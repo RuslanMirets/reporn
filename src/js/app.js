@@ -61,28 +61,32 @@ burger.addEventListener("click", (e) => {
 		dropdown?.classList.remove("active");
 	});
 })();
-// ================================ //GLOBAL =================================
 
-// ================================ MAIN PAGE ==============================
-// Search textarea
-(function () {
-	const textarea = document.querySelector(".search__textarea");
-	const reset = document.querySelector(".search__reset");
-
+// Auto height textarea
+function authHeightTextarea(textarea, reset) {
 	function autosize() {
 		setTimeout(function () {
 			textarea.style.cssText = "height:auto;";
 			textarea.style.cssText = "height:" + textarea.scrollHeight + "px";
 		}, 0);
 	}
-
 	textarea.addEventListener("keydown", autosize);
 	reset.addEventListener("click", (e) => {
+		textarea.value = "";
 		autosize();
 	});
 	window.addEventListener("resize", (e) => {
 		autosize();
 	});
+}
+// ================================ //GLOBAL =================================
+
+// ================================ MAIN PAGE ==============================
+// Search textarea
+(function () {
+	const textarea = document.querySelector("#textareaSearch");
+	const reset = document.querySelector("#resetSearch");
+	textarea && authHeightTextarea(textarea, reset);
 })();
 
 // Sort dropdown
@@ -102,7 +106,25 @@ burger.addEventListener("click", (e) => {
 
 	document.addEventListener("click", (e) => {
 		btn?.classList.remove("active");
-		dropdown.style.maxHeight = null;
+		if (dropdown) {
+			dropdown.style.maxHeight = null;
+		}
 	});
 })();
 // ================================ // MAIN PAGE ==============================
+
+// ========================== CREATE ARTWORK PAGE =============================
+// Prompt textarea
+(function () {
+	const textarea = document.querySelector("#textareaPrompt");
+	const reset = document.querySelector("#resetPrompt");
+	textarea && authHeightTextarea(textarea, reset);
+})();
+
+// Prompt Negative textarea
+(function () {
+	const textarea = document.querySelector("#textareaNegativePrompt");
+	const reset = document.querySelector("#resetNegativePrompt");
+	textarea && authHeightTextarea(textarea, reset);
+})();
+// ========================== // CREATE ARTWORK PAGE ==========================

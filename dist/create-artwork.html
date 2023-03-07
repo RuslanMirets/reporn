@@ -40,7 +40,6 @@
 		crossorigin
 	/>
 
-    <link rel="stylesheet" href="css/global.min.css" />
     <link rel="stylesheet" href="css/app.min.css" />
 
     <script defer src="js/app.min.js"></script>
@@ -210,7 +209,79 @@
 </nav>
 
             <main class="main">
-                <h1>Create Artwork</h1>
+                <section class="create">
+    <div class="container">
+        <h1 class="create__title heading">
+            <span class="heading--red">Create</span> Artwork
+        </h1>
+        <form class="create__form form-create">
+            <div class="form-create__prompts">
+                <div class="form-create__fields">
+                    <label class="form-create__label">
+                        Prompt
+                        <div class="form-create__group">
+                            <textarea
+								class="form-create__textarea textarea"
+								id="textareaPrompt"
+								type="text"
+								rows="1"
+								placeholder="Anime female with cat ears..."
+							></textarea>
+                            <button
+								class="form-create__reset btn btn-reset reset"
+								id="resetPrompt"
+								type="button"
+							>
+                                <img
+									src="img/icons/reset.svg"
+									width="11"
+									height="24"
+									loading="lazy"
+									alt="Reset"
+								/>
+                            </button>
+                        </div>
+                    </label>
+                    <label class="form-create__label form-create__label--sm">
+                        Negative Prompt
+                        <div class="form-create__group">
+                            <textarea
+								class="form-create__textarea form-create__textarea textarea textarea--sm"
+								id="textareaNegativePrompt"
+								type="text"
+								rows="1"
+								placeholder="Enter things you don’t want to be generated"
+							></textarea>
+                            <button
+								class="form-create__reset btn btn-reset reset"
+								id="resetNegativePrompt"
+								type="button"
+							>
+                                <img
+									src="img/icons/reset.svg"
+									width="11"
+									height="24"
+									loading="lazy"
+									alt="Reset"
+								/>
+                            </button>
+                        </div>
+                    </label>
+                </div>
+                <div class="form-create__btns">
+                    <input class="form-create__file" type="file" />
+                    <button
+						class="form-create__submit btn btn-reset btn--red"
+						type="submit"
+					>
+                        Create
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+
             </main>
             <footer class="footer">
     <div class="footer__container container">

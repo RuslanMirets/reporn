@@ -349,6 +349,7 @@ select {
 }
 
 .btn--red {
+  color: var(--white-color);
   background-color: var(--main-red-color);
   -webkit-transition: background-color 0.3s ease-in-out;
   -o-transition: background-color 0.3s ease-in-out;
@@ -356,6 +357,7 @@ select {
 }
 
 .btn--dark {
+  color: var(--white-color);
   background-color: var(--secondary-1-color);
   -webkit-transition: background-color 0.3s ease-in-out;
   -o-transition: background-color 0.3s ease-in-out;
@@ -390,46 +392,82 @@ select {
   color: var(--main-2-color);
 }
 
-.input {
+.textarea {
+  display: block;
   border: none;
   border-radius: 8px;
-  padding: 0 48px 0 16px;
+  padding: 20px 48px 20px 16px;
   width: 100%;
   height: 60px;
+  max-height: 240px;
   font-weight: 500;
   font-size: 14px;
   line-height: 20px;
   color: var(--white-color);
   background-color: var(--black-color);
+  resize: none;
 }
 
-.input::-webkit-input-placeholder {
+.textarea::-webkit-input-placeholder {
   color: var(--ui-text-color);
   opacity: 1;
 }
 
-.input::-moz-placeholder {
+.textarea::-moz-placeholder {
   color: var(--ui-text-color);
   opacity: 1;
 }
 
-.input:-ms-input-placeholder {
+.textarea:-ms-input-placeholder {
   color: var(--ui-text-color);
   opacity: 1;
 }
 
-.input::-ms-input-placeholder {
+.textarea::-ms-input-placeholder {
   color: var(--ui-text-color);
   opacity: 1;
 }
 
-.input::placeholder {
+.textarea::placeholder {
   color: var(--ui-text-color);
   opacity: 1;
 }
 
-.input:focus-visible {
+.textarea:focus-visible {
   outline: none;
+}
+
+.textarea--sm {
+  padding: 12px 49px 12px 16px;
+  height: 40px;
+  max-height: 184px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.reset {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.reset img {
+  height: auto;
 }
 
 .burger {
@@ -821,37 +859,6 @@ select {
   width: 100%;
 }
 
-.search__textarea {
-  display: block;
-  padding: 20px 48px 20px 16px;
-  max-height: 240px;
-  resize: none;
-}
-
-.search__reset {
-  position: absolute;
-  right: 16px;
-  top: 50%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  width: 32px;
-  height: 32px;
-  -webkit-transform: translateY(-50%);
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-}
-
-.search__reset img {
-  height: auto;
-}
-
 .search__submit {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1052,6 +1059,34 @@ select {
 .images__item img {
   border-radius: 8px;
   height: calc(100% - 8px);
+}
+
+.create__title {
+  margin: 16px 0 24px;
+}
+
+.form-create__label {
+  display: block;
+  margin-bottom: 16px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.form-create__label--sm {
+  margin-bottom: 24px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.form-create__group {
+  position: relative;
+  width: 100%;
+}
+
+.form-create__textarea {
+  margin-top: 8px;
 }
 
 @media (min-width: 576px) {
@@ -1282,6 +1317,10 @@ select {
   .images__item {
     padding-bottom: 12px;
   }
+
+  .create__title {
+    margin: 40px 0;
+  }
 }
 
 @media (min-width: 1400px) {
@@ -1291,16 +1330,19 @@ select {
 }
 
 @media (min-width: 1600px) {
-  .input {
-    padding: 0 48px 0 32px;
+  .textarea {
+    padding: 28px 48px 28px 32px;
     height: 80px;
+    max-height: 176px;
     font-size: 18px;
     line-height: 24px;
   }
 
-  .search__textarea {
-    padding: 28px 48px 28px 32px;
-    max-height: 176px;
+  .textarea--sm {
+    padding: 12px 48px 12px 32px;
+    height: 48px;
+    max-height: 144px;
+    font-weight: 500;
   }
 
   .search__submit {

@@ -40,7 +40,6 @@
 		crossorigin
 	/>
 
-    <link rel="stylesheet" href="css/global.min.css" />
     <link rel="stylesheet" href="css/app.min.css" />
 
     <script defer src="js/app.min.js"></script>
@@ -219,12 +218,17 @@
         <form class="search__form">
             <div class="search__group">
                 <textarea
-					class="search__textarea input"
+					class="search__textarea textarea"
+					id="textareaSearch"
 					type="text"
 					rows="1"
 					placeholder="Anime female with cat ears..."
 				></textarea>
-                <button class="search__reset btn btn-reset" type="reset">
+                <button
+					class="search__reset btn btn-reset reset"
+					id="resetSearch"
+					type="button"
+				>
                     <img
 						src="img/icons/reset.svg"
 						width="11"
