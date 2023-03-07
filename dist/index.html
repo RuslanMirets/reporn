@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en" class="page">
+    <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Описание" />
+
+    <link rel="icon" href="favicon.ico" />
+    <link rel="icon" href="img/favicon/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="img/favicon/manifest.json" />
+
+    <link
+		rel="preload"
+		href="./fonts/Poppins-Regular.woff2"
+		as="font"
+		type="font/woff2"
+		crossorigin
+	/>
+    <link
+		rel="preload"
+		href="./fonts/Poppins-Medium.woff2"
+		as="font"
+		type="font/woff2"
+		crossorigin
+	/>
+    <link
+		rel="preload"
+		href="./fonts/Poppins-SemiBold.woff2"
+		as="font"
+		type="font/woff2"
+		crossorigin
+	/>
+    <link
+		rel="preload"
+		href="./fonts/Poppins-Bold.woff2"
+		as="font"
+		type="font/woff2"
+		crossorigin
+	/>
+
+    <link rel="stylesheet" href="css/global.min.css?_v=20230307154149" />
+    <link rel="stylesheet" href="css/app.min.css?_v=20230307154149" />
+
+    <script defer src="js/app.min.js?_v=20230307154149"></script>
+    <title>Main</title>
+</head>
+
+    <body class="page__body">
+        <div class="site-container">
+            <header class="header">
+    <div class="header__container container">
+        <a class="header__logo" href="#">
+            <img
+				src="img/logo.svg"
+				width="100"
+				height="32"
+				loading="lazy"
+				alt="Logo"
+			/>
+        </a>
+        <nav class="header__menu menu">
+            <ul class="menu__list">
+                <li class="menu__item">
+                    <a class="menu__link btn btn--black" href="#">Explore</a>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__link btn btn--red" href="#">Create Artwork</a>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__link btn btn--black" href="#">My Gallery</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="header__user">
+            <a class="header__user-link btn btn--yellow" href="#">Upgrade</a>
+            <a class="header__user-link btn btn--dark" href="#">Log in</a>
+            <!-- <div class="header__user-auth">
+				<div class="header__user-name">David Smith</div>
+				<button class="header__user-btn btn-reset" aria-label="User">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="18"
+						height="21"
+						fill="none"
+					>
+						<path
+							fill="#fff"
+							d="M9 10.5c2.734 0 5-2.227 5-5 0-2.734-2.266-5-5-5-2.773 0-5 2.266-5 5 0 2.773 2.227 5 5 5Zm3.477 1.25h-.665c-.859.43-1.796.625-2.812.625-1.016 0-1.992-.195-2.852-.625h-.664c-2.89 0-5.234 2.383-5.234 5.273v1.602c0 1.055.82 1.875 1.875 1.875h13.75c1.016 0 1.875-.82 1.875-1.875v-1.602c0-2.89-2.383-5.273-5.273-5.273Z"
+						/>
+					</svg>
+				</button>
+				<div class="header__user-dropdown dropdown-user">
+					<ul class="dropdown-user__list">
+						<li class="dropdown-user__item">
+							<a class="dropdown-user__link" href="#">
+								<div class="dropdown-user__icon">
+									<img
+										src="img/icons/profile.svg"
+										width="11"
+										height="14"
+										loading="lazy"
+										alt="My profile"
+									/>
+								</div>
+								My profile
+							</a>
+						</li>
+						<li class="dropdown-user__item">
+							<a class="dropdown-user__link" href="#">
+								<div class="dropdown-user__icon">
+									<img
+										src="img/icons/list.svg"
+										width="12"
+										height="14"
+										loading="lazy"
+										alt="My lists"
+									/>
+								</div>
+								My lists
+							</a>
+						</li>
+						<hr />
+						<li class="dropdown-user__item">
+							<button class="dropdown-user__btn btn-reset">
+								<div class="dropdown-user__icon">
+									<img
+										src="img/icons/user-cog.svg"
+										width="15"
+										height="14"
+										loading="lazy"
+										alt="Log out"
+									/>
+								</div>
+								Log out
+							</button>
+						</li>
+					</ul>
+				</div>
+			</div> -->
+        </div>
+        <div class="header__actions">
+            <a class="header__create-btn btn btn--red" href="#">Create Artwork</a>
+            <button class="header__burger burger btn-reset">
+                <img
+					class="burger__img burger__img--open active"
+					src="img/icons/burger.svg"
+					width="18"
+					height="24"
+					loading="lazy"
+					alt="Open menu"
+				/>
+                <img
+					class="burger__img burger__img--close"
+					src="img/icons/burger-close.svg"
+					width="14"
+					height="24"
+					loading="lazy"
+					alt="Close menu"
+				/>
+            </button>
+        </div>
+    </div>
+</header>
+
+<nav class="header__menu-mobile mobile-menu">
+    <ul class="mobile-menu__list">
+        <li class="mobile-menu__item">
+            <a class="mobile-menu__link btn btn--red" href="#"> Create Artwork </a>
+        </li>
+        <li class="mobile-menu__item">
+            <a class="mobile-menu__link btn btn--dark" href="#">Explore</a>
+        </li>
+        <!-- <li class="mobile-menu__item">
+				<a class="mobile-menu__link btn btn--dark" href="#">My profile</a>
+			</li>
+			<li class="mobile-menu__item">
+				<a class="mobile-menu__link btn btn--dark" href="#">My Gallery</a>
+			</li> -->
+        <li class="mobile-menu__item">
+            <a class="mobile-menu__link btn btn--yellow" href="#">Upgrade</a>
+        </li>
+    </ul>
+    <ul class="mobile-menu__user-list">
+        <!-- <li class="mobile-menu__user-item">
+				<p class="mobile-menu__user-name">David Smith</p>
+			</li>
+			<li class="mobile-menu__user-item">
+				<p class="mobile-menu__user-username">@davidsmith4819</p>
+			</li>
+			<li class="mobile-menu__user-item">
+				<a class="mobile-menu__user-link btn btn--dark" href="#">Log out</a>
+			</li> -->
+        <li class="mobile-menu__user-item">
+            <a class="mobile-menu__user-link btn btn--dark" href="#">Log in</a>
+        </li>
+    </ul>
+    <ul class="mobile-menu__foot-list">
+        <li class="mobile-menu__foot-item">
+            <a class="mobile-menu__foot-link" href="#">Terms & Conditions</a>
+        </li>
+        <li class="mobile-menu__foot-item">
+            <a class="mobile-menu__foot-link" href="#">Privacy Policy</a>
+        </li>
+        <li class="mobile-menu__foot-item">
+            <a class="mobile-menu__foot-link" href="#">Contact</a>
+        </li>
+    </ul>
+</nav>
+
+            <main class="main">
+                <section class="search">
+    <div class="container">
+        <h1 class="search__title heading">
+            <span class="heading--red">Find</span> your special or
+            <span class="heading--yellow">create it</span>
+        </h1>
+        <form class="search__form">
+            <div class="search__group">
+                <textarea
+					class="search__textarea input"
+					type="text"
+					rows="1"
+					placeholder="Anime female with cat ears..."
+				></textarea>
+                <button class="search__reset btn btn-reset" type="reset">
+                    <img
+						src="img/icons/reset.svg"
+						width="11"
+						height="24"
+						loading="lazy"
+						alt="Reset"
+					/>
+                </button>
+            </div>
+            <button class="search__submit btn btn-reset btn--red" type="submit">
+                <img
+					src="img/icons/search.svg"
+					width="20"
+					height="24"
+					loading="lazy"
+					alt="Search"
+				/>
+                <p class="search__submit-title">Search</p>
+            </button>
+        </form>
+    </div>
+</section>
+
+                <section class="categories">
+    <div class="categories__container container">
+        <ul class="categories__list">
+            <li class="categories__item">
+                <button class="categories__btn btn-reset">lesbian</button>
+            </li>
+            <li class="categories__item">
+                <button class="categories__btn btn-reset active">ebony</button>
+            </li>
+            <li class="categories__item">
+                <button class="categories__btn btn-reset">japanese</button>
+            </li>
+            <li class="categories__item">
+                <button class="categories__btn btn-reset">anal</button>
+            </li>
+            <li class="categories__item">
+                <button class="categories__btn btn-reset">teen</button>
+            </li>
+            <li class="categories__item">
+                <button class="categories__btn btn-reset">mature</button>
+            </li>
+            <li class="categories__item">
+                <button class="categories__btn btn-reset">hentai</button>
+            </li>
+            <li class="categories__item">
+                <button class="categories__btn btn-reset">bigtits</button>
+            </li>
+            <li class="categories__item">
+                <button class="categories__btn btn-reset">asian</button>
+            </li>
+            <li class="categories__item">
+                <button class="categories__btn btn-reset">creampie</button>
+            </li>
+            <li class="categories__item">
+                <button class="categories__btn btn-reset">black</button>
+            </li>
+            <li class="categories__item">
+                <button class="categories__btn btn-reset">blowjob</button>
+            </li>
+            <li class="categories__item">
+                <button class="categories__btn btn-reset">followers</button>
+            </li>
+        </ul>
+        <div class="categories__sort sort">
+            <button class="sort__btn btn-reset">
+                <svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="10"
+					height="14"
+					fill="none"
+				>
+                    <path
+						fill="#fff"
+						d="M1.281 8C.594 8 .25 8.813.75 9.281L4.469 13c.281.313.75.313 1.062 0L9.25 9.281C9.719 8.812 9.375 8 8.719 8H1.28ZM9.25 4.719 5.531 1C5.22.719 4.75.719 4.47 1L.75 4.719C.25 5.219.594 6 1.281 6H8.72c.656 0 1-.781.531-1.281Z"
+					/>
+                </svg>
+                Sort by
+            </button>
+            <div class="sort__content">
+                <ul class="sort__list">
+                    <li class="sort__item">
+                        <button class="sort__item-btn btn-reset">
+                            <div class="sort__item-icon">
+                                <svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="12"
+									height="16"
+									fill="none"
+								>
+                                    <path
+										fill="#fff"
+										d="M10.25 5H6.625L7.969.969C8.094.469 7.719 0 7.25 0h-4.5c-.375 0-.719.281-.75.656l-1 7.5c-.063.469.281.844.75.844h3.688L4 15.094c-.094.469.25.906.719.906.281 0 .531-.125.656-.375l5.5-9.5C11.188 5.656 10.812 5 10.25 5Z"
+									/>
+                                </svg>
+                            </div>
+                            Week trending
+                        </button>
+                    </li>
+                    <li class="sort__item">
+                        <button class="sort__item-btn btn-reset active">
+                            <div class="sort__item-icon">
+                                <svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="12"
+									height="17"
+									fill="none"
+								>
+                                    <path
+										fill="#fff"
+										d="M6.75 1.75c0-.719-.969-1-1.406-.406C1.5 7 7 7.25 7 10c0 1.125-.938 2.031-2.031 2C3.844 12 3 11.094 3 10V7.312c0-.687-.844-1-1.313-.5C.845 7.688 0 9.188 0 11c0 3.313 2.688 6 6 6 3.281 0 6-2.688 6-6 0-5.313-5.25-6.031-5.25-9.25Z"
+									/>
+                                </svg>
+                            </div>
+                            Daily trending
+                        </button>
+                    </li>
+                    <li class="sort__item">
+                        <button class="sort__item-btn btn-reset">
+                            <div class="sort__item-icon">
+                                <svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="16"
+									height="17"
+									fill="none"
+								>
+                                    <path
+										fill="#fff"
+										d="M10.906 4.094C9.22 4.094 7.844 3 5.75 3c-.781 0-1.469.156-2.125.406.063-.219.094-.406.094-.625v-.125c-.031-.875-.781-1.594-1.656-1.625C1.063.97.25 1.781.25 2.75c0 .625.281 1.125.75 1.438V16.25c0 .438.313.75.75.75h.5a.74.74 0 0 0 .75-.75v-2.938c.875-.374 1.969-.687 3.563-.687 1.687 0 3.062 1.094 5.156 1.094 1.5 0 2.719-.531 3.844-1.281.25-.188.437-.5.437-.813V4c0-.719-.781-1.188-1.438-.906-1.062.5-2.374 1-3.656 1Z"
+									/>
+                                </svg>
+                            </div>
+                            Newest
+                        </button>
+                    </li>
+                    <li class="sort__item">
+                        <button class="sort__item-btn btn-reset">
+                            <div class="sort__item-icon">
+                                <svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="21"
+									height="16"
+									fill="none"
+								>
+                                    <path
+										fill="#fff"
+										d="M7 8c2.188 0 4-1.781 4-4 0-2.188-1.813-4-4-4-2.219 0-4 1.813-4 4 0 2.219 1.781 4 4 4Zm2.781 1H9.25c-.688.344-1.438.5-2.25.5-.813 0-1.594-.156-2.281-.5h-.532C1.876 9 0 10.906 0 13.219V14.5c0 .844.656 1.5 1.5 1.5h11a1.5 1.5 0 0 0 1.5-1.5v-1.281C14 10.906 12.094 9 9.781 9Zm10.094-4L19 4.125a.325.325 0 0 0-.5 0l-3.281 3.25-1.438-1.438c-.125-.156-.375-.156-.531 0l-.875.875c-.125.125-.125.375 0 .532l2.563 2.562a.36.36 0 0 0 .53 0l4.407-4.375a.36.36 0 0 0 0-.531Z"
+									/>
+                                </svg>
+                            </div>
+                            Followers
+                        </button>
+                    </li>
+                    <li class="sort__item">
+                        <button class="sort__item-btn btn-reset">
+                            <div class="sort__item-icon">
+                                <svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="18"
+									height="12"
+									fill="none"
+								>
+                                    <path
+										fill="#fff"
+										d="M17.875 5.563C16.187 2.25 12.812 0 9 0 5.156 0 1.781 2.25.094 5.563A.998.998 0 0 0 0 6c0 .188.031.344.094.469C1.78 9.78 5.156 12 9 12c3.813 0 7.188-2.219 8.875-5.531a.998.998 0 0 0 .094-.438c0-.187-.032-.343-.094-.468ZM9 10.5c-2.5 0-4.5-2-4.5-4.5 0-2.469 2-4.5 4.5-4.5 2.469 0 4.5 2.031 4.5 4.5v.031c0 2.469-2.031 4.5-4.5 4.5V10.5ZM9 3c-.281.031-.563.063-.813.125.188.25.282.563.282.906C8.469 4.844 7.813 5.5 7 5.5c-.344 0-.656-.094-.906-.281C6.03 5.469 6 5.75 6 6a3 3 0 0 0 6 0c0-1.656-1.344-2.969-3-2.969V3Z"
+									/>
+                                </svg>
+                            </div>
+                            Most viewed
+                        </button>
+                    </li>
+                    <hr />
+                    <li class="sort__item">
+                        <button class="sort__item-btn btn-reset">
+                            <div class="sort__item-icon">
+                                <svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="16"
+									height="16"
+									fill="none"
+								>
+                                    <path
+										fill="#fff"
+										d="M6.625 7.031A.403.403 0 0 0 7 6.656v-1.5a.38.38 0 0 0-.375-.375H3.562C4.563 3.406 6.156 2.5 8 2.5c3.031 0 5.5 2.469 5.5 5.5 0 3.063-2.469 5.5-5.5 5.5-1.406 0-2.688-.5-3.656-1.375-.157-.125-.375-.125-.5.031L2.78 13.22c-.156.156-.156.406 0 .531a7.744 7.744 0 0 0 5.219 2c4.281 0 7.75-3.438 7.75-7.719A7.715 7.715 0 0 0 8.062.281 7.605 7.605 0 0 0 2.25 2.844V.375A.403.403 0 0 0 1.875 0h-1.5A.38.38 0 0 0 0 .375v6.281a.38.38 0 0 0 .375.375h6.25Z"
+									/>
+                                </svg>
+                            </div>
+                            Reset
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+                <section class="images">
+    <div class="container">
+        <div class="images__items" id="masonry-with-columns">
+            <div class="images__item">
+                <img
+					src="img/image-01.webp"
+					width="297"
+					height="188"
+					loading="lazy"
+					alt="Image"
+				/>
+            </div>
+            <div class="images__item">
+                <img
+					src="img/image-02.webp"
+					width="296"
+					height="296"
+					loading="lazy"
+					alt="Image"
+				/>
+            </div>
+            <div class="images__item">
+                <img
+					src="img/image-03.webp"
+					width="297"
+					height="445"
+					loading="lazy"
+					alt="Image"
+				/>
+            </div>
+            <div class="images__item">
+                <img
+					src="img/image-02.webp"
+					width="296"
+					height="296"
+					loading="lazy"
+					alt="Image"
+				/>
+            </div>
+            <div class="images__item">
+                <img
+					src="img/image-01.webp"
+					width="297"
+					height="188"
+					loading="lazy"
+					alt="Image"
+				/>
+            </div>
+            <div class="images__item">
+                <img
+					src="img/image-01.webp"
+					width="297"
+					height="188"
+					loading="lazy"
+					alt="Image"
+				/>
+            </div>
+            <div class="images__item">
+                <img
+					src="img/image-02.webp"
+					width="296"
+					height="296"
+					loading="lazy"
+					alt="Image"
+				/>
+            </div>
+            <div class="images__item">
+                <img
+					src="img/image-02.webp"
+					width="296"
+					height="296"
+					loading="lazy"
+					alt="Image"
+				/>
+            </div>
+            <div class="images__item">
+                <img
+					src="img/image-01.webp"
+					width="297"
+					height="188"
+					loading="lazy"
+					alt="Image"
+				/>
+            </div>
+            <div class="images__item">
+                <img
+					src="img/image-03.webp"
+					width="297"
+					height="445"
+					loading="lazy"
+					alt="Image"
+				/>
+            </div>
+            <div class="images__item">
+                <img
+					src="img/image-02.webp"
+					width="296"
+					height="296"
+					loading="lazy"
+					alt="Image"
+				/>
+            </div>
+            <div class="images__item">
+                <img
+					src="img/image-01.webp"
+					width="297"
+					height="188"
+					loading="lazy"
+					alt="Image"
+				/>
+            </div>
+            <div class="images__item">
+                <img
+					src="img/image-01.webp"
+					width="297"
+					height="188"
+					loading="lazy"
+					alt="Image"
+				/>
+            </div>
+            <div class="images__item">
+                <img
+					src="img/image-02.webp"
+					width="296"
+					height="296"
+					loading="lazy"
+					alt="Image"
+				/>
+            </div>
+            <div class="images__item">
+                <img
+					src="img/image-02.webp"
+					width="296"
+					height="296"
+					loading="lazy"
+					alt="Image"
+				/>
+            </div>
+            <div class="images__item">
+                <img
+					src="img/image-02.webp"
+					width="296"
+					height="296"
+					loading="lazy"
+					alt="Image"
+				/>
+            </div>
+            <div class="images__item">
+                <img
+					src="img/image-02.webp"
+					width="296"
+					height="296"
+					loading="lazy"
+					alt="Image"
+				/>
+            </div>
+            <div class="images__item">
+                <img
+					src="img/image-03.webp"
+					width="297"
+					height="445"
+					loading="lazy"
+					alt="Image"
+				/>
+            </div>
+            <div class="images__item">
+                <img
+					src="img/image-01.webp"
+					width="297"
+					height="188"
+					loading="lazy"
+					alt="Image"
+				/>
+            </div>
+            <div class="images__item">
+                <img
+					src="img/image-03.webp"
+					width="297"
+					height="445"
+					loading="lazy"
+					alt="Image"
+				/>
+            </div>
+        </div>
+    </div>
+</section>
+
+            </main>
+            <footer class="footer">
+    <div class="footer__container container">
+        <div class="footer__copyright">© reporn.ai, 2023</div>
+        <ul class="footer__list">
+            <li class="footer__item">
+                <a class="footer__link" href="#">Terms & Conditions</a>
+            </li>
+            <li class="footer__item">
+                <a class="footer__link" href="#">Privacy Policy</a>
+            </li>
+            <li class="footer__item">
+                <a class="footer__link" href="#">Contact</a>
+            </li>
+        </ul>
+    </div>
+</footer>
+
+        </div>
+    </body>
+</html>
