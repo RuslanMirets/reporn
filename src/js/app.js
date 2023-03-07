@@ -149,13 +149,11 @@ const authHeightTextarea = (textarea, reset) => {
 	});
 
 	const previewFile = (file) => {
-		let reader = new FileReader();
+		const reader = new FileReader();
 		reader.readAsDataURL(file);
 		reader.onloadend = function () {
-			let img = document.createElement("img");
-			img.classList.add("form-create__preview");
+			const img = document.querySelector(".form-create__preview");
 			img.src = reader.result;
-			document.getElementById("dropArea").appendChild(img);
 		};
 		console.log(reader);
 	};
@@ -164,14 +162,12 @@ const authHeightTextarea = (textarea, reset) => {
 		const dt = e.dataTransfer;
 		const file = dt.files[0];
 		dropArea.classList.add("active");
-		console.log(file);
 		previewFile(file);
 	};
 
 	const handleChange = (e) => {
 		const file = e.target.files[0];
 		dropArea.classList.add("active");
-		console.log(file);
 		previewFile(file);
 	};
 
@@ -181,7 +177,6 @@ const authHeightTextarea = (textarea, reset) => {
 	deleteImg.addEventListener("click", () => {
 		fileElem.value = "";
 		dropArea.classList.remove("active");
-		document.querySelector(".form-create__preview").remove();
 	});
 })();
 // ========================== // CREATE ARTWORK PAGE ==========================

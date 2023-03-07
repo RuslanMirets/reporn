@@ -1276,27 +1276,13 @@ select {
 			}
 
 			.form-create__delete-img {
+				display: flex;
+			}
+
+			.form-create__preview {
 				display: block;
 			}
 		}
-
-		// &.active {
-		// 	.form-create__image-icon {
-		// 		display: none;
-		// 	}
-
-		// 	.form-create__uploaded-icon {
-		// 		display: block;
-		// 	}
-
-		// 	&:hover {
-		// 		svg {
-		// 			path {
-		// 				fill: var(--main-2-color);
-		// 			}
-		// 		}
-		// 	}
-		// }
 	}
 
 	&__uploaded-icon {
@@ -1308,6 +1294,7 @@ select {
 	}
 
 	&__preview {
+		display: none;
 		border-radius: 8px;
 		width: 100%;
 		height: 100%;
@@ -1315,12 +1302,21 @@ select {
 
 	&__delete-img {
 		position: absolute;
-		bottom: -38px;
+		right: -7px;
+		top: -7px;
 		display: none;
-		font-weight: 500;
-		font-size: 14px;
-		line-height: 16px;
-		color: var(--main-2-color);
+		align-items: center;
+		justify-content: center;
+		border-radius: 50%;
+		padding: 4px;
+		width: 16px;
+		height: 16px;
+		background-color: var(--main-red-color);
+		transition: background-color 0.3s ease-in-out;
+
+		&:hover {
+			background-color: var(--main-red-hover-color);
+		}
 	}
 
 	&__submit {
