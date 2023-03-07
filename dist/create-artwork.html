@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en" class="page">
+    <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Описание" />
+
+    <link rel="icon" href="favicon.ico" />
+    <link rel="icon" href="img/favicon/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="img/favicon/manifest.json" />
+
+    <link
+		rel="preload"
+		href="./fonts/Poppins-Regular.woff2"
+		as="font"
+		type="font/woff2"
+		crossorigin
+	/>
+    <link
+		rel="preload"
+		href="./fonts/Poppins-Medium.woff2"
+		as="font"
+		type="font/woff2"
+		crossorigin
+	/>
+    <link
+		rel="preload"
+		href="./fonts/Poppins-SemiBold.woff2"
+		as="font"
+		type="font/woff2"
+		crossorigin
+	/>
+    <link
+		rel="preload"
+		href="./fonts/Poppins-Bold.woff2"
+		as="font"
+		type="font/woff2"
+		crossorigin
+	/>
+
+    <link rel="stylesheet" href="css/global.min.css?_v=20230307154804" />
+    <link rel="stylesheet" href="css/app.min.css?_v=20230307154804" />
+
+    <script defer src="js/app.min.js?_v=20230307154804"></script>
+    <title>Create Artwork</title>
+</head>
+
+    <body class="page__body">
+        <div class="site-container">
+            <header class="header">
+    <div class="header__container container">
+        <a class="header__logo" href="#">
+            <img
+				src="img/logo.svg"
+				width="100"
+				height="32"
+				loading="lazy"
+				alt="Logo"
+			/>
+        </a>
+        <nav class="header__menu menu">
+            <ul class="menu__list">
+                <li class="menu__item">
+                    <a class="menu__link btn btn--black" href="#">Explore</a>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__link btn btn--red" href="#">Create Artwork</a>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__link btn btn--black" href="#">My Gallery</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="header__user">
+            <a class="header__user-link btn btn--yellow" href="#">Upgrade</a>
+            <a class="header__user-link btn btn--dark" href="#">Log in</a>
+            <!-- <div class="header__user-auth">
+				<div class="header__user-name">David Smith</div>
+				<button class="header__user-btn btn-reset" aria-label="User">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="18"
+						height="21"
+						fill="none"
+					>
+						<path
+							fill="#fff"
+							d="M9 10.5c2.734 0 5-2.227 5-5 0-2.734-2.266-5-5-5-2.773 0-5 2.266-5 5 0 2.773 2.227 5 5 5Zm3.477 1.25h-.665c-.859.43-1.796.625-2.812.625-1.016 0-1.992-.195-2.852-.625h-.664c-2.89 0-5.234 2.383-5.234 5.273v1.602c0 1.055.82 1.875 1.875 1.875h13.75c1.016 0 1.875-.82 1.875-1.875v-1.602c0-2.89-2.383-5.273-5.273-5.273Z"
+						/>
+					</svg>
+				</button>
+				<div class="header__user-dropdown dropdown-user">
+					<ul class="dropdown-user__list">
+						<li class="dropdown-user__item">
+							<a class="dropdown-user__link" href="#">
+								<div class="dropdown-user__icon">
+									<img
+										src="img/icons/profile.svg"
+										width="11"
+										height="14"
+										loading="lazy"
+										alt="My profile"
+									/>
+								</div>
+								My profile
+							</a>
+						</li>
+						<li class="dropdown-user__item">
+							<a class="dropdown-user__link" href="#">
+								<div class="dropdown-user__icon">
+									<img
+										src="img/icons/list.svg"
+										width="12"
+										height="14"
+										loading="lazy"
+										alt="My lists"
+									/>
+								</div>
+								My lists
+							</a>
+						</li>
+						<hr />
+						<li class="dropdown-user__item">
+							<button class="dropdown-user__btn btn-reset">
+								<div class="dropdown-user__icon">
+									<img
+										src="img/icons/user-cog.svg"
+										width="15"
+										height="14"
+										loading="lazy"
+										alt="Log out"
+									/>
+								</div>
+								Log out
+							</button>
+						</li>
+					</ul>
+				</div>
+			</div> -->
+        </div>
+        <div class="header__actions">
+            <a class="header__create-btn btn btn--red" href="#">Create Artwork</a>
+            <button class="header__burger burger btn-reset">
+                <img
+					class="burger__img burger__img--open active"
+					src="img/icons/burger.svg"
+					width="18"
+					height="24"
+					loading="lazy"
+					alt="Open menu"
+				/>
+                <img
+					class="burger__img burger__img--close"
+					src="img/icons/burger-close.svg"
+					width="14"
+					height="24"
+					loading="lazy"
+					alt="Close menu"
+				/>
+            </button>
+        </div>
+    </div>
+</header>
+
+<nav class="header__menu-mobile mobile-menu">
+    <ul class="mobile-menu__list">
+        <li class="mobile-menu__item">
+            <a class="mobile-menu__link btn btn--red" href="#"> Create Artwork </a>
+        </li>
+        <li class="mobile-menu__item">
+            <a class="mobile-menu__link btn btn--dark" href="#">Explore</a>
+        </li>
+        <!-- <li class="mobile-menu__item">
+				<a class="mobile-menu__link btn btn--dark" href="#">My profile</a>
+			</li>
+			<li class="mobile-menu__item">
+				<a class="mobile-menu__link btn btn--dark" href="#">My Gallery</a>
+			</li> -->
+        <li class="mobile-menu__item">
+            <a class="mobile-menu__link btn btn--yellow" href="#">Upgrade</a>
+        </li>
+    </ul>
+    <ul class="mobile-menu__user-list">
+        <!-- <li class="mobile-menu__user-item">
+				<p class="mobile-menu__user-name">David Smith</p>
+			</li>
+			<li class="mobile-menu__user-item">
+				<p class="mobile-menu__user-username">@davidsmith4819</p>
+			</li>
+			<li class="mobile-menu__user-item">
+				<a class="mobile-menu__user-link btn btn--dark" href="#">Log out</a>
+			</li> -->
+        <li class="mobile-menu__user-item">
+            <a class="mobile-menu__user-link btn btn--dark" href="#">Log in</a>
+        </li>
+    </ul>
+    <ul class="mobile-menu__foot-list">
+        <li class="mobile-menu__foot-item">
+            <a class="mobile-menu__foot-link" href="#">Terms & Conditions</a>
+        </li>
+        <li class="mobile-menu__foot-item">
+            <a class="mobile-menu__foot-link" href="#">Privacy Policy</a>
+        </li>
+        <li class="mobile-menu__foot-item">
+            <a class="mobile-menu__foot-link" href="#">Contact</a>
+        </li>
+    </ul>
+</nav>
+
+            <main class="main">
+                <h1>Create Artwork</h1>
+            </main>
+            <footer class="footer">
+    <div class="footer__container container">
+        <div class="footer__copyright">© reporn.ai, 2023</div>
+        <ul class="footer__list">
+            <li class="footer__item">
+                <a class="footer__link" href="#">Terms & Conditions</a>
+            </li>
+            <li class="footer__item">
+                <a class="footer__link" href="#">Privacy Policy</a>
+            </li>
+            <li class="footer__item">
+                <a class="footer__link" href="#">Contact</a>
+            </li>
+        </ul>
+    </div>
+</footer>
+
+        </div>
+    </body>
+</html>
