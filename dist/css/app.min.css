@@ -1089,6 +1089,99 @@ select {
   margin-top: 8px;
 }
 
+.form-create__btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 24px;
+  gap: 8px;
+}
+
+.form-create__drop {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 8px;
+  width: 52px;
+  height: 56px;
+  background-color: var(--secondary-1-color);
+  -webkit-transition: background-color 0.3s ease-in-out;
+  -o-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.form-create__drop svg path {
+  -webkit-transition: fill 0.3s ease-in-out;
+  -o-transition: fill 0.3s ease-in-out;
+  transition: fill 0.3s ease-in-out;
+}
+
+.form-create__drop:hover svg path {
+  fill: var(--secondary-3-color);
+}
+
+.form-create__drop.highlight {
+  background-color: var(--main-2-color);
+}
+
+.form-create__drop.highlight svg path {
+  fill: var(--secondary-1-color);
+}
+
+.form-create__drop.active .form-create__image-icon {
+  display: none;
+}
+
+.form-create__drop.active .form-create__delete-img {
+  display: block;
+}
+
+.form-create__uploaded-icon {
+  display: none;
+}
+
+.form-create__file {
+  display: none;
+}
+
+.form-create__preview {
+  border-radius: 8px;
+  width: 100%;
+  height: 100%;
+}
+
+.form-create__delete-img {
+  position: absolute;
+  bottom: -38px;
+  display: none;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  color: var(--main-2-color);
+}
+
+.form-create__submit {
+  padding: 16px;
+  width: 100%;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: -0.019em;
+}
+
 @media (min-width: 576px) {
   .container {
     max-width: 576px;

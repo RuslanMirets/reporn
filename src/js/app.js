@@ -63,13 +63,13 @@ burger.addEventListener("click", (e) => {
 })();
 
 // Auto height textarea
-function authHeightTextarea(textarea, reset) {
-	function autosize() {
+const authHeightTextarea = (textarea, reset) => {
+	const autosize = () => {
 		setTimeout(function () {
 			textarea.style.cssText = "height:auto;";
 			textarea.style.cssText = "height:" + textarea.scrollHeight + "px";
 		}, 0);
-	}
+	};
 	textarea.addEventListener("keydown", autosize);
 	reset.addEventListener("click", (e) => {
 		textarea.value = "";
@@ -78,7 +78,7 @@ function authHeightTextarea(textarea, reset) {
 	window.addEventListener("resize", (e) => {
 		autosize();
 	});
-}
+};
 // ================================ //GLOBAL =================================
 
 // ================================ MAIN PAGE ==============================
@@ -126,5 +126,62 @@ function authHeightTextarea(textarea, reset) {
 	const textarea = document.querySelector("#textareaNegativePrompt");
 	const reset = document.querySelector("#resetNegativePrompt");
 	textarea && authHeightTextarea(textarea, reset);
+})();
+
+// Drop image
+(function () {
+	const dropArea = document.querySelector("#dropArea");
+	const fileElem = document.querySelector("#fileElem");
+	const deleteImg = document.querySelector("#deleteImg");
+
+	const active = () => dropArea.classList.add("highlight");
+	const inactive = () => dropArea.classList.remove("highlight");
+	const prevents = (e) => e.preventDefault();
+
+	["dragenter", "dragover", "dragleave", "drop"].forEach((e) => {
+		dropArea.addEventListener(e, prevents);
+	});
+	["dragenter", "dragover"].forEach((e) => {
+		dropArea.addEventListener(e, active);
+	});
+	["dragleave", "drop"].forEach((e) => {
+		dropArea.addEventListener(e, inactive);
+	});
+
+	const previewFile = (file) => {
+		let reader = new FileReader();
+		reader.readAsDataURL(file);
+		reader.onloadend = function () {
+			let img = document.createElement("img");
+			img.classList.add("form-create__preview");
+			img.src = reader.result;
+			document.getElementById("dropArea").appendChild(img);
+		};
+		console.log(reader);
+	};
+
+	const handleDrop = (e) => {
+		const dt = e.dataTransfer;
+		const file = dt.files[0];
+		dropArea.classList.add("active");
+		console.log(file);
+		previewFile(file);
+	};
+
+	const handleChange = (e) => {
+		const file = e.target.files[0];
+		dropArea.classList.add("active");
+		console.log(file);
+		previewFile(file);
+	};
+
+	dropArea.addEventListener("change", handleChange);
+	dropArea.addEventListener("drop", handleDrop);
+
+	deleteImg.addEventListener("click", () => {
+		fileElem.value = "";
+		dropArea.classList.remove("active");
+		document.querySelector(".form-create__preview").remove();
+	});
 })();
 // ========================== // CREATE ARTWORK PAGE ==========================
