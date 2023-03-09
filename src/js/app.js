@@ -79,6 +79,20 @@ const authHeightTextarea = (textarea, reset) => {
 		autosize();
 	});
 };
+
+// Tooltip
+const tooltip = (btn, content) => {
+	btn?.addEventListener("click", (e) => {
+		btn?.classList.toggle("active");
+		content?.classList.toggle("active");
+		e.stopPropagation();
+	});
+
+	document.addEventListener("click", (e) => {
+		btn?.classList.remove("active");
+		content?.classList.remove("active");
+	});
+};
 // ================================ //GLOBAL =================================
 
 // ================================ MAIN PAGE ==============================
@@ -139,13 +153,13 @@ const authHeightTextarea = (textarea, reset) => {
 	const prevents = (e) => e.preventDefault();
 
 	["dragenter", "dragover", "dragleave", "drop"].forEach((e) => {
-		dropArea.addEventListener(e, prevents);
+		dropArea?.addEventListener(e, prevents);
 	});
 	["dragenter", "dragover"].forEach((e) => {
-		dropArea.addEventListener(e, active);
+		dropArea?.addEventListener(e, active);
 	});
 	["dragleave", "drop"].forEach((e) => {
-		dropArea.addEventListener(e, inactive);
+		dropArea?.addEventListener(e, inactive);
 	});
 
 	const previewFile = (file) => {
@@ -155,7 +169,6 @@ const authHeightTextarea = (textarea, reset) => {
 			const img = document.querySelector(".form-create__preview");
 			img.src = reader.result;
 		};
-		console.log(reader);
 	};
 
 	const handleDrop = (e) => {
@@ -171,12 +184,152 @@ const authHeightTextarea = (textarea, reset) => {
 		previewFile(file);
 	};
 
-	dropArea.addEventListener("change", handleChange);
-	dropArea.addEventListener("drop", handleDrop);
+	dropArea?.addEventListener("change", handleChange);
+	dropArea?.addEventListener("drop", handleDrop);
 
-	deleteImg.addEventListener("click", () => {
+	deleteImg?.addEventListener("click", () => {
 		fileElem.value = "";
 		dropArea.classList.remove("active");
+	});
+})();
+
+// Toggle Advanced mode
+(function () {
+	const toggle = document.querySelector("#advancedMode");
+	const advancedContent = document.querySelector(".form-create__advanced");
+
+	toggle?.addEventListener("change", () => {
+		if (toggle.checked == true) {
+			advancedContent.style.maxHeight = advancedContent.scrollHeight + "px";
+		} else {
+			advancedContent.style.maxHeight = null;
+		}
+	});
+})();
+
+// Guidance Scale Tooltip
+(function () {
+	const btn = document.querySelector("#scaleTooltipBtn");
+	const content = document.querySelector("#scaleTooltipContent");
+
+	tooltip(btn, content);
+})();
+
+// Steps Tooltip
+(function () {
+	const btn = document.querySelector("#stepsTooltipBtn");
+	const content = document.querySelector("#stepsTooltipContent");
+
+	tooltip(btn, content);
+})();
+
+// Guidance Scale
+(function () {
+	const progress = document.querySelector("#guidanceScale");
+	const result = document.querySelector("#resultGuidanceScale");
+
+	const min = progress?.min;
+	const max = progress?.max;
+	const val = progress?.value;
+
+	if (result) {
+		result.textContent = progress?.value;
+	}
+
+	if (progress) {
+		progress.style.backgroundSize =
+			((val - min) * 100) / (max - min) + "% 100%";
+	}
+
+	let n = 100 / max;
+	let x = ((val * n) / 100) * (progress?.offsetWidth - 18) - 6;
+	if (result) {
+		result.style.left = `${x}px`;
+	}
+
+	progress?.addEventListener("input", (e) => {
+		result.textContent = e.target.value;
+		const min = e.target.min;
+		const max = e.target.max;
+		const val = e.target.value;
+
+		e.target.style.backgroundSize =
+			((val - min) * 100) / (max - min) + "% 100%";
+
+		let n = 100 / max;
+		let x = ((val * n) / 100) * (progress.offsetWidth - 18) - 6;
+		result.style.left = `${x}px`;
+	});
+
+	window.addEventListener("resize", (e) => {
+		const progress = document.querySelector("#guidanceScale");
+		const result = document.querySelector("#resultGuidanceScale");
+
+		const min = progress.min;
+		const max = progress.max;
+		const val = progress.value;
+
+		progress.style.backgroundSize =
+			((val - min) * 100) / (max - min) + "% 100%";
+
+		let n = 100 / max;
+		let x = ((val * n) / 100) * (progress.offsetWidth - 18) - 6;
+		result.style.left = `${x}px`;
+	});
+})();
+
+// Steps
+(function () {
+	const progress = document.querySelector("#steps");
+	const result = document.querySelector("#resultSteps");
+
+	const min = progress?.min;
+	const max = progress?.max;
+	const val = progress?.value;
+
+	if (result) {
+		result.textContent = progress?.value;
+	}
+
+	if (progress) {
+		progress.style.backgroundSize =
+			((val - min) * 100) / (max - min) + "% 100%";
+	}
+
+	let n = 100 / max;
+	let x = ((val * n) / 100) * (progress?.offsetWidth - 18) - 6;
+	if (result) {
+		result.style.left = `${x}px`;
+	}
+
+	progress?.addEventListener("input", (e) => {
+		result.textContent = e.target.value;
+		const min = e.target.min;
+		const max = e.target.max;
+		const val = e.target.value;
+
+		e.target.style.backgroundSize =
+			((val - min) * 100) / (max - min) + "% 100%";
+
+		let n = 100 / max;
+		let x = ((val * n) / 100) * (progress.offsetWidth - 18) - 6;
+		result.style.left = `${x}px`;
+	});
+
+	window.addEventListener("resize", (e) => {
+		const progress = document.querySelector("#guidanceScale");
+		const result = document.querySelector("#resultGuidanceScale");
+
+		const min = progress.min;
+		const max = progress.max;
+		const val = progress.value;
+
+		progress.style.backgroundSize =
+			((val - min) * 100) / (max - min) + "% 100%";
+
+		let n = 100 / max;
+		let x = ((val * n) / 100) * (progress.offsetWidth - 18) - 6;
+		result.style.left = `${x}px`;
 	});
 })();
 // ========================== // CREATE ARTWORK PAGE ==========================
