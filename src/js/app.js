@@ -223,6 +223,14 @@ const tooltip = (btn, content) => {
 	tooltip(btn, content);
 })();
 
+// Ratio Tooltip
+(function () {
+	const btn = document.querySelector("#ratioTooltipBtn");
+	const content = document.querySelector("#ratioTooltipContent");
+
+	tooltip(btn, content);
+})();
+
 // Guidance Scale
 (function () {
 	const progress = document.querySelector("#guidanceScale");
