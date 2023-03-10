@@ -531,4 +531,22 @@ const tooltip = (btn, content) => {
 		}
 	});
 })();
+
+// Model swiper
+(function () {
+	const modelSwiper = new Swiper(".model__swiper", {
+		slidesPerView: "auto",
+		spaceBetween: 16,
+		navigation: {
+			prevEl: ".model__arrow--left",
+			nextEl: ".model__arrow--right",
+		},
+		breakpoints: {
+			1400: {
+				noSwiping: true,
+				noSwipingClass: "swiper-slide",
+			},
+		},
+	});
+})();
 // ========================== // CREATE ARTWORK PAGE ==========================

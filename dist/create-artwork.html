@@ -40,12 +40,15 @@
 		crossorigin
 	/>
 
+    <link
+		rel="stylesheet"
+		href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+	/>
     <link rel="stylesheet" href="css/app.min.css" />
 
     <script
-		src="https://code.jquery.com/jquery-3.6.4.min.js"
-		integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
-		crossorigin="anonymous"
+		defer
+		src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"
 	></script>
     <script defer src="js/app.min.js"></script>
     <title>Create Artwork</title>
@@ -219,7 +222,9 @@
         <h1 class="create__title heading">
             <span class="heading--red">Create</span> Artwork
         </h1>
-        <form class="create__form form-create">
+    </div>
+    <form class="create__form form-create">
+        <div class="container">
             <div class="form-create__prompts">
                 <div class="form-create__fields">
                     <label class="form-create__label">
@@ -627,13 +632,305 @@
                     </div>
                 </div>
             </div>
-            <div class="form-create__model model">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos commodi,
-                saepe eos quidem distinctio dolore voluptatem quod odio porro iure dicta
-                sit illo nisi perspiciatis autem eum blanditiis consectetur vel.
+        </div>
+        <div class="form-create__model model">
+            <div class="container">
+                <div class="model__head">
+                    <h2 class="model__title">Model</h2>
+                    <div class="model__arrows">
+                        <div class="model__arrow model__arrow--left">
+                            <img
+								src="img/icons/arrow-left.svg"
+								width="12"
+								height="19"
+								loading="lazy"
+								alt="Prev"
+							/>
+                        </div>
+                        <div class="model__arrow model__arrow--right">
+                            <img
+								src="img/icons/arrow-right.svg"
+								width="12"
+								height="19"
+								loading="lazy"
+								alt="Next"
+							/>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </form>
-    </div>
+            <div class="model__swiper swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="model__item">
+                            <div class="model__item-info">
+                                <div class="model__item-head">
+                                    <h4 class="model__item-title">Model Name v2.0</h4>
+                                    <button class="model__item-btn btn-reset" type="button">
+                                        Select
+                                    </button>
+                                </div>
+                                <p class="model__item-text">
+                                    Base model excellent for art and NSFW Base model excellent for
+                                    art and NSFWBase model excellent for art and NSFW
+                                </p>
+                            </div>
+                            <div class="model__item-images">
+                                <img
+									src="img/image-01.jpg"
+									width="143"
+									height="200"
+									alt="Model"
+								/>
+                                <img
+									src="img/image-02.jpg"
+									width="143"
+									height="200"
+									alt="Model"
+								/>
+                                <img
+									src="img/image-03.jpg"
+									width="143"
+									height="200"
+									alt="Model"
+								/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="model__item active">
+                            <div class="model__item-info">
+                                <div class="model__item-head">
+                                    <h4 class="model__item-title">Model Name v2.0</h4>
+                                    <button
+										class="model__item-btn btn-reset active"
+										type="button"
+									>
+                                        Selected
+                                    </button>
+                                </div>
+                                <p class="model__item-text">
+                                    Base model excellent for art and NSFW Base model excellent for
+                                    art and NSFWBase model excellent for art and NSFW
+                                </p>
+                            </div>
+                            <div class="model__item-images">
+                                <img
+									src="img/image-01.jpg"
+									width="143"
+									height="200"
+									alt="Model"
+								/>
+                                <img
+									src="img/image-02.jpg"
+									width="143"
+									height="200"
+									alt="Model"
+								/>
+                                <img
+									src="img/image-03.jpg"
+									width="143"
+									height="200"
+									alt="Model"
+								/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="model__item">
+                            <div class="model__item-info">
+                                <div class="model__item-head">
+                                    <h4 class="model__item-title">Model Name v2.0</h4>
+                                    <button
+										class="model__item-btn btn-reset upgrade"
+										type="button"
+									>
+                                        Upgrade
+                                    </button>
+                                </div>
+                                <p class="model__item-text">
+                                    Base model excellent for art and NSFW Base model excellent for
+                                    art and NSFWBase model excellent for art and NSFW
+                                </p>
+                            </div>
+                            <div class="model__item-images">
+                                <img
+									src="img/image-01.jpg"
+									width="143"
+									height="200"
+									alt="Model"
+								/>
+                                <img
+									src="img/image-02.jpg"
+									width="143"
+									height="200"
+									alt="Model"
+								/>
+                                <img
+									src="img/image-03.jpg"
+									width="143"
+									height="200"
+									alt="Model"
+								/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="model__item">
+                            <div class="model__item-info">
+                                <div class="model__item-head">
+                                    <h4 class="model__item-title">Model Name v2.0</h4>
+                                    <button class="model__item-btn btn-reset" type="button">
+                                        Select
+                                    </button>
+                                </div>
+                                <p class="model__item-text">
+                                    Base model excellent for art and NSFW Base model excellent for
+                                    art and NSFWBase model excellent for art and NSFW
+                                </p>
+                            </div>
+                            <div class="model__item-images">
+                                <img
+									src="img/image-01.jpg"
+									width="143"
+									height="200"
+									alt="Model"
+								/>
+                                <img
+									src="img/image-02.jpg"
+									width="143"
+									height="200"
+									alt="Model"
+								/>
+                                <img
+									src="img/image-03.jpg"
+									width="143"
+									height="200"
+									alt="Model"
+								/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="model__item">
+                            <div class="model__item-info">
+                                <div class="model__item-head">
+                                    <h4 class="model__item-title">Model Name v2.0</h4>
+                                    <button class="model__item-btn btn-reset" type="button">
+                                        Select
+                                    </button>
+                                </div>
+                                <p class="model__item-text">
+                                    Base model excellent for art and NSFW Base model excellent for
+                                    art and NSFWBase model excellent for art and NSFW
+                                </p>
+                            </div>
+                            <div class="model__item-images">
+                                <img
+									src="img/image-01.jpg"
+									width="143"
+									height="200"
+									alt="Model"
+								/>
+                                <img
+									src="img/image-02.jpg"
+									width="143"
+									height="200"
+									alt="Model"
+								/>
+                                <img
+									src="img/image-03.jpg"
+									width="143"
+									height="200"
+									alt="Model"
+								/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="model__item">
+                            <div class="model__item-info">
+                                <div class="model__item-head">
+                                    <h4 class="model__item-title">Model Name v2.0</h4>
+                                    <button class="model__item-btn btn-reset" type="button">
+                                        Select
+                                    </button>
+                                </div>
+                                <p class="model__item-text">
+                                    Base model excellent for art and NSFW Base model excellent for
+                                    art and NSFWBase model excellent for art and NSFW
+                                </p>
+                            </div>
+                            <div class="model__item-images">
+                                <img
+									src="img/image-01.jpg"
+									width="143"
+									height="200"
+									alt="Model"
+								/>
+                                <img
+									src="img/image-02.jpg"
+									width="143"
+									height="200"
+									alt="Model"
+								/>
+                                <img
+									src="img/image-03.jpg"
+									width="143"
+									height="200"
+									alt="Model"
+								/>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="model__item">
+                            <div class="model__item-info">
+                                <div class="model__item-head">
+                                    <h4 class="model__item-title">Model Name v2.0</h4>
+                                    <button class="model__item-btn btn-reset" type="button">
+                                        Select
+                                    </button>
+                                </div>
+                                <p class="model__item-text">
+                                    Base model excellent for art and NSFW Base model excellent for
+                                    art and NSFWBase model excellent for art and NSFW
+                                </p>
+                            </div>
+                            <div class="model__item-images">
+                                <img
+									src="img/image-01.jpg"
+									width="143"
+									height="200"
+									alt="Model"
+								/>
+                                <img
+									src="img/image-02.jpg"
+									width="143"
+									height="200"
+									alt="Model"
+								/>
+                                <img
+									src="img/image-03.jpg"
+									width="143"
+									height="200"
+									alt="Model"
+								/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <button
+				class="form-create__submit form-create__submit--full btn btn-reset btn--red"
+				type="submit"
+			>
+                Create
+            </button>
+        </div>
+    </form>
 </section>
 
             </main>
