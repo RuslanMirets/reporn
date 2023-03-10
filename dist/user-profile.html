@@ -42,15 +42,15 @@
 
     <link
 		rel="stylesheet"
-		href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css?_v=20230310182716"
+		href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css?_v=20230310184057"
 	/>
-    <link rel="stylesheet" href="css/app.min.css?_v=20230310182716" />
+    <link rel="stylesheet" href="css/app.min.css?_v=20230310184057" />
 
     <script
 		defer
 		src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"
 	></script>
-    <script defer src="js/app.min.js?_v=20230310182716"></script>
+    <script defer src="js/app.min.js?_v=20230310184057"></script>
     <title>Main</title>
 </head>
 
@@ -269,11 +269,15 @@
             </a>
             <p class="login-modal__text">Or continue with email</p>
             <form class="login-modal__form">
-                <input
-					class="login-modal__input input"
-					type="email"
-					placeholder="mail@davidsmith4819.com"
-				/>
+                <div class="login-modal__group error">
+                    <input
+						class="login-modal__input input"
+						type="email"
+						placeholder="mail@davidsmith4819.com"
+					/>
+                    <div class="login-modal__error">Wrong email</div>
+                </div>
+                <p class="login-modal__success">Check your mail</p>
                 <button
 					class="login-modal__submit btn btn-reset btn--red"
 					type="submit"

@@ -39,11 +39,15 @@
 			</a>
 			<p class="login-modal__text">Or continue with email</p>
 			<form class="login-modal__form">
-				<input
-					class="login-modal__input input"
-					type="email"
-					placeholder="mail@davidsmith4819.com"
-				/>
+				<div class="login-modal__group error">
+					<input
+						class="login-modal__input input"
+						type="email"
+						placeholder="mail@davidsmith4819.com"
+					/>
+					<div class="login-modal__error">Wrong email</div>
+				</div>
+				<p class="login-modal__success">Check your mail</p>
 				<button
 					class="login-modal__submit btn btn-reset btn--red"
 					type="submit"

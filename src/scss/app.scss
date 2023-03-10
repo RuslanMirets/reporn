@@ -2274,12 +2274,6 @@ select {
 		padding: 24px 32px 40px;
 		max-width: 440px;
 		background-color: var(--secondary-1-color);
-
-		// hr {
-		// 	margin: 0 0 32px 0;
-		// 	border: 1px solid var(--secondary-2-color);
-		// 	width: 100%;
-		// }
 	}
 
 	&__close {
@@ -2337,9 +2331,40 @@ select {
 		color: var(--ui-text-color);
 	}
 
-	&__input {
+	&__group {
 		margin-bottom: 32px;
+
+		&.error {
+			.login-modal__error {
+				display: block;
+			}
+
+			.login-modal__input {
+				border: 1px solid var(--main-red-hover-color);
+			}
+		}
+	}
+
+	&__input {
+		margin-bottom: 8px;
 		background-color: var(--secondary-2-color);
+	}
+
+	&__error {
+		display: none;
+		font-weight: 400;
+		font-size: 12px;
+		line-height: 16px;
+		color: var(--main-red-hover-color);
+	}
+
+	&__success {
+		margin-bottom: 56px;
+		font-weight: 500;
+		font-size: 14px;
+		line-height: 16px;
+		text-align: center;
+		color: var(--ui-text-color);
 	}
 
 	&__submit {
