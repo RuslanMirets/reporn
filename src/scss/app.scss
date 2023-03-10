@@ -1959,51 +1959,31 @@ select {
 			margin-bottom: 20px;
 		}
 
-		// @media (min-width: 576px) {
-		// 	padding-right: max(16px, (100% - 544px) / 2);
-		// 	padding-left: max(16px, (100% - 544px) / 2);
-		// }
-
-		// @media (min-width: 768px) {
-		// 	padding-right: max(16px, (100% - 736px) / 2);
-		// 	padding-left: max(16px, (100% - 736px) / 2);
-		// }
-
-		// @media (min-width: 834px) {
-		// 	padding-right: max(16px, (100% - 802px) / 2);
-		// 	padding-left: max(16px, (100% - 802px) / 2);
-		// }
-
-		// @media (min-width: 992px) {
-		// 	padding-right: max(16px, (100% - 960px) / 2);
-		// 	padding-left: max(16px, (100% - 960px) / 2);
-		// }
-
-		// @media (min-width: 1200px) {
-		// 	padding-right: max(16px, (100% - 1168px) / 2);
-		// 	padding-left: max(16px, (100% - 1168px) / 2);
-		// }
-
-		// @media (min-width: 1400px) {
-		// 	padding-right: max(16px, (100% - 1368px) / 2);
-		// 	padding-left: max(16px, (100% - 1368px) / 2);
-		// }
-
-		// @media (min-width: 1840px) {
-		// 	padding-right: max(16px, (100% - 1808px) / 2);
-		// 	padding-left: max(16px, (100% - 1808px) / 2);
-		// }
+		@media (min-width: 1400px) {
+			justify-content: center;
+			margin-bottom: 40px;
+		}
 	}
 
 	&__title {
 		font-weight: 600;
 		font-size: 28px;
 		line-height: 32px;
+
+		@media (min-width: 1400px) {
+			font-size: 42px;
+			line-height: 48px;
+			text-align: center;
+		}
 	}
 
 	&__arrows {
 		display: flex;
 		gap: 8px;
+
+		@media (min-width: 1400px) {
+			display: none;
+		}
 	}
 
 	&__arrow {
@@ -2068,8 +2048,6 @@ select {
 		}
 
 		@media (min-width: 1840px) {
-			// padding-right: max(16px, (100% - 1808px) / 2);
-			// padding-left: max(16px, (100% - 1808px) / 2);
 			padding-right: 16px;
 			padding-left: 16px;
 			max-width: 1872px;
@@ -2127,11 +2105,32 @@ select {
 					background-image: url("../img/icons/check.svg");
 					transform: translateY(-50%);
 				}
+
+				@media (any-hover: hover) {
+					&:hover {
+						border-color: var(--main-red-hover-color);
+						background-color: var(--main-red-hover-color);
+					}
+				}
 			}
 
 			&.upgrade {
-				border-color: var(--main-2-color);
+				border-color: var(--main-2-color) !important;
 				color: var(--main-2-color);
+
+				@media (any-hover: hover) {
+					&:hover {
+						color: var(--secondary-1-color);
+						background-color: var(--main-2-color);
+					}
+				}
+			}
+
+			@media (any-hover: hover) {
+				&:hover {
+					border-color: var(--main-red-hover-color);
+					background-color: var(--main-red-hover-color);
+				}
 			}
 		}
 

@@ -1990,7 +1990,7 @@ select {
 }
 
 .model__item-btn.upgrade {
-  border-color: var(--main-2-color);
+  border-color: var(--main-2-color) !important;
   color: var(--main-2-color);
 }
 
@@ -2364,6 +2364,23 @@ select {
     grid-template-columns: 1fr 1fr;
   }
 
+  .model__head {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+
+  .model__title {
+    font-size: 42px;
+    line-height: 48px;
+    text-align: center;
+  }
+
+  .model__arrows {
+    display: none;
+  }
+
   .model__swiper .swiper-slide {
     margin: 0 !important;
     width: 100%;
@@ -2481,6 +2498,21 @@ select {
   }
 
   .form-create__delete-img:hover {
+    background-color: var(--main-red-hover-color);
+  }
+
+  .model__item-btn.active:hover {
+    border-color: var(--main-red-hover-color);
+    background-color: var(--main-red-hover-color);
+  }
+
+  .model__item-btn.upgrade:hover {
+    color: var(--secondary-1-color);
+    background-color: var(--main-2-color);
+  }
+
+  .model__item-btn:hover {
+    border-color: var(--main-red-hover-color);
     background-color: var(--main-red-hover-color);
   }
 }
