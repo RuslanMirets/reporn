@@ -82,7 +82,13 @@
         </nav>
         <div class="header__user">
             <a class="header__user-link btn btn--yellow" href="#">Upgrade</a>
-            <a class="header__user-link btn btn--dark" href="#">Log in</a>
+            <button
+				class="header__user-link btn btn--dark btn-reset"
+				type="button"
+				data-graph-path="login"
+			>
+                Log in
+            </button>
             <!-- <div class="header__user-auth">
 				<div class="header__user-name">David Smith</div>
 				<button class="header__user-btn btn-reset" aria-label="User">
@@ -200,7 +206,13 @@
 				<a class="mobile-menu__user-link btn btn--dark" href="#">Log out</a>
 			</li> -->
         <li class="mobile-menu__user-item">
-            <a class="mobile-menu__user-link btn btn--dark" href="#">Log in</a>
+            <button
+				class="mobile-menu__user-link btn btn--dark btn-reset"
+				type="button"
+				data-graph-path="login"
+			>
+                Log in
+            </button>
         </li>
     </ul>
     <ul class="mobile-menu__foot-list">
@@ -215,6 +227,63 @@
         </li>
     </ul>
 </nav>
+
+<div class="login-modal graph-modal">
+    <div
+		class="login-modal__container graph-modal__container"
+		role="dialog"
+		aria-modal="true"
+		data-graph-target="login"
+	>
+        <button
+			class="login-modal__close btn-reset graph-modal__close js-modal-close"
+			aria-label="Закрыть модальное окно"
+		>
+            <img
+				src="img/icons/close-modal-icon.svg"
+				width="15"
+				height="15"
+				loading="lazy"
+				alt="Close"
+			/>
+        </button>
+        <div class="login-modal__content graph-modal__content">
+            <div class="login-modal__logo">
+                <img
+					src="img/logo-modal.svg"
+					width="144"
+					height="42"
+					loading="lazy"
+					alt="Logo"
+				/>
+            </div>
+            <a class="login-modal__google" href="#">
+                <img
+					src="img/icons/google-icon.svg"
+					width="24"
+					height="24"
+					loading="lazy"
+					alt="Continue with Google"
+				/>
+                Continue with Google
+            </a>
+            <p class="login-modal__text">Or continue with email</p>
+            <form class="login-modal__form">
+                <input
+					class="login-modal__input input"
+					type="email"
+					placeholder="mail@davidsmith4819.com"
+				/>
+                <button
+					class="login-modal__submit btn btn-reset btn--red"
+					type="submit"
+				>
+                    Continue
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
 
             <main class="main">
                 <section class="search">
