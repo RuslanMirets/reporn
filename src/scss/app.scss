@@ -2284,6 +2284,7 @@ select {
 	&__close {
 		right: 16px;
 		top: 32px;
+		z-index: 99;
 		display: flex;
 		align-items: center;
 		justify-content: center;
