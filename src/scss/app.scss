@@ -2107,7 +2107,7 @@ select {
 	}
 
 	&__swiper {
-		padding-left: 16px;
+		padding-left: max(16px, (100% - 328px) / 2);
 
 		.swiper-slide {
 			width: 312px;
