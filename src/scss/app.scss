@@ -2098,6 +2098,7 @@ select {
 		height: 32px;
 		background: var(--secondary-2-color);
 		transition: opacity 0.3s ease-in-out;
+		cursor: pointer;
 
 		&.swiper-button-disabled {
 			opacity: 0.3;
