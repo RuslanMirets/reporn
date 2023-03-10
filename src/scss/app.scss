@@ -1561,17 +1561,19 @@ select {
 	}
 
 	&__advanced {
-		display: flex;
-		flex-direction: column;
-		// overflow: hidden;
-		// max-height: 0;
-		transition: max-height 0.3s ease-in-out;
-		gap: 32px;
+		display: none;
 
-		@media (min-width: 1400px) {
-			display: grid;
-			grid-template-columns: repeat(4, 1fr);
-			gap: 10px 40px;
+		&.active {
+			display: flex;
+			flex-direction: column;
+			margin-bottom: 56px;
+			gap: 32px;
+
+			@media (min-width: 1400px) {
+				display: grid;
+				grid-template-columns: repeat(4, 1fr);
+				gap: 10px 40px;
+			}
 		}
 	}
 
@@ -1676,28 +1678,30 @@ select {
 			position: relative;
 			display: flex;
 
-			// span {
-			// 	position: absolute;
-			// 	top: 50%;
-			// 	border-radius: 4px;
-			// 	width: 4px;
-			// 	height: 24px;
-			// 	background: var(--secondary-3-color);
-			// 	transform: translateY(-50%);
+			span {
+				position: absolute;
+				top: 50%;
+				border-radius: 4px;
+				width: 4px;
+				height: 24px;
+				background-color: var(--secondary-3-color);
+				transform: translateY(-50%);
+				transition: background-color 0.3s ease-in-out;
 
-			// 	&:nth-child(1) {
-			// 		left: 0;
-			// 	}
+				&:nth-child(1) {
+					left: 0;
+					background-color: var(--main-red-color);
+				}
 
-			// 	&:nth-child(2) {
-			// 		right: 0;
-			// 	}
-			// }
+				&:nth-child(2) {
+					right: 0;
+				}
+			}
 		}
 
 		&-result {
 			position: absolute;
-			bottom: -40px;
+			bottom: -30px;
 			z-index: 30;
 			display: flex;
 			align-items: center;
@@ -1733,6 +1737,7 @@ select {
 
 		&-input {
 			-webkit-appearance: none;
+			margin: 12px 4px;
 			width: 100%;
 			height: 4px;
 			/* stylelint-disable-next-line declaration-colon-newline-after */
@@ -1927,5 +1932,9 @@ select {
 			font-size: 18px;
 			line-height: 20px;
 		}
+	}
+
+	&__model {
+		margin-bottom: 32px;
 	}
 }

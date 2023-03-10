@@ -212,11 +212,13 @@ const tooltip = (btn, content) => {
 
 	toggle?.addEventListener("change", () => {
 		if (toggle.checked == true) {
-			advancedContent.style.maxHeight = advancedContent.scrollHeight + "px";
-			advancedContent.style.overflow = "visible";
+			// advancedContent.style.maxHeight = advancedContent.scrollHeight + "px";
+			// advancedContent.style.overflow = "visible";
+			advancedContent.classList.add("active");
 		} else {
-			advancedContent.style.maxHeight = null;
-			advancedContent.style.overflow = "hidden";
+			// advancedContent.style.maxHeight = null;
+			// advancedContent.style.overflow = "hidden";
+			advancedContent.classList.remove("active");
 		}
 	});
 })();
@@ -283,12 +285,27 @@ const tooltip = (btn, content) => {
 		const max = e.target.max;
 		const val = e.target.value;
 
+		const leftLine = document.querySelector("#leftLineGuidanceScale");
+		const rightLine = document.querySelector("#rightLineGuidanceScale");
+
 		e.target.style.backgroundSize =
 			((val - min) * 100) / (max - min) + "% 100%";
 
 		let n = 100 / max;
-		let x = ((val * n) / 100) * (progress.offsetWidth - 18) - 6;
+		let x = ((val * n) / 100) * (progress.offsetWidth - 18) - 4;
 		result.style.left = `${x}px`;
+
+		if (e.target.value > min) {
+			leftLine.style.backgroundColor = "var(--main-red-color)";
+		} else {
+			leftLine.style.backgroundColor = "var(--secondary-3-color)";
+		}
+
+		if (e.target.value == max) {
+			rightLine.style.backgroundColor = "var(--main-red-color)";
+		} else {
+			rightLine.style.backgroundColor = "var(--secondary-3-color)";
+		}
 	});
 
 	window.addEventListener("resize", (e) => {
@@ -351,12 +368,27 @@ const tooltip = (btn, content) => {
 		const max = e.target.max;
 		const val = e.target.value;
 
+		const leftLine = document.querySelector("#leftLineSteps");
+		const rightLine = document.querySelector("#rightLineSteps");
+
 		e.target.style.backgroundSize =
 			((val - min) * 100) / (max - min) + "% 100%";
 
 		let n = 100 / max;
-		let x = ((val * n) / 100) * (progress.offsetWidth - 18) - 6;
+		let x = ((val * n) / 100) * (progress.offsetWidth - 18) - 4;
 		result.style.left = `${x}px`;
+
+		if (e.target.value > min) {
+			leftLine.style.backgroundColor = "var(--main-red-color)";
+		} else {
+			leftLine.style.backgroundColor = "var(--secondary-3-color)";
+		}
+
+		if (e.target.value == max) {
+			rightLine.style.backgroundColor = "var(--main-red-color)";
+		} else {
+			rightLine.style.backgroundColor = "var(--secondary-3-color)";
+		}
 	});
 
 	window.addEventListener("resize", (e) => {
@@ -419,12 +451,27 @@ const tooltip = (btn, content) => {
 		const max = e.target.max;
 		const val = e.target.value;
 
+		const leftLine = document.querySelector("#leftLineStrength");
+		const rightLine = document.querySelector("#rightLineStrength");
+
 		e.target.style.backgroundSize =
 			((val - min) * 100) / (max - min) + "% 100%";
 
 		let n = 100 / max;
-		let x = ((val * n) / 100) * (progress.offsetWidth - 18) - 6;
+		let x = ((val * n) / 100) * (progress.offsetWidth - 18) - 4;
 		result.style.left = `${x}px`;
+
+		if (e.target.value > min) {
+			leftLine.style.backgroundColor = "var(--main-red-color)";
+		} else {
+			leftLine.style.backgroundColor = "var(--secondary-3-color)";
+		}
+
+		if (e.target.value == max) {
+			rightLine.style.backgroundColor = "var(--main-red-color)";
+		} else {
+			rightLine.style.backgroundColor = "var(--secondary-3-color)";
+		}
 	});
 
 	window.addEventListener("resize", (e) => {

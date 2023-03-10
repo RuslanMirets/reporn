@@ -1441,6 +1441,10 @@ select {
 }
 
 .form-create__advanced {
+  display: none;
+}
+
+.form-create__advanced.active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1448,9 +1452,7 @@ select {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
-  -webkit-transition: max-height 0.3s ease-in-out;
-  -o-transition: max-height 0.3s ease-in-out;
-  transition: max-height 0.3s ease-in-out;
+  margin-bottom: 56px;
   gap: 32px;
 }
 
@@ -1573,9 +1575,33 @@ select {
   display: flex;
 }
 
+.form-create__range-group span {
+  position: absolute;
+  top: 50%;
+  border-radius: 4px;
+  width: 4px;
+  height: 24px;
+  background-color: var(--secondary-3-color);
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -webkit-transition: background-color 0.3s ease-in-out;
+  -o-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.form-create__range-group span:nth-child(1) {
+  left: 0;
+  background-color: var(--main-red-color);
+}
+
+.form-create__range-group span:nth-child(2) {
+  right: 0;
+}
+
 .form-create__range-result {
   position: absolute;
-  bottom: -40px;
+  bottom: -30px;
   z-index: 30;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1621,6 +1647,7 @@ select {
 
 .form-create__range-input {
   -webkit-appearance: none;
+  margin: 12px 4px;
   width: 100%;
   height: 4px;
   /* stylelint-disable-next-line declaration-colon-newline-after */
@@ -1826,6 +1853,10 @@ select {
   font-weight: 600;
   font-size: 18px;
   line-height: 20px;
+}
+
+.form-create__model {
+  margin-bottom: 32px;
 }
 
 @media (min-width: 576px) {
@@ -2128,7 +2159,7 @@ select {
     margin-bottom: 56px;
   }
 
-  .form-create__advanced {
+  .form-create__advanced.active {
     display: -ms-grid;
     display: grid;
     -ms-grid-columns: (1fr)[4];

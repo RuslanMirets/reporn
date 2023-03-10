@@ -323,7 +323,6 @@
 						class="form-create__toggle-input"
 						id="advancedMode"
 						type="checkbox"
-						checked
 					/>
                 </div>
                 <div class="form-create__toggle">
@@ -372,8 +371,8 @@
                         <p>Prioritize prompt</p>
                     </div>
                     <div class="form-create__range-group">
-                        <!-- <span></span>
-						<span></span> -->
+                        <span id="leftLineGuidanceScale"></span>
+                        <span id="rightLineGuidanceScale"></span>
                         <input
 							class="form-create__range-input"
 							id="guidanceScale"
@@ -429,6 +428,8 @@
                         <p>Better quality</p>
                     </div>
                     <div class="form-create__range-group">
+                        <span id="leftLineSteps"></span>
+                        <span id="rightLineSteps"></span>
                         <input
 							class="form-create__range-input"
 							id="steps"
@@ -611,6 +612,8 @@
                         <p>Prioritize init image</p>
                     </div>
                     <div class="form-create__range-group">
+                        <span id="leftLineStrength"></span>
+                        <span id="rightLineStrength"></span>
                         <input
 							class="form-create__range-input"
 							id="strength"
@@ -623,6 +626,11 @@
                         <div class="form-create__range-result" id="resultStrength"></div>
                     </div>
                 </div>
+            </div>
+            <div class="form-create__model model">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos commodi,
+                saepe eos quidem distinctio dolore voluptatem quod odio porro iure dicta
+                sit illo nisi perspiciatis autem eum blanditiis consectetur vel.
             </div>
         </form>
     </div>
