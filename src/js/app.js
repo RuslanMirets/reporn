@@ -176,12 +176,21 @@ const tooltip = (btn, content) => {
 		const file = dt.files[0];
 		dropArea.classList.add("active");
 		previewFile(file);
+		document
+			.querySelector(".form-create__range--access")
+			.classList.remove("disable");
 	};
 
 	const handleChange = (e) => {
 		const file = e.target.files[0];
 		dropArea.classList.add("active");
 		previewFile(file);
+
+		if (file) {
+			document
+				.querySelector(".form-create__range--access")
+				.classList.remove("disable");
+		}
 	};
 
 	dropArea?.addEventListener("change", handleChange);
@@ -190,6 +199,9 @@ const tooltip = (btn, content) => {
 	deleteImg?.addEventListener("click", () => {
 		fileElem.value = "";
 		dropArea.classList.remove("active");
+		document
+			.querySelector(".form-create__range--access")
+			.classList.add("disable");
 	});
 })();
 
@@ -201,8 +213,10 @@ const tooltip = (btn, content) => {
 	toggle?.addEventListener("change", () => {
 		if (toggle.checked == true) {
 			advancedContent.style.maxHeight = advancedContent.scrollHeight + "px";
+			advancedContent.style.overflow = "visible";
 		} else {
 			advancedContent.style.maxHeight = null;
+			advancedContent.style.overflow = "hidden";
 		}
 	});
 })();
@@ -227,6 +241,14 @@ const tooltip = (btn, content) => {
 (function () {
 	const btn = document.querySelector("#ratioTooltipBtn");
 	const content = document.querySelector("#ratioTooltipContent");
+
+	tooltip(btn, content);
+})();
+
+// Strength Tooltip
+(function () {
+	const btn = document.querySelector("#strengthTooltipBtn");
+	const content = document.querySelector("#strengthTooltipContent");
 
 	tooltip(btn, content);
 })();
@@ -284,6 +306,19 @@ const tooltip = (btn, content) => {
 		let x = ((val * n) / 100) * (progress.offsetWidth - 18) - 6;
 		result.style.left = `${x}px`;
 	});
+
+	progress.addEventListener("mousedown", () => {
+		result.classList.add("active");
+	});
+	progress.addEventListener("mouseup", () => {
+		result.classList.remove("active");
+	});
+	progress.addEventListener("touchstart", () => {
+		result.classList.add("active");
+	});
+	progress.addEventListener("touchend", () => {
+		result.classList.remove("active");
+	});
 })();
 
 // Steps
@@ -325,8 +360,8 @@ const tooltip = (btn, content) => {
 	});
 
 	window.addEventListener("resize", (e) => {
-		const progress = document.querySelector("#guidanceScale");
-		const result = document.querySelector("#resultGuidanceScale");
+		const progress = document.querySelector("#steps");
+		const result = document.querySelector("#resultSteps");
 
 		const min = progress.min;
 		const max = progress.max;
@@ -338,6 +373,115 @@ const tooltip = (btn, content) => {
 		let n = 100 / max;
 		let x = ((val * n) / 100) * (progress.offsetWidth - 18) - 6;
 		result.style.left = `${x}px`;
+	});
+
+	progress.addEventListener("mousedown", () => {
+		result.classList.add("active");
+	});
+	progress.addEventListener("mouseup", () => {
+		result.classList.remove("active");
+	});
+	progress.addEventListener("touchstart", () => {
+		result.classList.add("active");
+	});
+	progress.addEventListener("touchend", () => {
+		result.classList.remove("active");
+	});
+})();
+
+// Strength
+(function () {
+	const progress = document.querySelector("#strength");
+	const result = document.querySelector("#resultStrength");
+
+	const min = progress?.min;
+	const max = progress?.max;
+	const val = progress?.value;
+
+	if (result) {
+		result.textContent = progress?.value;
+	}
+
+	if (progress) {
+		progress.style.backgroundSize =
+			((val - min) * 100) / (max - min) + "% 100%";
+	}
+
+	let n = 100 / max;
+	let x = ((val * n) / 100) * (progress?.offsetWidth - 18) - 6;
+	if (result) {
+		result.style.left = `${x}px`;
+	}
+
+	progress?.addEventListener("input", (e) => {
+		result.textContent = e.target.value;
+		const min = e.target.min;
+		const max = e.target.max;
+		const val = e.target.value;
+
+		e.target.style.backgroundSize =
+			((val - min) * 100) / (max - min) + "% 100%";
+
+		let n = 100 / max;
+		let x = ((val * n) / 100) * (progress.offsetWidth - 18) - 6;
+		result.style.left = `${x}px`;
+	});
+
+	window.addEventListener("resize", (e) => {
+		const progress = document.querySelector("#strength");
+		const result = document.querySelector("#resultStrength");
+
+		const min = progress.min;
+		const max = progress.max;
+		const val = progress.value;
+
+		progress.style.backgroundSize =
+			((val - min) * 100) / (max - min) + "% 100%";
+
+		let n = 100 / max;
+		let x = ((val * n) / 100) * (progress.offsetWidth - 18) - 6;
+		result.style.left = `${x}px`;
+	});
+
+	progress.addEventListener("mousedown", () => {
+		result.classList.add("active");
+	});
+	progress.addEventListener("mouseup", () => {
+		result.classList.remove("active");
+	});
+	progress.addEventListener("touchstart", () => {
+		result.classList.add("active");
+	});
+	progress.addEventListener("touchend", () => {
+		result.classList.remove("active");
+	});
+})();
+
+// Sampler dropdown
+(function () {
+	const label = document.querySelector(".dropdown__filter-selected");
+	const options = Array.from(
+		document.querySelectorAll(".dropdown__select-option")
+	);
+	const toggle = document.querySelector(".dropdown__switch");
+
+	options.forEach((option) => {
+		option.addEventListener("click", () => {
+			label.textContent = option.textContent;
+			toggle.value = option.value;
+		});
+	});
+
+	document.addEventListener("click", (e) => {
+		const element = e.target;
+
+		if (element == toggle) return;
+
+		const isDropdownChild = element.closest(".dropdown__filter");
+
+		if (!isDropdownChild) {
+			toggle.checked = false;
+		}
 	});
 })();
 // ========================== // CREATE ARTWORK PAGE ==========================

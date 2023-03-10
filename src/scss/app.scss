@@ -155,6 +155,15 @@ textarea {
 	outline-offset: -2px;
 }
 
+input[type="number"] {
+	-moz-appearance: textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+}
+
 [type="search"]::-webkit-search-decoration {
 	-webkit-appearance: none;
 }
@@ -705,7 +714,86 @@ select {
 	}
 }
 
-.select {
+.dropdown {
+	&__options-filter {
+		width: 100%;
+		cursor: pointer;
+	}
+
+	&__filter {
+		position: relative;
+		display: flex;
+		border-radius: 8px;
+		padding: 14px 16px;
+		font-weight: 500;
+		font-size: 14px;
+		line-height: 20px;
+		background-color: var(--secondary-2-color);
+		transition: all 0.3s ease-in-out;
+
+		&::after {
+			content: "";
+			position: absolute;
+			right: 16px;
+			top: 50%;
+			width: 18px;
+			height: 11px;
+			background-image: url("../img/icons/chevron-down.svg");
+			transform: translateY(-50%);
+			transition: transform 0.3s ease-in-out;
+		}
+
+		&:focus {
+			outline: none;
+		}
+	}
+
+	&__filter-selected {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		width: 100%;
+	}
+
+	&__select {
+		position: absolute;
+		left: 0;
+		top: 100%;
+		z-index: 10;
+		overflow: hidden;
+		border-radius: 0 0 8px 8px;
+		padding-top: 5px;
+		width: 100%;
+		background-color: var(--secondary-1-color);
+		transform: scaleY(0);
+		transform-origin: top;
+		transition: 0.3s ease-in-out;
+	}
+
+	&__select-option {
+		padding: 8px 16px;
+		font-weight: 500;
+		font-size: 14px;
+		line-height: 20px;
+		transition: 0.3s;
+
+		&:hover {
+			background-color: var(--main-red-color);
+		}
+	}
+
+	&__switch:checked + &__options-filter &__filter {
+		border-bottom-right-radius: 0;
+		border-bottom-left-radius: 0;
+	}
+
+	&__switch:checked + &__options-filter &__select {
+		transform: scaleY(1);
+	}
+
+	&__switch:checked + &__options-filter &__filter::after {
+		transform: translateY(-50%) rotate(180deg);
+	}
 }
 
 .header {
@@ -1473,17 +1561,21 @@ select {
 	}
 
 	&__advanced {
-		// overflow: hidden;
-		// max-height: 0;
 		display: flex;
 		flex-direction: column;
+		// overflow: hidden;
+		// max-height: 0;
 		transition: max-height 0.3s ease-in-out;
 		gap: 32px;
+
+		@media (min-width: 1400px) {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			gap: 10px 40px;
+		}
 	}
 
 	&__tooltip {
-		// position: relative;
-
 		&-btn {
 			display: flex;
 			align-items: center;
@@ -1549,6 +1641,8 @@ select {
 	}
 
 	&__range {
+		transition: opacity 0.3s ease-in-out;
+
 		&-head {
 			position: relative;
 			display: flex;
@@ -1581,6 +1675,24 @@ select {
 		&-group {
 			position: relative;
 			display: flex;
+
+			// span {
+			// 	position: absolute;
+			// 	top: 50%;
+			// 	border-radius: 4px;
+			// 	width: 4px;
+			// 	height: 24px;
+			// 	background: var(--secondary-3-color);
+			// 	transform: translateY(-50%);
+
+			// 	&:nth-child(1) {
+			// 		left: 0;
+			// 	}
+
+			// 	&:nth-child(2) {
+			// 		right: 0;
+			// 	}
+			// }
 		}
 
 		&-result {
@@ -1598,6 +1710,9 @@ select {
 			line-height: 16px;
 			color: var(--white-color);
 			background-color: var(--main-red-color);
+			opacity: 0;
+			visibility: hidden;
+			transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
 
 			&::before {
 				content: "";
@@ -1608,6 +1723,11 @@ select {
 				height: 4px;
 				background-image: url("../img/icons/result-triangle.svg");
 				transform: translateX(-50%);
+			}
+
+			&.active {
+				opacity: 1;
+				visibility: visible;
 			}
 		}
 
@@ -1629,6 +1749,7 @@ select {
 				border-radius: 50%;
 				width: 18px;
 				height: 18px;
+				box-sizing: inherit;
 				background: var(--bg-color);
 				transition: background 0.3s ease-in-out;
 				cursor: ew-resize;
@@ -1640,6 +1761,7 @@ select {
 				border-radius: 50%;
 				width: 18px;
 				height: 18px;
+				box-sizing: inherit;
 				background: var(--bg-color);
 				transition: background 0.3s ease-in-out;
 				cursor: ew-resize;
@@ -1651,6 +1773,7 @@ select {
 				border-radius: 50%;
 				width: 18px;
 				height: 18px;
+				box-sizing: inherit;
 				background: var(--bg-color);
 				transition: background 0.3s ease-in-out;
 				cursor: ew-resize;
@@ -1677,9 +1800,16 @@ select {
 				background: transparent;
 			}
 		}
+
+		&.disable {
+			opacity: 0.3;
+			pointer-events: none;
+		}
 	}
 
 	&__ratio {
+		grid-row: span 2;
+
 		&-head {
 			position: relative;
 			display: flex;
@@ -1710,6 +1840,11 @@ select {
 			display: flex;
 			flex-direction: column;
 			gap: 18px;
+
+			@media (min-width: 1400px) {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+			}
 		}
 
 		&-option {

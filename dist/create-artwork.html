@@ -372,10 +372,8 @@
                         <p>Prioritize prompt</p>
                     </div>
                     <div class="form-create__range-group">
-                        <div
-							class="form-create__range-result"
-							id="resultGuidanceScale"
-						></div>
+                        <!-- <span></span>
+						<span></span> -->
                         <input
 							class="form-create__range-input"
 							id="guidanceScale"
@@ -385,6 +383,10 @@
 							max="20"
 							step="0.5"
 						/>
+                        <div
+							class="form-create__range-result"
+							id="resultGuidanceScale"
+						></div>
                     </div>
                 </div>
                 <div class="form-create__range">
@@ -427,7 +429,6 @@
                         <p>Better quality</p>
                     </div>
                     <div class="form-create__range-group">
-                        <div class="form-create__range-result" id="resultSteps"></div>
                         <input
 							class="form-create__range-input"
 							id="steps"
@@ -437,6 +438,7 @@
 							max="20"
 							step="0.5"
 						/>
+                        <div class="form-create__range-result" id="resultSteps"></div>
                     </div>
                 </div>
                 <div class="form-create__ratio">
@@ -525,7 +527,9 @@
                         <input
 							class="form-create__seed-input input-reset input"
 							type="number"
+							accept=""
 							placeholder="28365"
+							min="0"
 						/>
                         <button
 							class="form-create__seed-btn btn-reset btn--red"
@@ -537,8 +541,86 @@
                 </div>
                 <div class="form-create__sampler">
                     <div class="form-create__sampler-title">Sampler</div>
-                    <div class="form-create__sampler-select select">
-                        <button class="select__btn"></button>
+                    <div class="form-create__sampler-select dropdown">
+                        <input
+							class="dropdown__switch"
+							type="checkbox"
+							id="samplerSwitch"
+							hidden
+							value="1"
+						/>
+                        <label class="dropdown__options-filter" for="samplerSwitch">
+                            <ul class="dropdown__filter" role="listbox" tabindex="-1">
+                                <li class="dropdown__filter-selected" aria-selected="true">
+                                    Euler (Default)
+                                </li>
+                                <li>
+                                    <ul class="dropdown__select">
+                                        <li class="dropdown__select-option" role="option" value="1">
+                                            Euler (Default)
+                                        </li>
+                                        <li class="dropdown__select-option" role="option" value="2">
+                                            Name 1
+                                        </li>
+                                        <li class="dropdown__select-option" role="option" value="3">
+                                            Name 2
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-create__range form-create__range--access disable">
+                    <div class="form-create__range-head">
+                        <div class="form-create__range-title">Strength</div>
+                        <div class="form-create__tooltip">
+                            <button
+								class="form-create__tooltip-btn btn-reset"
+								id="strengthTooltipBtn"
+								type="button"
+							>
+                                <svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="12"
+									height="13"
+									fill="none"
+								>
+                                    <path
+										fill="#fff"
+										d="M11.813 6.5C11.813 3.312 9.187.687 6 .687 2.79.688.187 3.313.187 6.5A5.811 5.811 0 0 0 6 12.313c3.188 0 5.813-2.602 5.813-5.813ZM6.14 2.61c1.336 0 2.742 1.03 2.742 2.39 0 1.828-1.945 1.852-1.945 2.508v.023c0 .164-.141.282-.282.282H5.344a.27.27 0 0 1-.282-.282v-.093c0-.961.727-1.336 1.266-1.641.469-.258.774-.445.774-.797 0-.469-.61-.773-1.079-.773-.632 0-.914.304-1.335.843a.293.293 0 0 1-.399.047l-.82-.61c-.117-.093-.14-.257-.047-.398.633-.96 1.453-1.5 2.719-1.5ZM6 8.421A1.09 1.09 0 0 1 7.078 9.5c0 .61-.492 1.078-1.078 1.078A1.06 1.06 0 0 1 4.922 9.5c0-.586.469-1.078 1.078-1.078Z"
+									/>
+                                </svg>
+                            </button>
+                            <div
+								class="form-create__tooltip-content"
+								id="strengthTooltipContent"
+							>
+                                <h4 class="form-create__tooltip-title">Sampler</h4>
+                                <p class="form-create__tooltip-text">
+                                    Sampling is the <a href="#">action of taking</a> some
+                                    proportion of the total amount (population) for the
+                                    non-experimental (not in laboratory) analysis. In statistics,
+                                    the population is usually denoted by N and the sample by n.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-create__range-descr">
+                        <p>Prioritize creativity</p>
+                        <p>Prioritize init image</p>
+                    </div>
+                    <div class="form-create__range-group">
+                        <input
+							class="form-create__range-input"
+							id="strength"
+							type="range"
+							value="10"
+							min="0"
+							max="20"
+							step="0.5"
+						/>
+                        <div class="form-create__range-result" id="resultStrength"></div>
                     </div>
                 </div>
             </div>
