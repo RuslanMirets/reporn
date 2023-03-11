@@ -2148,7 +2148,7 @@ select {
   border-color: var(--main-red-color);
 }
 
-.login-modal__container {
+.login-modal {
   padding: 24px 32px 40px;
   max-width: 440px;
   background-color: var(--secondary-1-color);

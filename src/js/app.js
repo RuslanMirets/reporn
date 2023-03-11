@@ -375,9 +375,9 @@ const tooltip = (btn, content) => {
 	});
 };
 
-// Login modal
+// Init modal
 (function () {
-	const loginModal = new GraphModal();
+	const modal = new GraphModal();
 })();
 // ================================ //GLOBAL =================================
 

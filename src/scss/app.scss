@@ -2270,11 +2270,9 @@ select {
 }
 
 .login-modal {
-	&__container {
-		padding: 24px 32px 40px;
-		max-width: 440px;
-		background-color: var(--secondary-1-color);
-	}
+	padding: 24px 32px 40px;
+	max-width: 440px;
+	background-color: var(--secondary-1-color);
 
 	&__close {
 		right: 16px;

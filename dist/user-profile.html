@@ -228,67 +228,6 @@
     </ul>
 </nav>
 
-<div class="login-modal graph-modal">
-    <div
-		class="login-modal__container graph-modal__container"
-		role="dialog"
-		aria-modal="true"
-		data-graph-target="login-modal"
-	>
-        <button
-			class="login-modal__close btn-reset graph-modal__close js-modal-close"
-			aria-label="Закрыть модальное окно"
-		>
-            <img
-				src="img/icons/close-modal-icon.svg"
-				width="15"
-				height="15"
-				loading="lazy"
-				alt="Close"
-			/>
-        </button>
-        <div class="login-modal__content graph-modal__content">
-            <div class="login-modal__logo">
-                <img
-					src="img/logo-modal.svg"
-					width="144"
-					height="42"
-					loading="lazy"
-					alt="Logo"
-				/>
-            </div>
-            <a class="login-modal__google" href="#">
-                <img
-					src="img/icons/google-icon.svg"
-					width="24"
-					height="24"
-					loading="lazy"
-					alt="Continue with Google"
-				/>
-                Continue with Google
-            </a>
-            <p class="login-modal__text">Or continue with email</p>
-            <form class="login-modal__form">
-                <div class="login-modal__group error">
-                    <input
-						class="login-modal__input input"
-						type="email"
-						placeholder="mail@davidsmith4819.com"
-					/>
-                    <div class="login-modal__error">Wrong email</div>
-                </div>
-                <p class="login-modal__success">Check your mail</p>
-                <button
-					class="login-modal__submit btn btn-reset btn--red"
-					type="submit"
-				>
-                    Continue
-                </button>
-            </form>
-        </div>
-    </div>
-</div>
-
             <main class="main">
                 <section class="profile">
     <div class="container">
@@ -329,6 +268,64 @@
         </ul>
     </div>
 </footer>
+
+        </div>
+        <div class="graph-modal">
+            <div
+	class="login-modal graph-modal__container"
+	role="dialog"
+	aria-modal="true"
+	data-graph-target="login-modal"
+>
+    <button
+		class="login-modal__close btn-reset graph-modal__close js-modal-close"
+		aria-label="Закрыть модальное окно"
+	>
+        <img
+			src="img/icons/close-modal-icon.svg"
+			width="15"
+			height="15"
+			loading="lazy"
+			alt="Close"
+		/>
+    </button>
+    <div class="login-modal__content graph-modal__content">
+        <div class="login-modal__logo">
+            <img
+				src="img/logo-modal.svg"
+				width="144"
+				height="42"
+				loading="lazy"
+				alt="Logo"
+			/>
+        </div>
+        <a class="login-modal__google" href="#">
+            <img
+				src="img/icons/google-icon.svg"
+				width="24"
+				height="24"
+				loading="lazy"
+				alt="Continue with Google"
+			/>
+            Continue with Google
+        </a>
+        <p class="login-modal__text">Or continue with email</p>
+        <form class="login-modal__form">
+            <div class="login-modal__group error">
+                <input
+					class="login-modal__input input"
+					type="email"
+					placeholder="mail@davidsmith4819.com"
+				/>
+                <div class="login-modal__error">Wrong email</div>
+            </div>
+            <p class="login-modal__success">Check your mail</p>
+            <button class="login-modal__submit btn btn-reset btn--red" type="submit">
+                Continue
+            </button>
+        </form>
+    </div>
+</div>
 
         </div>
     </body>
