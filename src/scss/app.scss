@@ -2439,78 +2439,14 @@ select {
 		}
 
 		&-price {
-			position: relative;
 			display: flex;
 			align-items: center;
 			justify-content: center;
 			margin-bottom: 24px;
 			gap: 8px;
 
-			&-economy {
-				position: absolute;
-				left: 60px;
-				top: 14px;
-				font-weight: 600;
-				font-size: 18px;
-				line-height: 24px;
-				text-decoration: line-through;
-				color: var(--ui-text-color);
-
-				&--expert {
-					left: 50px;
-
-					@media (min-width: 576px) {
-						left: 160px !important;
-					}
-
-					@media (min-width: 768px) {
-						left: 5px !important;
-					}
-
-					@media (min-width: 834px) {
-						left: 14px !important;
-					}
-
-					@media (min-width: 992px) {
-						left: 40px !important;
-					}
-
-					@media (min-width: 1200px) {
-						left: 60px !important;
-					}
-
-					@media (min-width: 1400px) {
-						left: 64px !important;
-					}
-				}
-
-				@media (min-width: 576px) {
-					left: 170px;
-				}
-
-				@media (min-width: 768px) {
-					left: 15px;
-				}
-
-				@media (min-width: 834px) {
-					left: 24px;
-				}
-
-				@media (min-width: 992px) {
-					left: 50px;
-				}
-
-				@media (min-width: 1200px) {
-					left: 76px;
-					top: 12px;
-				}
-
-				@media (min-width: 1400px) {
-					left: 80px;
-				}
-			}
-
 			&-number {
+				position: relative;
 				font-weight: 600;
 				font-size: 28px;
 				line-height: 32px;
@@ -2518,6 +2454,23 @@ select {
 				@media (min-width: 1200px) {
 					font-size: 42px;
 					line-height: 48px;
+				}
+			}
+
+			&-economy {
+				position: absolute;
+				left: -38px;
+				bottom: -4px;
+				font-weight: 600;
+				font-size: 18px;
+				line-height: 24px;
+				text-decoration: line-through;
+				color: var(--ui-text-color);
+
+				@media (min-width: 1200px) {
+					left: -40px;
+					bottom: 50%;
+					transform: translateY(50%);
 				}
 			}
 

@@ -42,15 +42,15 @@
 
     <link
 		rel="stylesheet"
-		href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css?_v=20230310184057"
+		href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css?_v=20230311084304"
 	/>
-    <link rel="stylesheet" href="css/app.min.css?_v=20230310184057" />
+    <link rel="stylesheet" href="css/app.min.css?_v=20230311084304" />
 
     <script
 		defer
 		src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"
 	></script>
-    <script defer src="js/app.min.js?_v=20230310184057"></script>
+    <script defer src="js/app.min.js?_v=20230311084304"></script>
     <title>Main</title>
 </head>
 
@@ -299,7 +299,6 @@
             <div class="tariffs__item">
                 <div class="tariffs__item-title">Free</div>
                 <div class="tariffs__item-price">
-                    <!-- <div class="tariffs__item-price-economy">$15</div> -->
                     <div class="tariffs__item-price-number">$0</div>
                     <div class="tariffs__item-price-info">
                         <div class="tariffs__item-price-currency">USD</div>
@@ -323,8 +322,10 @@
                     Advanced
                 </div>
                 <div class="tariffs__item-price">
-                    <div class="tariffs__item-price-economy">$15</div>
-                    <div class="tariffs__item-price-number">$5</div>
+                    <div class="tariffs__item-price-number">
+                        <span class="tariffs__item-price-economy">$15</span>
+                        $5
+                    </div>
                     <div class="tariffs__item-price-info">
                         <div class="tariffs__item-price-currency">USD</div>
                         <div class="tariffs__item-price-duration">month</div>
@@ -349,12 +350,10 @@
                     Expert
                 </div>
                 <div class="tariffs__item-price">
-                    <div
-						class="tariffs__item-price-economy tariffs__item-price-economy--expert"
-					>
-                        $75
+                    <div class="tariffs__item-price-number">
+                        <span class="tariffs__item-price-economy">$75</span>
+                        $25
                     </div>
-                    <div class="tariffs__item-price-number">$25</div>
                     <div class="tariffs__item-price-info">
                         <div class="tariffs__item-price-currency">USD</div>
                         <div class="tariffs__item-price-duration">month</div>
