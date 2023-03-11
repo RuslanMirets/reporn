@@ -22,6 +22,11 @@ html {
 
 .graph-modal {
   --transition-time: 0.3s;
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   position: fixed;
   left: 0;
   top: 0;
@@ -38,13 +43,6 @@ html {
   -webkit-transition: opacity var(--transition-time), visibility var(--transition-time);
   -o-transition: opacity var(--transition-time), visibility var(--transition-time);
   transition: opacity var(--transition-time), visibility var(--transition-time);
-}
-
-.graph-modal:before {
-  content: "";
-  display: inline-block;
-  vertical-align: middle;
-  height: 100%;
 }
 
 .graph-modal__container {
@@ -453,6 +451,28 @@ select {
 
 .page--ios .dis-scroll {
   position: relative;
+}
+
+.close-modal {
+  z-index: 99;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 8px;
+  width: 32px;
+  height: 32px;
+  background-image: none;
+  background-color: var(--secondary-3-color);
+}
+
+.close-modal img {
+  height: auto;
 }
 
 .site-container {
@@ -1094,21 +1114,6 @@ select {
 .login-modal__close {
   right: 16px;
   top: 32px;
-  z-index: 99;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  border-radius: 8px;
-  width: 32px;
-  height: 32px;
-  background-image: url("");
-  background-color: var(--secondary-3-color);
 }
 
 .login-modal__logo {
@@ -2265,6 +2270,162 @@ select {
 
 .model__item.active {
   border-color: var(--main-red-color);
+}
+
+.create-modal {
+  border-radius: 8px;
+  padding: 16px;
+  width: 100% !important;
+  background-color: var(--secondary-1-color);
+}
+
+.create-modal__head {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.create-modal__close {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.create-modal__close-btn {
+  position: static;
+}
+
+.create-modal__name {
+  margin-bottom: 4px;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.create-modal__username {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--ui-text-color);
+}
+
+.create-modal__preview {
+  border-radius: 16px;
+  padding: 16px;
+  background-color: var(--bg-color);
+}
+
+.create-modal__img {
+  margin-bottom: 8px;
+  border-radius: 16px;
+  height: 460px;
+}
+
+.create-modal__actions {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.create-modal__actions-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  background-color: var(--secondary-1-color);
+}
+
+.create-modal__actions-btn--red {
+  background-color: var(--main-red-color);
+}
+
+.create-modal__actions-btn--delete {
+  margin-left: auto;
+}
+
+.create-modal__toggle {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  background-color: var(--secondary-1-color);
+}
+
+.create-modal__toggle-title {
+  display: none;
+}
+
+.create-modal__toggle-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0;
+  outline: none;
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.create-modal__toggle-input:checked + svg path {
+  fill: var(--main-red-color);
+}
+
+.create-modal__toggle svg {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.create-modal__toggle svg path {
+  -webkit-transition: fill 0.3s ease-in-out;
+  -o-transition: fill 0.3s ease-in-out;
+  transition: fill 0.3s ease-in-out;
+}
+
+.create-modal__info {
+  border-radius: 8px;
+  padding: 16px;
+  background-color: var(--bg-color);
 }
 
 .tariffs__title {
