@@ -2420,7 +2420,14 @@ select {
 		color: var(--ui-text-color);
 	}
 
+	&__content {
+		// @media (min-width: 768px) {
+		// 	display: flex;
+		// }
+	}
+
 	&__preview {
+		margin-bottom: 24px;
 		border-radius: 16px;
 		padding: 16px;
 		background-color: var(--bg-color);
@@ -2508,6 +2515,60 @@ select {
 		border-radius: 8px;
 		padding: 16px;
 		background-color: var(--bg-color);
+
+		&-btns {
+			display: flex;
+			flex-direction: column;
+			margin-bottom: 32px;
+			gap: 8px;
+		}
+
+		&-btn {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border-radius: 8px;
+			padding: 12px;
+			font-weight: 600;
+			font-size: 16px;
+			line-height: 24px;
+			color: var(--white-color);
+			background-color: var(--secondary-1-color);
+			gap: 8px;
+
+			&--red {
+				background-color: var(--main-red-color);
+			}
+		}
+	}
+
+	&__prompts {
+		&-list {
+			/* stylelint-disable-next-line value-no-vendor-prefix */
+			display: -webkit-box;
+			overflow: hidden;
+			font-weight: 500;
+			font-size: 14px;
+			line-height: 20px;
+			text-overflow: ellipsis;
+			-webkit-box-orient: vertical;
+			-webkit-line-clamp: 5;
+			line-clamp: 5;
+
+			li {
+				display: inline;
+			}
+		}
+
+		&-link {
+			transition: color 0.3s ease-in-out;
+
+			@media (any-hover: hover) {
+				&:hover {
+					color: var(--main-2-color);
+				}
+			}
+		}
 	}
 
 	// &__toggle {
