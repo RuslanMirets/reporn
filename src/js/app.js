@@ -284,19 +284,47 @@ webpCheck((support) => {
 });
 
 // Burger menu
-const burger = document.querySelector(".burger");
-const burgerOpen = document.querySelector(".burger__img--open");
-const burgerClose = document.querySelector(".burger__img--close");
-const menu = document.querySelector(".mobile-menu");
-const body = document.querySelector("body");
+(function () {
+	const burger = document.querySelector(".burger");
+	const burgerOpen = document.querySelector(".burger__img--open");
+	const burgerClose = document.querySelector(".burger__img--close");
+	const menu = document.querySelector(".mobile-menu");
+	const body = document.querySelector("body");
 
-burger.addEventListener("click", (e) => {
-	burgerOpen.classList.toggle("active");
-	burgerClose.classList.toggle("active");
-	menu.classList.toggle("active");
-	body.classList.toggle("dis-scroll");
-});
-(function () {})();
+	burger.addEventListener("click", (e) => {
+		burgerOpen.classList.toggle("active");
+		burgerClose.classList.toggle("active");
+		menu.classList.toggle("active");
+		body.classList.toggle("dis-scroll");
+	});
+
+	let viewportWidth;
+
+	let setViewportWidth = function () {
+		viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+	};
+
+	let logWidth = function () {
+		if (viewportWidth >= 992) {
+			burgerOpen.classList.add("active");
+			burgerClose.classList.remove("active");
+			menu.classList.remove("active");
+			body.classList.remove("dis-scroll");
+		}
+	};
+
+	setViewportWidth();
+	logWidth();
+
+	window.addEventListener(
+		"resize",
+		function () {
+			setViewportWidth();
+			logWidth();
+		},
+		false
+	);
+})();
 
 // User dropdown
 (function () {

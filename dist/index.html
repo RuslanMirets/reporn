@@ -42,15 +42,15 @@
 
     <link
 		rel="stylesheet"
-		href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css?_v=20230311084304"
+		href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
 	/>
-    <link rel="stylesheet" href="css/app.min.css?_v=20230311084304" />
+    <link rel="stylesheet" href="css/app.min.css" />
 
     <script
 		defer
 		src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"
 	></script>
-    <script defer src="js/app.min.js?_v=20230311084304"></script>
+    <script defer src="js/app.min.js"></script>
     <title>Main</title>
 </head>
 
@@ -85,7 +85,7 @@
             <button
 				class="header__user-link btn btn--dark btn-reset"
 				type="button"
-				data-graph-path="login"
+				data-graph-path="login-modal"
 			>
                 Log in
             </button>
@@ -209,7 +209,7 @@
             <button
 				class="mobile-menu__user-link btn btn--dark btn-reset"
 				type="button"
-				data-graph-path="login"
+				data-graph-path="login-modal"
 			>
                 Log in
             </button>
@@ -233,7 +233,7 @@
 		class="login-modal__container graph-modal__container"
 		role="dialog"
 		aria-modal="true"
-		data-graph-target="login"
+		data-graph-target="login-modal"
 	>
         <button
 			class="login-modal__close btn-reset graph-modal__close js-modal-close"
