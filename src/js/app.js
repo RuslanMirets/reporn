@@ -930,10 +930,20 @@ const tooltip = (btn, content) => {
 (function () {
 	const btn = document.querySelector(".my-gallery__edit");
 	const settings = document.querySelector(".my-gallery__settings");
+	const images = document.querySelectorAll(".list-images__label");
+	const inputs = document.querySelectorAll(".list-images__input");
 
 	btn?.addEventListener("click", () => {
 		btn.classList.toggle("active");
 		settings.classList.toggle("active");
+
+		images.forEach((image) => {
+			image.classList.toggle("active");
+		});
+
+		inputs.forEach((input) => {
+			input.disabled = !input.disabled;
+		});
 	});
 })();
 // ========================== // USER PROFILE PAGE ==========================
