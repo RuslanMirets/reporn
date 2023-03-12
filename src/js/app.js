@@ -909,3 +909,20 @@ const tooltip = (btn, content) => {
 	});
 })();
 // ========================== // CREATE ARTWORK PAGE ==========================
+
+// ========================== USER PROFILE PAGE ==========================
+// My lists
+(function () {
+	const btn = document.querySelector(".my-gallery__tabs-open");
+	const list = document.querySelector(".my-gallery__actions-items");
+
+	btn?.addEventListener("click", () => {
+		btn.classList.toggle("active");
+		if (list.style.maxHeight) {
+			list.style.maxHeight = null;
+		} else {
+			list.style.maxHeight = list.scrollHeight + "px";
+		}
+	});
+})();
+// ========================== // USER PROFILE PAGE ==========================
