@@ -48,7 +48,7 @@ html {
 	display: inline-block;
 	vertical-align: middle;
 	background-color: #fff;
-	border-radius: 10px;
+	border-radius: 8px;
 	padding: 20px;
 	cursor: default;
 	text-align: left;
@@ -3539,6 +3539,66 @@ select {
 	@media (min-width: 1200px) {
 		column-count: 6;
 		column-gap: 12px;
+	}
+}
+
+.followers-modal {
+	padding: 0;
+	max-width: 440px;
+	background-color: var(--secondary-1-color);
+
+	hr {
+		margin: 0 0 24px;
+		border: 1px solid var(--secondary-2-color);
+		width: 100%;
+	}
+
+	&__title {
+		margin: 16px 0;
+		font-weight: 600;
+		font-size: 18px;
+		line-height: 24px;
+		text-align: center;
+	}
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		padding: 0 32px 40px;
+		gap: 16px;
+	}
+
+	&__item {
+		display: flex;
+		align-items: center;
+		gap: 16px;
+	}
+
+	&__btn {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border: 0.85px solid var(--secondary-2-color);
+		border-radius: 8px;
+		width: 40px;
+		height: 40px;
+		background-color: var(--secondary-1-color);
+	}
+
+	&__user {
+		&-name {
+			margin-bottom: 4px;
+			font-weight: 500;
+			font-size: 14px;
+			line-height: 16px;
+		}
+
+		&-username {
+			font-weight: 400;
+			font-size: 12px;
+			line-height: 16px;
+			color: var(--ui-text-color);
+		}
 	}
 }
 
