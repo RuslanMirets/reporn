@@ -861,4 +861,51 @@ const tooltip = (btn, content) => {
 		},
 	});
 })();
+
+// Add comma to prompts link
+(function () {
+	const links = document.querySelectorAll(".create-modal__prompts-link");
+	links.forEach((link) => {
+		link.innerHTML += ",";
+	});
+})();
+
+// Create modal show more
+(function () {
+	const btn = document.querySelector(".create-modal__show-more");
+	const additionalInfo = document.querySelector(".create-modal__additional");
+
+	btn?.addEventListener("click", () => {
+		btn.classList.toggle("active");
+		if (additionalInfo.style.maxHeight) {
+			additionalInfo.style.maxHeight = null;
+		} else {
+			additionalInfo.style.maxHeight = additionalInfo.scrollHeight + "px";
+		}
+	});
+})();
+
+// Change aspect ration
+(function () {
+	const btns = document.querySelectorAll(".form-create__ratio-btn");
+	const img = document.querySelector(".create-modal__img");
+
+	btns.forEach((btn) => {
+		btn.addEventListener("click", () => {
+			const wasActive = btn.classList.contains("active");
+
+			btns.forEach((btn) => {
+				if (!wasActive) {
+					btn.classList.remove("active");
+				}
+			});
+
+			if (!wasActive) {
+				btn.classList.add("active");
+			}
+
+			img.setAttribute("data-type", btn.getAttribute("data-type"));
+		});
+	});
+})();
 // ========================== // CREATE ARTWORK PAGE ==========================

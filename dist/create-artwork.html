@@ -499,8 +499,12 @@
                         Non-square aspect ratios may produce artifacts.
                     </p>
                     <div class="form-create__ratio-btns">
-                        <div class="form-create__ratio-option active">
-                            <button class="form-create__ratio-btn btn-reset" type="button">
+                        <button
+							class="form-create__ratio-btn btn-reset active"
+							type="button"
+							data-type="square"
+						>
+                            <div class="form-create__ratio-btn-icon">
                                 <img
 									src="img/icons/square.svg"
 									width="18"
@@ -508,11 +512,15 @@
 									loading="lazy"
 									alt="Square"
 								/>
-                            </button>
-                            <div class="form-create__ratio-name">Square (1:1)</div>
-                        </div>
-                        <div class="form-create__ratio-option">
-                            <button class="form-create__ratio-btn btn-reset" type="button">
+                            </div>
+                            Square (1:1)
+                        </button>
+                        <button
+							class="form-create__ratio-btn btn-reset"
+							type="button"
+							data-type="portrait"
+						>
+                            <div class="form-create__ratio-btn-icon">
                                 <img
 									src="img/icons/portrait.svg"
 									width="17"
@@ -520,11 +528,15 @@
 									loading="lazy"
 									alt="Portrait"
 								/>
-                            </button>
-                            <div class="form-create__ratio-name">Portrait (2:3)</div>
-                        </div>
-                        <div class="form-create__ratio-option">
-                            <button class="form-create__ratio-btn btn-reset" type="button">
+                            </div>
+                            Portrait (2:3)
+                        </button>
+                        <button
+							class="form-create__ratio-btn btn-reset"
+							type="button"
+							data-type="landscape"
+						>
+                            <div class="form-create__ratio-btn-icon">
                                 <img
 									src="img/icons/landscape.svg"
 									width="23"
@@ -532,9 +544,9 @@
 									loading="lazy"
 									alt="Landscape"
 								/>
-                            </button>
-                            <div class="form-create__ratio-name">Landscape (3:2)</div>
-                        </div>
+                            </div>
+                            Landscape (3:2)
+                        </button>
                     </div>
                 </div>
                 <div class="form-create__seed">
@@ -1056,6 +1068,7 @@
 				class="create-modal__img"
 				src="img/image-02.jpg"
 				loading="lazy"
+				data-type="square"
 				alt="Image"
 			/>
             <div class="create-modal__actions">
@@ -1070,10 +1083,6 @@
 						alt="Download"
 					/>
                 </button>
-                <!-- <div class="create-modal__toggle">
-						<div class="create-modal__toggle-title">Make private</div>
-						<input class="create-modal__toggle-input" type="checkbox" checked />
-					</div> -->
                 <div class="create-modal__toggle">
                     <div class="create-modal__toggle-title">Make private</div>
                     <input class="create-modal__toggle-input" type="checkbox" />
@@ -1163,51 +1172,90 @@
                     Reimage
                 </button>
             </div>
-            <div class="create-modal__prompts">
-                <ul class="create-modal__prompts-list">
-                    <li>
-                        <a class="create-modal__prompts-link" href="#"
-							>cute young tee[girl),</a
-						>
-                    </li>
-                    <li>
-                        <a class="create-modal__prompts-link" href="#">innocent.girl,</a>
-                    </li>
-                    <li>
-                        <a class="create-modal__prompts-link" href="#">adorable face,</a>
-                    </li>
-                    <li>
-                        <a class="create-modal__prompts-link" href="#">K (120 years old,</a>
-                    </li>
-                    <li>
-                        <a class="create-modal__prompts-link" href="#">20 y.o.)1)),</a>
-                    </li>
-                    <li>
-                        <a class="create-modal__prompts-link" href="#">(full body)),</a>
-                    </li>
-                    <li>
-                        <a class="create-modal__prompts-link" href="#">[nipples),</a>
-                    </li>
-                    <li>
-                        <a class="create-modal__prompts-link" href="#"
-							>small breast lanky,</a
-						>
-                    </li>
-                    <li>
-                        <a class="create-modal__prompts-link" href="#">detailed breast,</a>
-                    </li>
-                    <li>
-                        <a class="create-modal__prompts-link" href="#">masterpiece,</a>
-                    </li>
-                    <li>
-                        <a class="create-modal__prompts-link" href="#">highness,</a>
-                    </li>
-                    <li>
-                        <a class="create-modal__prompts-link" href="#"
-							>high resolution illustration extremely</a
-						>
-                    </li>
-                </ul>
+            <ul class="create-modal__prompts">
+                <li>
+                    <a class="create-modal__prompts-link" href="#"
+						>cute young tee[girl)</a
+					>
+                </li>
+                <li>
+                    <a class="create-modal__prompts-link" href="#">innocent.girl</a>
+                </li>
+                <li>
+                    <a class="create-modal__prompts-link" href="#">adorable face</a>
+                </li>
+                <li>
+                    <a class="create-modal__prompts-link" href="#">K (120 years old</a>
+                </li>
+                <li>
+                    <a class="create-modal__prompts-link" href="#">20 y.o.)1))</a>
+                </li>
+                <li>
+                    <a class="create-modal__prompts-link" href="#">(full body))</a>
+                </li>
+                <li>
+                    <a class="create-modal__prompts-link" href="#">[nipples)</a>
+                </li>
+                <li>
+                    <a class="create-modal__prompts-link" href="#">small breast lanky</a>
+                </li>
+                <li>
+                    <a class="create-modal__prompts-link" href="#">detailed breast</a>
+                </li>
+                <li>
+                    <a class="create-modal__prompts-link" href="#">masterpiece</a>
+                </li>
+                <li>
+                    <a class="create-modal__prompts-link" href="#">highness</a>
+                </li>
+                <li>
+                    <a class="create-modal__prompts-link" href="#"
+						>high resolution illustration extremely</a
+					>
+                </li>
+            </ul>
+            <div class="create-modal__show-more">
+                Show more
+                <svg
+					xmlns="http://www.w3.org/2000/svg"
+					width="13"
+					height="8"
+					fill="none"
+				>
+                    <path
+						fill="#909090"
+						d="M6.035 7.195a.644.644 0 0 0 .902 0l5.333-5.304c.246-.274.246-.684 0-.93l-.63-.629c-.245-.246-.656-.246-.93 0L6.5 4.543 2.262.332c-.274-.246-.684-.246-.93 0L.703.961c-.246.246-.246.656 0 .93l5.332 5.304Z"
+					/>
+                </svg>
+            </div>
+            <div class="create-modal__additional">
+                <div class="create-modal__additional-item">
+                    <div class="create-modal__additional-title">Model</div>
+                    <div class="create-modal__additional-value">Stable-diffusion</div>
+                </div>
+                <div class="create-modal__additional-item">
+                    <div class="create-modal__additional-title">Guidance Scale</div>
+                    <div class="create-modal__additional-value">7.4</div>
+                </div>
+                <div class="create-modal__additional-item">
+                    <div class="create-modal__additional-title">Seed</div>
+                    <div class="create-modal__additional-value">3206509548187911</div>
+                </div>
+                <div class="create-modal__additional-item">
+                    <div class="create-modal__additional-title">Steps</div>
+                    <div class="create-modal__additional-value">71</div>
+                </div>
+                <div class="create-modal__additional-item">
+                    <div class="create-modal__additional-title">Dimensions</div>
+                    <div class="create-modal__additional-value">768×512</div>
+                </div>
+                <div class="create-modal__additional-item">
+                    <div class="create-modal__additional-title">Negative prompt</div>
+                    <div class="create-modal__additional-value">
+                        censorship, ugly, deformed, amateur drawing, odd, Imbs, extra arms,
+                        extra logs, mutated hands, 3 legs, 3
+                    </div>
+                </div>
             </div>
         </div>
     </div>

@@ -268,8 +268,12 @@
 						Non-square aspect ratios may produce artifacts.
 					</p>
 					<div class="form-create__ratio-btns">
-						<div class="form-create__ratio-option active">
-							<button class="form-create__ratio-btn btn-reset" type="button">
+						<button
+							class="form-create__ratio-btn btn-reset active"
+							type="button"
+							data-type="square"
+						>
+							<div class="form-create__ratio-btn-icon">
 								<img
 									src="@img/icons/square.svg"
 									width="18"
@@ -277,11 +281,15 @@
 									loading="lazy"
 									alt="Square"
 								/>
-							</button>
-							<div class="form-create__ratio-name">Square (1:1)</div>
-						</div>
-						<div class="form-create__ratio-option">
-							<button class="form-create__ratio-btn btn-reset" type="button">
+							</div>
+							Square (1:1)
+						</button>
+						<button
+							class="form-create__ratio-btn btn-reset"
+							type="button"
+							data-type="portrait"
+						>
+							<div class="form-create__ratio-btn-icon">
 								<img
 									src="@img/icons/portrait.svg"
 									width="17"
@@ -289,11 +297,15 @@
 									loading="lazy"
 									alt="Portrait"
 								/>
-							</button>
-							<div class="form-create__ratio-name">Portrait (2:3)</div>
-						</div>
-						<div class="form-create__ratio-option">
-							<button class="form-create__ratio-btn btn-reset" type="button">
+							</div>
+							Portrait (2:3)
+						</button>
+						<button
+							class="form-create__ratio-btn btn-reset"
+							type="button"
+							data-type="landscape"
+						>
+							<div class="form-create__ratio-btn-icon">
 								<img
 									src="@img/icons/landscape.svg"
 									width="23"
@@ -301,9 +313,9 @@
 									loading="lazy"
 									alt="Landscape"
 								/>
-							</button>
-							<div class="form-create__ratio-name">Landscape (3:2)</div>
-						</div>
+							</div>
+							Landscape (3:2)
+						</button>
 					</div>
 				</div>
 				<div class="form-create__seed">
