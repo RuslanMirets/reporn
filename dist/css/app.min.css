@@ -3411,6 +3411,62 @@ select {
   width: 100%;
 }
 
+.add-to-modal {
+  padding: 0;
+  max-width: 440px;
+  background-color: var(--secondary-1-color);
+}
+
+.add-to-modal hr {
+  margin: 0 0 16px;
+  border: 1px solid var(--secondary-2-color);
+  width: 100%;
+}
+
+.add-to-modal__title {
+  margin: 16px 0;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  text-align: center;
+}
+
+.add-to-modal__body {
+  padding: 0 32px 40px;
+}
+
+.add-to-modal__subtitle {
+  margin-bottom: 16px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  color: var(--ui-text-color);
+}
+
+.add-to-modal__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.add-to-modal__btn {
+  border-radius: 8px;
+  padding: 12px 20px;
+  width: 100%;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: left;
+  color: var(--white-color);
+  background-color: var(--secondary-2-color);
+}
+
 .tariffs__title {
   margin: 16px 0 40px;
 }

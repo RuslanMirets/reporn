@@ -3648,6 +3648,57 @@ select {
 	}
 }
 
+.add-to-modal {
+	padding: 0;
+	max-width: 440px;
+	background-color: var(--secondary-1-color);
+
+	hr {
+		margin: 0 0 16px;
+		border: 1px solid var(--secondary-2-color);
+		width: 100%;
+	}
+
+	&__title {
+		margin: 16px 0;
+		font-weight: 600;
+		font-size: 18px;
+		line-height: 24px;
+		text-align: center;
+	}
+
+	&__body {
+		padding: 0 32px 40px;
+	}
+
+	&__subtitle {
+		margin-bottom: 16px;
+		font-weight: 500;
+		font-size: 14px;
+		line-height: 16px;
+		text-align: center;
+		color: var(--ui-text-color);
+	}
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+	}
+
+	&__btn {
+		border-radius: 8px;
+		padding: 12px 20px;
+		width: 100%;
+		font-weight: 600;
+		font-size: 16px;
+		line-height: 24px;
+		text-align: left;
+		color: var(--white-color);
+		background-color: var(--secondary-2-color);
+	}
+}
+
 .tariffs {
 	&__title {
 		margin: 16px 0 40px;
