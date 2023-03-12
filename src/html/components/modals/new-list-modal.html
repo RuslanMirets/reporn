@@ -1,0 +1,39 @@
+<div
+	class="new-list-modal graph-modal__container"
+	role="dialog"
+	aria-modal="true"
+	data-graph-target="new-list-modal"
+>
+	<button
+		class="followers__close close-modal btn-reset graph-modal__close js-modal-close"
+		aria-label="Закрыть модальное окно"
+	>
+		<img
+			src="@img/icons/close-modal-icon.svg"
+			width="14"
+			height="14"
+			loading="lazy"
+			alt="Close"
+		/>
+	</button>
+	<h3 class="new-list-modal__title">Followers</h3>
+	<hr />
+	<div class="new-list-modal__body">
+		<form class="new-list-modal__form">
+			<label class="new-list-modal__label">
+				Name
+				<input
+					class="new-list-modal__input input"
+					type="text"
+					placeholder="List name"
+				/>
+			</label>
+			<button
+				class="new-list-modal__submit btn-reset btn btn--red"
+				type="submit"
+			>
+				Create new list
+			</button>
+		</form>
+	</div>
+</div>

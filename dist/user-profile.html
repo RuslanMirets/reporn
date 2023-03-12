@@ -362,6 +362,7 @@
                     <li>
                         <button
 							class="my-gallery__list-btn my-gallery__list-btn--new-list btn-reset"
+							data-graph-path="new-list-modal"
 						>
                             <svg
 								xmlns="http://www.w3.org/2000/svg"
@@ -1363,98 +1364,140 @@
     </button>
     <h3 class="followers-modal__title">Followers</h3>
     <hr />
-    <ul class="followers-modal__list">
-        <li class="followers-modal__item">
-            <button class="followers-modal__btn btn-reset">
-                <img
-					src="img/icons/user.svg"
-					width="18"
-					height="21"
-					loading="lazy"
-					alt="User"
+    <div class="followers-modal__body">
+        <ul class="followers-modal__list">
+            <li class="followers-modal__item">
+                <button class="followers-modal__btn btn-reset">
+                    <img
+						src="img/icons/user.svg"
+						width="18"
+						height="21"
+						loading="lazy"
+						alt="User"
+					/>
+                </button>
+                <div class="followers-modal__user">
+                    <div class="followers-modal__user-name">Brooklyn Simmons</div>
+                    <div class="followers-modal__user-username">@davidsmith4819</div>
+                </div>
+            </li>
+            <li class="followers-modal__item">
+                <button class="followers-modal__btn btn-reset">
+                    <img
+						src="img/icons/user.svg"
+						width="18"
+						height="21"
+						loading="lazy"
+						alt="User"
+					/>
+                </button>
+                <div class="followers-modal__user">
+                    <div class="followers-modal__user-name">Jenny Wilson</div>
+                    <div class="followers-modal__user-username">@davidsmith4819</div>
+                </div>
+            </li>
+            <li class="followers-modal__item">
+                <button class="followers-modal__btn btn-reset">
+                    <img
+						src="img/icons/user.svg"
+						width="18"
+						height="21"
+						loading="lazy"
+						alt="User"
+					/>
+                </button>
+                <div class="followers-modal__user">
+                    <div class="followers-modal__user-name">Robert Fox</div>
+                    <div class="followers-modal__user-username">@davidsmith4819</div>
+                </div>
+            </li>
+            <li class="followers-modal__item">
+                <button class="followers-modal__btn btn-reset">
+                    <img
+						src="img/icons/user.svg"
+						width="18"
+						height="21"
+						loading="lazy"
+						alt="User"
+					/>
+                </button>
+                <div class="followers-modal__user">
+                    <div class="followers-modal__user-name">Robert Fox</div>
+                    <div class="followers-modal__user-username">@davidsmith4819</div>
+                </div>
+            </li>
+            <li class="followers-modal__item">
+                <button class="followers-modal__btn btn-reset">
+                    <img
+						src="img/icons/user.svg"
+						width="18"
+						height="21"
+						loading="lazy"
+						alt="User"
+					/>
+                </button>
+                <div class="followers-modal__user">
+                    <div class="followers-modal__user-name">Jenny Wilson</div>
+                    <div class="followers-modal__user-username">@davidsmith4819</div>
+                </div>
+            </li>
+            <li class="followers-modal__item">
+                <button class="followers-modal__btn btn-reset">
+                    <img
+						src="img/icons/user.svg"
+						width="18"
+						height="21"
+						loading="lazy"
+						alt="User"
+					/>
+                </button>
+                <div class="followers-modal__user">
+                    <div class="followers-modal__user-name">Courtney Henry</div>
+                    <div class="followers-modal__user-username">@davidsmith4819</div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+
+            <div
+	class="new-list-modal graph-modal__container"
+	role="dialog"
+	aria-modal="true"
+	data-graph-target="new-list-modal"
+>
+    <button
+		class="followers__close close-modal btn-reset graph-modal__close js-modal-close"
+		aria-label="Закрыть модальное окно"
+	>
+        <img
+			src="img/icons/close-modal-icon.svg"
+			width="14"
+			height="14"
+			loading="lazy"
+			alt="Close"
+		/>
+    </button>
+    <h3 class="new-list-modal__title">Followers</h3>
+    <hr />
+    <div class="new-list-modal__body">
+        <form class="new-list-modal__form">
+            <label class="new-list-modal__label">
+                Name
+                <input
+					class="new-list-modal__input input"
+					type="text"
+					placeholder="List name"
 				/>
+            </label>
+            <button
+				class="new-list-modal__submit btn-reset btn btn--red"
+				type="submit"
+			>
+                Create new list
             </button>
-            <div class="followers-modal__user">
-                <div class="followers-modal__user-name">Brooklyn Simmons</div>
-                <div class="followers-modal__user-username">@davidsmith4819</div>
-            </div>
-        </li>
-        <li class="followers-modal__item">
-            <button class="followers-modal__btn btn-reset">
-                <img
-					src="img/icons/user.svg"
-					width="18"
-					height="21"
-					loading="lazy"
-					alt="User"
-				/>
-            </button>
-            <div class="followers-modal__user">
-                <div class="followers-modal__user-name">Jenny Wilson</div>
-                <div class="followers-modal__user-username">@davidsmith4819</div>
-            </div>
-        </li>
-        <li class="followers-modal__item">
-            <button class="followers-modal__btn btn-reset">
-                <img
-					src="img/icons/user.svg"
-					width="18"
-					height="21"
-					loading="lazy"
-					alt="User"
-				/>
-            </button>
-            <div class="followers-modal__user">
-                <div class="followers-modal__user-name">Robert Fox</div>
-                <div class="followers-modal__user-username">@davidsmith4819</div>
-            </div>
-        </li>
-        <li class="followers-modal__item">
-            <button class="followers-modal__btn btn-reset">
-                <img
-					src="img/icons/user.svg"
-					width="18"
-					height="21"
-					loading="lazy"
-					alt="User"
-				/>
-            </button>
-            <div class="followers-modal__user">
-                <div class="followers-modal__user-name">Robert Fox</div>
-                <div class="followers-modal__user-username">@davidsmith4819</div>
-            </div>
-        </li>
-        <li class="followers-modal__item">
-            <button class="followers-modal__btn btn-reset">
-                <img
-					src="img/icons/user.svg"
-					width="18"
-					height="21"
-					loading="lazy"
-					alt="User"
-				/>
-            </button>
-            <div class="followers-modal__user">
-                <div class="followers-modal__user-name">Jenny Wilson</div>
-                <div class="followers-modal__user-username">@davidsmith4819</div>
-            </div>
-        </li>
-        <li class="followers-modal__item">
-            <button class="followers-modal__btn btn-reset">
-                <img
-					src="img/icons/user.svg"
-					width="18"
-					height="21"
-					loading="lazy"
-					alt="User"
-				/>
-            </button>
-            <div class="followers-modal__user">
-                <div class="followers-modal__user-name">Courtney Henry</div>
-                <div class="followers-modal__user-username">@davidsmith4819</div>
-            </div>
-        </li>
-    </ul>
+        </form>
+    </div>
 </div>
 
             <div

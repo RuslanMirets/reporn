@@ -3561,10 +3561,13 @@ select {
 		text-align: center;
 	}
 
+	&__body {
+		padding: 0 32px 40px;
+	}
+
 	&__list {
 		display: flex;
 		flex-direction: column;
-		padding: 0 32px 40px;
 		gap: 16px;
 	}
 
@@ -3599,6 +3602,49 @@ select {
 			line-height: 16px;
 			color: var(--ui-text-color);
 		}
+	}
+}
+
+.new-list-modal {
+	padding: 0;
+	max-width: 440px;
+	background-color: var(--secondary-1-color);
+
+	hr {
+		margin: 0 0 24px;
+		border: 1px solid var(--secondary-2-color);
+		width: 100%;
+	}
+
+	&__title {
+		margin: 16px 0;
+		font-weight: 600;
+		font-size: 18px;
+		line-height: 24px;
+		text-align: center;
+	}
+
+	&__body {
+		padding: 0 32px 40px;
+	}
+
+	&__label {
+		display: flex;
+		flex-direction: column;
+		margin-bottom: 32px;
+		font-weight: 500;
+		font-size: 14px;
+		line-height: 16px;
+		gap: 8px;
+	}
+
+	&__input {
+		height: 48px;
+	}
+
+	&__submit {
+		padding: 12px;
+		width: 100%;
 	}
 }
 
