@@ -51,7 +51,7 @@
 		src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"
 	></script>
     <script defer src="js/app.min.js"></script>
-    <title>Main</title>
+    <title>User profile</title>
 </head>
 
     <body class="page__body">
@@ -232,43 +232,57 @@
                 <section class="profile">
     <div class="container">
         <div class="profile__container">
-            <div class="profile__content">
-                <div class="profile__info">
-                    <div class="profile__info-head">
-                        <div class="profile__tariff">
-                            <div class="profile__tariff-current">Free tariff</div>
-                            <a class="profile__tariff-link btn-reset" href="#">Tariffs</a>
-                        </div>
-                        <button class="profile__info-edit btn-reset">
-                            <img src="img/icons/share.svg" alt="Edit profile" />
-                            Edit<span> Profile</span>
-                        </button>
+            <div class="profile__info">
+                <div class="profile__info-head">
+                    <div class="profile__tariff">
+                        <div class="profile__tariff-current">Free tariff</div>
+                        <a class="profile__tariff-link btn-reset" href="#">Tariffs</a>
                     </div>
-                    <div class="profile__user">
-                        <div class="profile__user-name">David Smith</div>
-                        <div class="profile__user-username">@davidsmith4819</div>
-                    </div>
-                    <div class="profile__statistics">
-                        <div class="profile__statistics-item">
-                            <div class="profile__statistics-value">15</div>
-                            <div class="profile__statistics-title">Followers</div>
-                        </div>
-                        <div class="profile__statistics-item">
-                            <div class="profile__statistics-value">6</div>
-                            <div class="profile__statistics-title">Following</div>
-                        </div>
-                        <div class="profile__statistics-item">
-                            <div class="profile__statistics-value">12</div>
-                            <div class="profile__statistics-title">Created Artworks</div>
-                        </div>
-                    </div>
+                    <button
+						class="profile__info-edit btn-reset"
+						data-graph-path="edit-profile-modal"
+					>
+                        <img src="img/icons/share.svg" alt="Edit profile" />
+                        Edit<span> Profile</span>
+                    </button>
                 </div>
-                <div class="profile__available">
-                    <div class="profile__available-value">10</div>
-                    <div class="profile__available-text">Image available</div>
-                    <a class="profile__available-link" href="#">Upgrade</a>
+                <div class="profile__user">
+                    <div class="profile__user-name">David Smith</div>
+                    <div class="profile__user-username">@davidsmith4819</div>
+                </div>
+                <div class="profile__statistics">
+                    <div class="profile__statistics-item">
+                        <div class="profile__statistics-value">15</div>
+                        <div class="profile__statistics-title">Followers</div>
+                    </div>
+                    <div class="profile__statistics-item">
+                        <div class="profile__statistics-value">6</div>
+                        <div class="profile__statistics-title">Following</div>
+                    </div>
+                    <div class="profile__statistics-item">
+                        <div class="profile__statistics-value">12</div>
+                        <div class="profile__statistics-title">Created Artworks</div>
+                    </div>
                 </div>
             </div>
+            <div class="profile__available">
+                <div class="profile__available-value">10</div>
+                <div class="profile__available-text">Image available</div>
+                <a class="profile__available-link" href="#">Upgrade</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+                <section class="my-gallery">
+    <div class="container">
+        <div class="my-gallery__head">
+            <h2 class="my-gallery__title">My Gallery</h2>
+            <button class="my-gallery__edit btn-reset">Edit</button>
+            <p class="my-gallery__info">
+                We don’t have access to your private gallery. Your browser has a unique
+                private key to excript.
+            </p>
         </div>
     </div>
 </section>
@@ -347,6 +361,79 @@
             </button>
         </form>
     </div>
+</div>
+
+            <div
+	class="edit-profile graph-modal__container"
+	role="dialog"
+	aria-modal="true"
+	data-graph-target="edit-profile-modal"
+>
+    <button
+		class="edit-profile__close close-modal btn-reset graph-modal__close js-modal-close"
+		aria-label="Закрыть модальное окно"
+	>
+        <img
+			src="img/icons/close-modal-icon.svg"
+			width="14"
+			height="14"
+			loading="lazy"
+			alt="Close"
+		/>
+    </button>
+    <h2 class="edit-profile__title">Edit profile</h2>
+    <form class="edit-profile__form">
+        <div class="edit-profile__form-group error">
+            <label class="edit-profile__form-label" for="editUsername">
+                Username
+                <span>(only lowercase letters, numbers and dashes)</span>
+            </label>
+            <div class="edit-profile__form-info">
+                Your profile page:
+                <a href="#">https://reporn.ai/davidsmith4819</a>
+            </div>
+            <input
+				class="edit-profile__form-input input"
+				id="editUsername"
+				type="text"
+				value="davidsmith4819"
+			/>
+            <div class="edit-profile__form-error">Username already exists</div>
+        </div>
+        <div class="edit-profile__form-group">
+            <label class="edit-profile__form-label" for="editNickname">
+                Nickname
+            </label>
+            <input
+				class="edit-profile__form-input input"
+				id="editNickname"
+				type="text"
+				value="David Smith"
+			/>
+            <div class="edit-profile__form-error">Username already exists</div>
+        </div>
+        <button class="edit-profile__form-submit btn-reset">Save</button>
+        <div class="edit-profile__form-group">
+            <label class="edit-profile__form-label" for="editEmail"> Email </label>
+            <input
+				class="edit-profile__form-input input"
+				id="editEmail"
+				type="text"
+				placeholder="mail@davidsmith4819.com"
+			/>
+            <div class="edit-profile__form-error">Username already exists</div>
+        </div>
+    </form>
+    <button class="edit-profile__delete btn-reset">
+        <img
+			src="img/icons/delete-profile.svg"
+			width="13"
+			height="15"
+			loading="lazy"
+			alt="Delete profile"
+		/>
+        Delete profile
+    </button>
 </div>
 
         </div>

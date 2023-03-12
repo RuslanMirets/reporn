@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" class="page">
-	@@include('../components/page-blocks/head.html', {"title": "Main"})
+	@@include('../components/page-blocks/head.html', {"title": "User profile"})
 	<body class="page__body">
 		<div class="site-container">
 			@@include('../components/page-blocks/header.html')
 			<main class="main">
 				@@include('../components/user-profile/profile.html')
+				@@include('../components/user-profile/my-gallery.html')
 			</main>
 			@@include('../components/page-blocks/footer.html')
 		</div>
 		<div class="graph-modal">
 			@@include('../components/modals/login-modal.html')
+			@@include('../components/modals/edit-profile-modal.html')
 		</div>
 	</body>
 </html>
