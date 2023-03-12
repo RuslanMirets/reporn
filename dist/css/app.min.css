@@ -613,7 +613,7 @@ select {
   font-size: 16px;
   line-height: 20px;
   color: var(--white-color);
-  background-color: var(--secondary-1-color);
+  background-color: var(--black-color);
 }
 
 .input::-webkit-input-placeholder {
@@ -2802,6 +2802,12 @@ select {
 
 .edit-profile__form-input {
   margin-bottom: 8px;
+  height: 48px;
+}
+
+.edit-profile__form-input--email {
+  color: var(--ui-text-color);
+  background-color: var(--secondary-1-color);
 }
 
 .edit-profile__form-error {
