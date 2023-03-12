@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en" class="page">
+    <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Описание" />
+
+    <link rel="icon" href="favicon.ico" />
+    <link rel="icon" href="img/favicon/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="img/favicon/apple-touch-icon.png" />
+    <link rel="manifest" href="img/favicon/manifest.json" />
+
+    <link
+		rel="preload"
+		href="./fonts/Poppins-Regular.woff2"
+		as="font"
+		type="font/woff2"
+		crossorigin
+	/>
+    <link
+		rel="preload"
+		href="./fonts/Poppins-Medium.woff2"
+		as="font"
+		type="font/woff2"
+		crossorigin
+	/>
+    <link
+		rel="preload"
+		href="./fonts/Poppins-SemiBold.woff2"
+		as="font"
+		type="font/woff2"
+		crossorigin
+	/>
+    <link
+		rel="preload"
+		href="./fonts/Poppins-Bold.woff2"
+		as="font"
+		type="font/woff2"
+		crossorigin
+	/>
+
+    <link
+		rel="stylesheet"
+		href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+	/>
+    <link rel="stylesheet" href="css/app.min.css" />
+
+    <script
+		defer
+		src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"
+	></script>
+    <script defer src="js/app.min.js"></script>
+    <title>FAQ</title>
+</head>
+
+    <body class="page__body">
+        <div class="site-container">
+            <header class="header">
+    <div class="header__container container">
+        <a class="header__logo" href="#">
+            <img
+				src="img/logo.svg"
+				width="100"
+				height="32"
+				loading="lazy"
+				alt="Logo"
+			/>
+        </a>
+        <nav class="header__menu menu">
+            <ul class="menu__list">
+                <li class="menu__item">
+                    <a class="menu__link btn btn--black" href="#">Explore</a>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__link btn btn--red" href="#">Create Artwork</a>
+                </li>
+                <li class="menu__item">
+                    <a class="menu__link btn btn--black" href="#">My Gallery</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="header__user">
+            <a class="header__user-link btn btn--yellow" href="#">Upgrade</a>
+            <button
+				class="header__user-link btn btn--dark btn-reset"
+				type="button"
+				data-graph-path="login-modal"
+			>
+                Log in
+            </button>
+            <!-- <div class="header__user-auth">
+				<div class="header__user-name">David Smith</div>
+				<button class="header__user-btn btn-reset" aria-label="User">
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="18"
+						height="21"
+						fill="none"
+					>
+						<path
+							fill="#fff"
+							d="M9 10.5c2.734 0 5-2.227 5-5 0-2.734-2.266-5-5-5-2.773 0-5 2.266-5 5 0 2.773 2.227 5 5 5Zm3.477 1.25h-.665c-.859.43-1.796.625-2.812.625-1.016 0-1.992-.195-2.852-.625h-.664c-2.89 0-5.234 2.383-5.234 5.273v1.602c0 1.055.82 1.875 1.875 1.875h13.75c1.016 0 1.875-.82 1.875-1.875v-1.602c0-2.89-2.383-5.273-5.273-5.273Z"
+						/>
+					</svg>
+				</button>
+				<div class="header__user-dropdown dropdown-user">
+					<ul class="dropdown-user__list">
+						<li class="dropdown-user__item">
+							<a class="dropdown-user__link" href="#">
+								<div class="dropdown-user__icon">
+									<img
+										src="img/icons/profile.svg"
+										width="11"
+										height="14"
+										loading="lazy"
+										alt="My profile"
+									/>
+								</div>
+								My profile
+							</a>
+						</li>
+						<li class="dropdown-user__item">
+							<a class="dropdown-user__link" href="#">
+								<div class="dropdown-user__icon">
+									<img
+										src="img/icons/list.svg"
+										width="12"
+										height="14"
+										loading="lazy"
+										alt="My lists"
+									/>
+								</div>
+								My lists
+							</a>
+						</li>
+						<hr />
+						<li class="dropdown-user__item">
+							<button class="dropdown-user__btn btn-reset">
+								<div class="dropdown-user__icon">
+									<img
+										src="img/icons/user-cog.svg"
+										width="15"
+										height="14"
+										loading="lazy"
+										alt="Log out"
+									/>
+								</div>
+								Log out
+							</button>
+						</li>
+					</ul>
+				</div>
+			</div> -->
+        </div>
+        <div class="header__actions">
+            <a class="header__create-btn btn btn--red" href="#">Create Artwork</a>
+            <button class="header__burger burger btn-reset">
+                <img
+					class="burger__img burger__img--open active"
+					src="img/icons/burger.svg"
+					width="18"
+					height="24"
+					loading="lazy"
+					alt="Open menu"
+				/>
+                <img
+					class="burger__img burger__img--close"
+					src="img/icons/burger-close.svg"
+					width="14"
+					height="24"
+					loading="lazy"
+					alt="Close menu"
+				/>
+            </button>
+        </div>
+    </div>
+</header>
+
+<nav class="header__menu-mobile mobile-menu">
+    <ul class="mobile-menu__list">
+        <li class="mobile-menu__item">
+            <a class="mobile-menu__link btn btn--red" href="#"> Create Artwork </a>
+        </li>
+        <li class="mobile-menu__item">
+            <a class="mobile-menu__link btn btn--dark" href="#">Explore</a>
+        </li>
+        <!-- <li class="mobile-menu__item">
+				<a class="mobile-menu__link btn btn--dark" href="#">My profile</a>
+			</li>
+			<li class="mobile-menu__item">
+				<a class="mobile-menu__link btn btn--dark" href="#">My Gallery</a>
+			</li> -->
+        <li class="mobile-menu__item">
+            <a class="mobile-menu__link btn btn--yellow" href="#">Upgrade</a>
+        </li>
+    </ul>
+    <ul class="mobile-menu__user-list">
+        <!-- <li class="mobile-menu__user-item">
+				<p class="mobile-menu__user-name">David Smith</p>
+			</li>
+			<li class="mobile-menu__user-item">
+				<p class="mobile-menu__user-username">@davidsmith4819</p>
+			</li>
+			<li class="mobile-menu__user-item">
+				<a class="mobile-menu__user-link btn btn--dark" href="#">Log out</a>
+			</li> -->
+        <li class="mobile-menu__user-item">
+            <button
+				class="mobile-menu__user-link btn btn--dark btn-reset"
+				type="button"
+				data-graph-path="login-modal"
+			>
+                Log in
+            </button>
+        </li>
+    </ul>
+    <ul class="mobile-menu__foot-list">
+        <li class="mobile-menu__foot-item">
+            <a class="mobile-menu__foot-link" href="#">Terms & Conditions</a>
+        </li>
+        <li class="mobile-menu__foot-item">
+            <a class="mobile-menu__foot-link" href="#">Privacy Policy</a>
+        </li>
+        <li class="mobile-menu__foot-item">
+            <a class="mobile-menu__foot-link" href="#">Contact</a>
+        </li>
+    </ul>
+</nav>
+
+            <main class="main"><section class="faq">
+    <div class="container">
+        <h1 class="faq__title">FAQs</h1>
+        <div class="faq__items">
+            <div class="faq__item">
+                <h3 class="faq__item-title">A. This Privacy Notice</h3>
+                <p class="faq__item-text">
+                    This Privacy Notice is issued by each of the Controller entities
+                    listed in Section (Q) below (together, «Getac», «we», «us» and «our»)
+                    and is addressed to individuals outside our organisation with whom we
+                    interact, including customers, visitors to our Sites, users of our
+                    Apps, other users of our products or services, personnel of corporate
+                    customers and vendors, applicants for employment, and visitors to our
+                    premises (together, «you»). Defined terms used in this Privacy Notice
+                    are explained in Section ® below. Individual employees of existing
+                    or prospective customers and partners who leverage Getac’s solutions
+                    and services, or use the Getac website, may be provided with further
+                    privacy notices which may be contained in a separate supplemental
+                    notice. These additional privacy notices shall supplement this Privacy
+                    Notice. This Privacy Notice may be amended or updated from time to
+                    time to reflect changes in our practices with respect to the
+                    Processing of Personal Data, or changes in applicable law. We
+                    encourage you to read this Privacy Notice carefully, and to regularly
+                    check this page to review any changes we might make in accordance with
+                    the terms of this Privacy Notice. This Privacy Notice was last updated
+                    on Feb 24, 2022.
+                </p>
+            </div>
+            <div class="faq__item">
+                <h3 class="faq__item-title">B. Collection of Personal Data</h3>
+                <p class="faq__item-text">
+                    Collection of Personal Data: We collect or obtain Personal Data about
+                    you from the following sources:
+                </p>
+                <ul class="faq__item-list">
+                    <li>
+                        Data provided to us: We obtain Personal Data when those data are
+                        provided to us (e.g., where you contact us via email or telephone,
+                        or by any other means, or when you provide us with your business
+                        card, or when you submit a job application).
+                    </li>
+                    <li>
+                        Data we obtain in person: We obtain Personal Data during meetings,
+                        at trade shows, during visits from sales or marketing
+                        representatives, or at events we attend.
+                    </li>
+                    <li>
+                        Collaborations: We obtain Personal Data when you collaborate with us
+                        in research or in an advisory/consultancy capacity.
+                    </li>
+                    <li>
+                        Relationship data: We collect or obtain Personal Data in the
+                        ordinary course of our relationship with you (e.g., we provide a
+                        service to you, or to your employer).
+                    </li>
+                    <li>
+                        Data you make public: We collect or obtain Personal Data that you
+                        manifestly choose to make public, including via social media (e.g.,
+                        we may collect information from your social media profile (s), if you
+                        make a public post about us).
+                    </li>
+                    <li>
+                        App data: We collect or obtain Personal Data when you download or
+                        use any of our Apps.
+                    </li>
+                    <li>
+                        Site data: We collect or obtain Personal Data when you visit any of
+                        our Sites or use any features or resources available on or through a
+                        Site.
+                    </li>
+                    <li>
+                        Registration details: We collect or obtain Personal Data when you
+                        use, or register to use, any of our Sites, Apps, products, or
+                        services.
+                    </li>
+                    <li>
+                        Content and advertising information: If you interact with any third
+                        party content or advertising on a Site or in an App (including third
+                        party plugins and cookies) we receive Personal Data from the
+                        relevant third party provider of that content or advertising.
+                    </li>
+                    <li>
+                        Third party information: We collect or obtain Personal Data from
+                        third parties who provide it to us (e.g., credit reference agencies;
+                        law enforcement authorities; etc.).
+                    </li>
+                </ul>
+            </div>
+            <div class="faq__item">
+                <h3 class="faq__item-title">C. Creation of Personal Data</h3>
+                <p class="faq__item-text">
+                    We also create Personal Data about you in certain circumstances, such
+                    as records of your interactions with us, and details of your past
+                    interactions with us. We may also combine Personal Data from any of
+                    our Sites, Apps, products, or services, including where those data are
+                    collected from different devices.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+</main>
+            <footer class="footer">
+    <div class="footer__container container">
+        <div class="footer__copyright">© reporn.ai, 2023</div>
+        <ul class="footer__list">
+            <li class="footer__item">
+                <a class="footer__link" href="#">Terms & Conditions</a>
+            </li>
+            <li class="footer__item">
+                <a class="footer__link" href="#">Privacy Policy</a>
+            </li>
+            <li class="footer__item">
+                <a class="footer__link" href="#">Contact</a>
+            </li>
+        </ul>
+    </div>
+</footer>
+
+        </div>
+        <div class="graph-modal">
+            <div
+	class="login-modal graph-modal__container"
+	role="dialog"
+	aria-modal="true"
+	data-graph-target="login-modal"
+>
+    <button
+		class="login-modal__close close-modal btn-reset graph-modal__close js-modal-close"
+		aria-label="Закрыть модальное окно"
+	>
+        <img
+			src="img/icons/close-modal-icon.svg"
+			width="14"
+			height="14"
+			loading="lazy"
+			alt="Close"
+		/>
+    </button>
+    <div class="login-modal__content graph-modal__content">
+        <div class="login-modal__logo">
+            <img
+				src="img/logo-modal.svg"
+				width="144"
+				height="42"
+				loading="lazy"
+				alt="Logo"
+			/>
+        </div>
+        <a class="login-modal__google" href="#">
+            <img
+				src="img/icons/google-icon.svg"
+				width="24"
+				height="24"
+				loading="lazy"
+				alt="Continue with Google"
+			/>
+            Continue with Google
+        </a>
+        <p class="login-modal__text">Or continue with email</p>
+        <form class="login-modal__form">
+            <div class="login-modal__group error">
+                <input
+					class="login-modal__input input"
+					type="email"
+					placeholder="mail@davidsmith4819.com"
+				/>
+                <div class="login-modal__error">Wrong email</div>
+            </div>
+            <p class="login-modal__success">Check your mail</p>
+            <button class="login-modal__submit btn btn-reset btn--red" type="submit">
+                Continue
+            </button>
+        </form>
+    </div>
+</div>
+
+        </div>
+    </body>
+</html>
