@@ -3077,6 +3077,11 @@ select {
 		line-height: 24px;
 		color: var(--white-color);
 		background-color: var(--secondary-1-color);
+		transition: background-color 0.3s ease-in-out;
+
+		&.active {
+			background-color: var(--secondary-3-color);
+		}
 	}
 
 	&__info {
@@ -3088,6 +3093,8 @@ select {
 	}
 
 	&__tabs {
+		position: relative;
+
 		&-open {
 			display: flex;
 			align-items: center;
@@ -3127,22 +3134,14 @@ select {
 	}
 
 	&__actions {
-		&-items {
-			overflow: hidden;
-			max-height: 0;
-			transition: all 0.3s ease-in-out;
-
-			@media (min-width: 1200px) {
-				overflow: auto;
-				max-height: 100%;
-			}
-		}
+		overflow: hidden;
+		max-height: 0;
+		transition: all 0.3s ease-in-out;
 
 		@media (min-width: 1200px) {
-			display: flex;
-			align-items: flex-start;
-			justify-content: space-between;
-			gap: 16px;
+			overflow: auto;
+			padding-right: 150px;
+			max-height: 100%;
 		}
 	}
 
@@ -3178,9 +3177,26 @@ select {
 			&--new-list {
 				padding: 12px 0;
 				color: var(--ui-text-color);
+				transition: color 0.3s ease-in-out !important;
+
+				svg {
+					path {
+						transition: fill 0.3s ease-in-out;
+					}
+				}
 
 				@media (min-width: 1200px) {
 					background-color: transparent !important;
+
+					&:hover {
+						color: var(--secondary-3-color) !important;
+
+						svg {
+							path {
+								fill: var(--secondary-3-color);
+							}
+						}
+					}
 				}
 			}
 
@@ -3211,6 +3227,152 @@ select {
 		white-space: nowrap;
 		text-align: center;
 		color: var(--ui-text-color);
+
+		@media (min-width: 1200px) {
+			position: absolute;
+			right: 0;
+			top: 16px;
+			margin-top: 0;
+		}
+	}
+
+	&__settings {
+		display: none;
+		margin-top: 32px;
+		margin-bottom: 32px;
+
+		&-input {
+			margin-bottom: 16px;
+			height: 40px;
+			color: var(--ui-text-color);
+
+			@media (min-width: 1600px) {
+				margin-bottom: 0;
+				height: 48px;
+				max-width: 460px;
+			}
+		}
+
+		&-list {
+			display: flex;
+			flex-direction: column;
+			margin-bottom: 24px;
+			gap: 8px;
+
+			@media (min-width: 834px) {
+				flex-direction: row;
+			}
+
+			@media (min-width: 1600px) {
+				flex-shrink: 0;
+				margin-right: auto;
+				margin-bottom: 0;
+			}
+		}
+
+		&-toggle {
+			display: flex;
+			align-items: center;
+			border-radius: 8px;
+			padding: 12px;
+			background-color: var(--secondary-1-color);
+			gap: 8px;
+
+			&-title {
+				font-weight: 600;
+				font-size: 16px;
+				line-height: 24px;
+			}
+
+			&-input {
+				-webkit-appearance: none;
+				-moz-appearance: none;
+				appearance: none;
+				position: relative;
+				display: inline-block;
+				vertical-align: top;
+				margin: 0;
+				outline: none;
+				border-radius: 18px;
+				width: 40px;
+				height: 24px;
+				background-color: var(--secondary-2-color);
+				cursor: pointer;
+
+				&::after {
+					content: "";
+					position: absolute;
+					left: 4px;
+					top: 4px;
+					display: inline-block;
+					border-radius: 50%;
+					width: 16px;
+					height: 16px;
+					background-color: var(--ui-text-color);
+					transform: translateX(0);
+					transition: all 0.3s cubic-bezier(0.2, 0.85, 0.32, 1.2);
+				}
+
+				&:checked {
+					background-color: var(--main-red-color);
+
+					&::after {
+						background-color: var(--white-color);
+						transform: translateX(100%);
+					}
+				}
+			}
+		}
+
+		&-btn {
+			display: flex;
+			align-items: center;
+			padding: 12px 20px;
+			width: 100%;
+			gap: 8px;
+		}
+
+		&-foot {
+			display: flex;
+			flex-direction: column;
+			gap: 16px;
+
+			@media (min-width: 1600px) {
+				flex-shrink: 0;
+				flex-direction: row;
+				align-items: center;
+			}
+		}
+
+		&-selected {
+			font-weight: 500;
+			font-size: 14px;
+			line-height: 16px;
+		}
+
+		&-btns {
+			display: flex;
+			gap: 8px;
+
+			.my-gallery__settings-btn {
+				width: auto;
+			}
+		}
+
+		&.active {
+			display: block;
+
+			@media (min-width: 1600px) {
+				display: flex;
+			}
+		}
+
+		@media (min-width: 1600px) {
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-between;
+			gap: 24px;
+		}
 	}
 
 	@media (min-width: 1200px) {

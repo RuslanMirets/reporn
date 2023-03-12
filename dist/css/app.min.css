@@ -2877,6 +2877,13 @@ select {
   line-height: 24px;
   color: var(--white-color);
   background-color: var(--secondary-1-color);
+  -webkit-transition: background-color 0.3s ease-in-out;
+  -o-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.my-gallery__edit.active {
+  background-color: var(--secondary-3-color);
 }
 
 .my-gallery__info {
@@ -2886,6 +2893,10 @@ select {
   font-size: 14px;
   line-height: 20px;
   color: var(--secondary-3-color);
+}
+
+.my-gallery__tabs {
+  position: relative;
 }
 
 .my-gallery__tabs-open {
@@ -2927,7 +2938,7 @@ select {
   fill: var(--secondary-3-color);
 }
 
-.my-gallery__actions-items {
+.my-gallery__actions {
   overflow: hidden;
   max-height: 0;
   -webkit-transition: all 0.3s ease-in-out;
@@ -2976,6 +2987,15 @@ select {
 .my-gallery__list-btn--new-list {
   padding: 12px 0;
   color: var(--ui-text-color);
+  -webkit-transition: color 0.3s ease-in-out !important;
+  -o-transition: color 0.3s ease-in-out !important;
+  transition: color 0.3s ease-in-out !important;
+}
+
+.my-gallery__list-btn--new-list svg path {
+  -webkit-transition: fill 0.3s ease-in-out;
+  -o-transition: fill 0.3s ease-in-out;
+  transition: fill 0.3s ease-in-out;
 }
 
 .my-gallery__count {
@@ -2986,6 +3006,138 @@ select {
   white-space: nowrap;
   text-align: center;
   color: var(--ui-text-color);
+}
+
+.my-gallery__settings {
+  display: none;
+  margin-top: 32px;
+  margin-bottom: 32px;
+}
+
+.my-gallery__settings-input {
+  margin-bottom: 16px;
+  height: 40px;
+  color: var(--ui-text-color);
+}
+
+.my-gallery__settings-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  margin-bottom: 24px;
+  gap: 8px;
+}
+
+.my-gallery__settings-toggle {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border-radius: 8px;
+  padding: 12px;
+  background-color: var(--secondary-1-color);
+  gap: 8px;
+}
+
+.my-gallery__settings-toggle-title {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.my-gallery__settings-toggle-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: relative;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0;
+  outline: none;
+  border-radius: 18px;
+  width: 40px;
+  height: 24px;
+  background-color: var(--secondary-2-color);
+  cursor: pointer;
+}
+
+.my-gallery__settings-toggle-input::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 4px;
+  display: inline-block;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  background-color: var(--ui-text-color);
+  -webkit-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+  -webkit-transition: all 0.3s cubic-bezier(0.2, 0.85, 0.32, 1.2);
+  -o-transition: all 0.3s cubic-bezier(0.2, 0.85, 0.32, 1.2);
+  transition: all 0.3s cubic-bezier(0.2, 0.85, 0.32, 1.2);
+}
+
+.my-gallery__settings-toggle-input:checked {
+  background-color: var(--main-red-color);
+}
+
+.my-gallery__settings-toggle-input:checked::after {
+  background-color: var(--white-color);
+  -webkit-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  transform: translateX(100%);
+}
+
+.my-gallery__settings-btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 12px 20px;
+  width: 100%;
+  gap: 8px;
+}
+
+.my-gallery__settings-foot {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.my-gallery__settings-selected {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+}
+
+.my-gallery__settings-btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 8px;
+}
+
+.my-gallery__settings-btns .my-gallery__settings-btn {
+  width: auto;
+}
+
+.my-gallery__settings.active {
+  display: block;
 }
 
 .tariffs__title {
@@ -3343,6 +3495,13 @@ select {
 
   .model__swiper {
     padding-left: max(16px, (100% - 802px) / 2);
+  }
+
+  .my-gallery__settings-list {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
   }
 }
 
@@ -3705,22 +3864,10 @@ select {
     display: none;
   }
 
-  .my-gallery__actions-items {
-    overflow: auto;
-    max-height: 100%;
-  }
-
   .my-gallery__actions {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-align: start;
-    -ms-flex-align: start;
-    align-items: flex-start;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    gap: 16px;
+    overflow: auto;
+    padding-right: 150px;
+    max-height: 100%;
   }
 
   .my-gallery__list-btn.active {
@@ -3730,6 +3877,14 @@ select {
 
   .my-gallery__list-btn--new-list {
     background-color: transparent !important;
+  }
+
+  .my-gallery__list-btn--new-list:hover {
+    color: var(--secondary-3-color) !important;
+  }
+
+  .my-gallery__list-btn--new-list:hover svg path {
+    fill: var(--secondary-3-color);
   }
 
   .my-gallery__list-btn {
@@ -3752,6 +3907,13 @@ select {
     flex-direction: row;
     padding: 0;
     background-color: transparent;
+  }
+
+  .my-gallery__count {
+    position: absolute;
+    right: 0;
+    top: 16px;
+    margin-top: 0;
   }
 
   .my-gallery {
@@ -3882,6 +4044,51 @@ select {
 
   .form-create__submit {
     min-width: 356px;
+  }
+
+  .my-gallery__settings-input {
+    margin-bottom: 0;
+    height: 48px;
+    max-width: 460px;
+  }
+
+  .my-gallery__settings-list {
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    margin-right: auto;
+    margin-bottom: 0;
+  }
+
+  .my-gallery__settings-foot {
+    -ms-flex-negative: 0;
+    flex-shrink: 0;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+
+  .my-gallery__settings.active {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+
+  .my-gallery__settings {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    gap: 24px;
   }
 }
 

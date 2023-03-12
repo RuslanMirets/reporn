@@ -26,79 +26,180 @@
 				My lists
 			</button>
 			<div class="my-gallery__actions">
-				<div class="my-gallery__actions-items">
-					<ul class="my-gallery__list">
-						<li>
-							<button class="my-gallery__list-btn btn-reset">
-								<img
-									src="@img/icons/like.svg"
-									width="18"
-									height="16"
-									loading="lazy"
-									alt="Likes"
-								/>
-								Likes
-							</button>
-						</li>
-						<li>
-							<button class="my-gallery__list-btn btn-reset">
-								<img
-									src="@img/icons/following.svg"
-									width="20"
-									height="16"
-									loading="lazy"
-									alt="Following"
-								/>
-								Following
-							</button>
-						</li>
-						<li>
-							<button class="my-gallery__list-btn btn-reset">
-								<img
-									src="@img/icons/private-eye.svg"
-									width="18"
-									height="15"
-									loading="lazy"
-									alt="Private"
-								/>
-								Private
-							</button>
-						</li>
-						<li>
-							<button class="my-gallery__list-btn btn-reset active">
-								All works
-							</button>
-						</li>
-						<li>
-							<button class="my-gallery__list-btn btn-reset">List 1</button>
-						</li>
-						<li>
-							<button class="my-gallery__list-btn btn-reset">List 2</button>
-						</li>
-						<li>
-							<button class="my-gallery__list-btn btn-reset">List 3</button>
-						</li>
-						<li>
-							<button class="my-gallery__list-btn btn-reset">List 4</button>
-						</li>
-						<li>
-							<button
-								class="my-gallery__list-btn my-gallery__list-btn--new-list btn-reset"
+				<ul class="my-gallery__list">
+					<li>
+						<button class="my-gallery__list-btn btn-reset">
+							<img
+								src="@img/icons/like.svg"
+								width="18"
+								height="16"
+								loading="lazy"
+								alt="Likes"
+							/>
+							Likes
+						</button>
+					</li>
+					<li>
+						<button class="my-gallery__list-btn btn-reset">
+							<img
+								src="@img/icons/following.svg"
+								width="20"
+								height="16"
+								loading="lazy"
+								alt="Following"
+							/>
+							Following
+						</button>
+					</li>
+					<li>
+						<button class="my-gallery__list-btn btn-reset">
+							<img
+								src="@img/icons/private-eye.svg"
+								width="18"
+								height="15"
+								loading="lazy"
+								alt="Private"
+							/>
+							Private
+						</button>
+					</li>
+					<li>
+						<button class="my-gallery__list-btn btn-reset active">
+							All works
+						</button>
+					</li>
+					<li>
+						<button class="my-gallery__list-btn btn-reset">List 1</button>
+					</li>
+					<li>
+						<button class="my-gallery__list-btn btn-reset">List 2</button>
+					</li>
+					<li>
+						<button class="my-gallery__list-btn btn-reset">List 3</button>
+					</li>
+					<li>
+						<button class="my-gallery__list-btn btn-reset">List 4</button>
+					</li>
+					<li>
+						<button
+							class="my-gallery__list-btn my-gallery__list-btn--new-list btn-reset"
+						>
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="14"
+								height="14"
+								fill="none"
 							>
-								<img
-									src="@img/icons/new-list-icon.svg"
-									width="14"
-									height="14"
-									loading="lazy"
-									alt="New list"
+								<path
+									fill="#909090"
+									d="M13 5.5H8.5V1c0-.531-.469-1-1-1h-1c-.563 0-1 .469-1 1v4.5H1c-.563 0-1 .469-1 1v1c0 .563.438 1 1 1h4.5V13c0 .563.438 1 1 1h1c.531 0 1-.438 1-1V8.5H13c.531 0 1-.438 1-1v-1c0-.531-.469-1-1-1Z"
 								/>
-								New list
-							</button>
-						</li>
-					</ul>
-				</div>
-				<div class="my-gallery__count">102 Elements</div>
+							</svg>
+							New list
+						</button>
+					</li>
+				</ul>
 			</div>
+			<div class="my-gallery__settings">
+				<input
+					class="my-gallery__settings-input input"
+					type="text"
+					value="My List №2"
+				/>
+				<ul class="my-gallery__settings-list">
+					<li>
+						<div class="my-gallery__settings-toggle">
+							<div class="my-gallery__settings-toggle-title">Make private</div>
+							<input
+								class="my-gallery__settings-toggle-input"
+								type="checkbox"
+							/>
+						</div>
+					</li>
+					<li>
+						<button class="my-gallery__settings-btn btn btn--dark btn-reset">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="14"
+								height="14"
+								fill="none"
+							>
+								<path
+									fill="#909090"
+									d="M13 5.5H8.5V1c0-.531-.469-1-1-1h-1c-.563 0-1 .469-1 1v4.5H1c-.563 0-1 .469-1 1v1c0 .563.438 1 1 1h4.5V13c0 .563.438 1 1 1h1c.531 0 1-.438 1-1V8.5H13c.531 0 1-.438 1-1v-1c0-.531-.469-1-1-1Z"
+								/>
+							</svg>
+							Add to list
+						</button>
+					</li>
+					<li>
+						<button class="my-gallery__settings-btn btn btn--dark btn-reset">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="20"
+								height="21"
+								fill="none"
+							>
+								<path
+									fill="#909090"
+									d="M8.438.5a.925.925 0 0 0-.938.938V8H4.062c-.703 0-1.054.86-.546 1.367l5.937 5.938c.274.273.781.273 1.055 0l5.937-5.938C16.953 8.86 16.602 8 15.898 8H12.5V1.437A.95.95 0 0 0 11.562.5H8.438ZM20 15.188a.95.95 0 0 0-.938-.938H13.32l-1.914 1.914a1.96 1.96 0 0 1-2.851 0L6.64 14.25H.937a.925.925 0 0 0-.937.938v4.374c0 .547.39.938.938.938h18.125c.507 0 .937-.39.937-.938v-4.375Zm-4.844 3.437c0 .43-.351.781-.781.781a.783.783 0 0 1-.781-.781c0-.43.351-.781.781-.781.43 0 .781.351.781.781Zm2.5 0c0 .43-.351.781-.781.781a.783.783 0 0 1-.781-.781c0-.43.351-.781.781-.781.43 0 .781.351.781.781Z"
+								/>
+							</svg>
+							Download
+						</button>
+					</li>
+					<li>
+						<button class="my-gallery__settings-btn btn btn--dark btn-reset">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="20"
+								height="17"
+								fill="none"
+							>
+								<path
+									fill="#909090"
+									d="M3.125 12.875h-2.5A.642.642 0 0 0 0 13.5V16c0 .352.273.625.625.625h2.5A.642.642 0 0 0 3.75 16v-2.5c0-.313-.313-.625-.625-.625Zm0-12.5h-2.5A.642.642 0 0 0 0 1v2.5c0 .352.273.625.625.625h2.5A.642.642 0 0 0 3.75 3.5V1c0-.313-.313-.625-.625-.625Zm0 6.25h-2.5A.642.642 0 0 0 0 7.25v2.5c0 .352.273.625.625.625h2.5a.642.642 0 0 0 .625-.625v-2.5c0-.313-.313-.625-.625-.625Zm16.25 6.875h-12.5a.642.642 0 0 0-.625.625v1.25c0 .352.273.625.625.625h12.5a.642.642 0 0 0 .625-.625v-1.25c0-.313-.313-.625-.625-.625Zm0-12.5h-12.5a.642.642 0 0 0-.625.625v1.25c0 .352.273.625.625.625h12.5A.642.642 0 0 0 20 2.875v-1.25c0-.313-.313-.625-.625-.625Zm0 6.25h-12.5a.642.642 0 0 0-.625.625v1.25c0 .352.273.625.625.625h12.5A.642.642 0 0 0 20 9.125v-1.25c0-.313-.313-.625-.625-.625Z"
+								/>
+							</svg>
+							Select All
+						</button>
+					</li>
+					<li>
+						<button class="my-gallery__settings-btn btn btn--dark btn-reset">
+							<svg
+								xmlns="http://www.w3.org/2000/svg"
+								width="18"
+								height="21"
+								fill="none"
+							>
+								<path
+									fill="#909090"
+									d="M17.125 1.75h-4.688l-.39-.703C11.89.734 11.578.5 11.227.5H6.734c-.351 0-.664.234-.82.547l-.351.703H.875a.642.642 0 0 0-.625.625v1.25c0 .352.273.625.625.625h16.25a.642.642 0 0 0 .625-.625v-1.25c0-.313-.313-.625-.625-.625ZM2.32 18.742c.04 1.016.86 1.758 1.875 1.758h9.57c1.016 0 1.837-.742 1.876-1.758L16.5 5.5h-15l.82 13.242Z"
+								/>
+							</svg>
+							Delete
+						</button>
+					</li>
+				</ul>
+				<div class="my-gallery__settings-foot">
+					<div class="my-gallery__settings-selected">6 Elements selected</div>
+					<div class="my-gallery__settings-btns">
+						<button
+							class="my-gallery__settings-btn btn btn--red btn-reset"
+							type="button"
+						>
+							Save
+						</button>
+						<button
+							class="my-gallery__settings-btn btn btn--dark btn-reset"
+							type="button"
+						>
+							Cancel
+						</button>
+					</div>
+				</div>
+			</div>
+			<div class="my-gallery__count">102 Elements</div>
 		</div>
 	</div>
 </section>

@@ -914,7 +914,7 @@ const tooltip = (btn, content) => {
 // My lists
 (function () {
 	const btn = document.querySelector(".my-gallery__tabs-open");
-	const list = document.querySelector(".my-gallery__actions-items");
+	const list = document.querySelector(".my-gallery__actions");
 
 	btn?.addEventListener("click", () => {
 		btn.classList.toggle("active");
@@ -923,6 +923,17 @@ const tooltip = (btn, content) => {
 		} else {
 			list.style.maxHeight = list.scrollHeight + "px";
 		}
+	});
+})();
+
+// Open settings
+(function () {
+	const btn = document.querySelector(".my-gallery__edit");
+	const settings = document.querySelector(".my-gallery__settings");
+
+	btn?.addEventListener("click", () => {
+		btn.classList.toggle("active");
+		settings.classList.toggle("active");
 	});
 })();
 // ========================== // USER PROFILE PAGE ==========================
