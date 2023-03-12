@@ -2740,6 +2740,143 @@ select {
 }
 
 .profile {
+	margin-bottom: 16px;
+
+	&__info {
+		margin-bottom: 8px;
+		border-radius: 8px;
+		padding: 16px;
+		background-color: var(--secondary-1-color);
+
+		&-head {
+			display: flex;
+			align-items: flex-start;
+			justify-content: space-between;
+			margin-bottom: 16px;
+		}
+
+		&-edit {
+			display: flex;
+			align-items: center;
+			font-weight: 500;
+			font-size: 14px;
+			line-height: 16px;
+			color: var(--white-color);
+
+			img {
+				margin-right: 8px;
+			}
+
+			span {
+				display: none;
+
+				@media (min-width: 576px) {
+					display: block;
+				}
+			}
+		}
+
+		@media (min-width: 1200px) {
+			padding: 24px;
+		}
+	}
+
+	&__tariff {
+		display: flex;
+		gap: 16px;
+
+		&-current {
+			border-radius: 4px;
+			padding: 8px;
+			font-weight: 500;
+			font-size: 14px;
+			line-height: 16px;
+			background-color: var(--secondary-2-color);
+		}
+
+		&-link {
+			border: 1px solid var(--main-2-color);
+			border-radius: 4px;
+			padding: 7px 15px;
+			font-weight: 500;
+			font-size: 14px;
+			line-height: 16px;
+			color: var(--main-2-color);
+		}
+	}
+
+	&__user {
+		margin-bottom: 24px;
+
+		&-name {
+			font-weight: 600;
+			font-size: 23px;
+			line-height: 24px;
+		}
+
+		&-username {
+			font-weight: 500;
+			font-size: 14px;
+			line-height: 20px;
+			color: var(--ui-text-color);
+		}
+	}
+
+	&__statistics {
+		display: flex;
+		gap: 16px;
+
+		&-value {
+			margin-bottom: 4px;
+			font-weight: 600;
+			font-size: 18px;
+			line-height: 20px;
+		}
+
+		&-title {
+			font-weight: 400;
+			font-size: 12px;
+			line-height: 16px;
+			color: var(--ui-text-color);
+		}
+	}
+
+	&__available {
+		display: flex;
+		align-items: center;
+		border: 1px solid var(--secondary-3-color);
+		border-radius: 8px;
+		padding: 16px;
+		gap: 8px;
+
+		&-value {
+			font-weight: 600;
+			font-size: 26px;
+			line-height: 32px;
+			color: var(--main-2-color);
+		}
+
+		&-text {
+			font-weight: 500;
+			font-size: 14px;
+			line-height: 16px;
+		}
+
+		&-link {
+			margin-left: auto;
+			border: 1px solid var(--main-2-color);
+			border-radius: 4px;
+			padding: 7px 15px;
+			font-weight: 500;
+			font-size: 14px;
+			line-height: 16px;
+			color: var(--main-2-color);
+		}
+	}
+
+	@media (min-width: 1200px) {
+		margin-bottom: 56px;
+	}
 }
 
 .tariffs {
