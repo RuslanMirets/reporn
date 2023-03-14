@@ -414,20 +414,6 @@ const tooltip = (btn, content) => {
 // ================================ // MAIN PAGE ==============================
 
 // ========================== CREATE ARTWORK PAGE =============================
-// Prompt textarea
-(function () {
-	const textarea = document.querySelector("#textareaPrompt");
-	const reset = document.querySelector("#resetPrompt");
-	textarea && authHeightTextarea(textarea, reset);
-})();
-
-// Prompt Negative textarea
-(function () {
-	const textarea = document.querySelector("#textareaNegativePrompt");
-	const reset = document.querySelector("#resetNegativePrompt");
-	textarea && authHeightTextarea(textarea, reset);
-})();
-
 // Drop image
 (function () {
 	const dropArea = document.querySelector("#dropArea");
@@ -509,6 +495,22 @@ const tooltip = (btn, content) => {
 	});
 })();
 
+// Prompt Tooltip
+(function () {
+	const btn = document.querySelector("#promptTooltipBtn");
+	const content = document.querySelector("#promptTooltipContent");
+
+	tooltip(btn, content);
+})();
+
+// Negative Prompt Tooltip
+(function () {
+	const btn = document.querySelector("#negativePromptTooltipBtn");
+	const content = document.querySelector("#negativePromptTooltipContent");
+
+	tooltip(btn, content);
+})();
+
 // Guidance Scale Tooltip
 (function () {
 	const btn = document.querySelector("#scaleTooltipBtn");
@@ -529,6 +531,22 @@ const tooltip = (btn, content) => {
 (function () {
 	const btn = document.querySelector("#ratioTooltipBtn");
 	const content = document.querySelector("#ratioTooltipContent");
+
+	tooltip(btn, content);
+})();
+
+// Seed Tooltip
+(function () {
+	const btn = document.querySelector("#seedTooltipBtn");
+	const content = document.querySelector("#seedTooltipContent");
+
+	tooltip(btn, content);
+})();
+
+// Sampler Tooltip
+(function () {
+	const btn = document.querySelector("#samplerTooltipBtn");
+	const content = document.querySelector("#samplerTooltipContent");
 
 	tooltip(btn, content);
 })();
@@ -559,12 +577,10 @@ const tooltip = (btn, content) => {
 			((val - min) * 100) / (max - min) + "% 100%";
 	}
 
-	let n = 100 / max;
-	let x = ((val * n) / 100) * (progress?.offsetWidth - 18) - 6;
+	const newValue = Number(((val - min) * 100) / (max - min));
+	const newPosition = -3 - newValue * 0.26;
 	if (result) {
-		if (result) {
-			result.style.left = `${x}px`;
-		}
+		result.style.left = `calc(${newValue}% + (${newPosition}px))`;
 	}
 
 	progress?.addEventListener("input", (e) => {
@@ -579,10 +595,10 @@ const tooltip = (btn, content) => {
 		e.target.style.backgroundSize =
 			((val - min) * 100) / (max - min) + "% 100%";
 
-		let n = 100 / max;
-		let x = ((val * n) / 100) * (progress?.offsetWidth - 18) - 4;
+		const newValue = Number(((val - min) * 100) / (max - min));
+		const newPosition = -3 - newValue * 0.26;
 		if (result) {
-			result.style.left = `${x}px`;
+			result.style.left = `calc(${newValue}% + (${newPosition}px))`;
 		}
 
 		if (e.target.value > min) {
@@ -611,10 +627,10 @@ const tooltip = (btn, content) => {
 				((val - min) * 100) / (max - min) + "% 100%";
 		}
 
-		let n = 100 / max;
-		let x = ((val * n) / 100) * (progress?.offsetWidth - 18) - 6;
+		const newValue = Number(((val - min) * 100) / (max - min));
+		const newPosition = -3 - newValue * 0.26;
 		if (result) {
-			result.style.left = `${x}px`;
+			result.style.left = `calc(${newValue}% + (${newPosition}px))`;
 		}
 	});
 
@@ -650,12 +666,10 @@ const tooltip = (btn, content) => {
 			((val - min) * 100) / (max - min) + "% 100%";
 	}
 
-	let n = 100 / max;
-	let x = ((val * n) / 100) * (progress?.offsetWidth - 18) - 6;
+	const newValue = Number(((val - min) * 100) / (max - min));
+	const newPosition = -3 - newValue * 0.26;
 	if (result) {
-		if (result) {
-			result.style.left = `${x}px`;
-		}
+		result.style.left = `calc(${newValue}% + (${newPosition}px))`;
 	}
 
 	progress?.addEventListener("input", (e) => {
@@ -670,10 +684,10 @@ const tooltip = (btn, content) => {
 		e.target.style.backgroundSize =
 			((val - min) * 100) / (max - min) + "% 100%";
 
-		let n = 100 / max;
-		let x = ((val * n) / 100) * (progress?.offsetWidth - 18) - 4;
+		const newValue = Number(((val - min) * 100) / (max - min));
+		const newPosition = -3 - newValue * 0.26;
 		if (result) {
-			result.style.left = `${x}px`;
+			result.style.left = `calc(${newValue}% + (${newPosition}px))`;
 		}
 
 		if (e.target.value > min) {
@@ -702,10 +716,10 @@ const tooltip = (btn, content) => {
 				((val - min) * 100) / (max - min) + "% 100%";
 		}
 
-		let n = 100 / max;
-		let x = ((val * n) / 100) * (progress?.offsetWidth - 18) - 6;
+		const newValue = Number(((val - min) * 100) / (max - min));
+		const newPosition = -3 - newValue * 0.26;
 		if (result) {
-			result.style.left = `${x}px`;
+			result.style.left = `calc(${newValue}% + (${newPosition}px))`;
 		}
 	});
 
@@ -741,12 +755,10 @@ const tooltip = (btn, content) => {
 			((val - min) * 100) / (max - min) + "% 100%";
 	}
 
-	let n = 100 / max;
-	let x = ((val * n) / 100) * (progress?.offsetWidth - 18) - 6;
+	const newValue = Number(((val - min) * 100) / (max - min));
+	const newPosition = -3 - newValue * 0.26;
 	if (result) {
-		if (result) {
-			result.style.left = `${x}px`;
-		}
+		result.style.left = `calc(${newValue}% + (${newPosition}px))`;
 	}
 
 	progress?.addEventListener("input", (e) => {
@@ -761,10 +773,10 @@ const tooltip = (btn, content) => {
 		e.target.style.backgroundSize =
 			((val - min) * 100) / (max - min) + "% 100%";
 
-		let n = 100 / max;
-		let x = ((val * n) / 100) * (progress?.offsetWidth - 18) - 4;
+		const newValue = Number(((val - min) * 100) / (max - min));
+		const newPosition = -3 - newValue * 0.26;
 		if (result) {
-			result.style.left = `${x}px`;
+			result.style.left = `calc(${newValue}% + (${newPosition}px))`;
 		}
 
 		if (e.target.value > min) {
@@ -793,10 +805,10 @@ const tooltip = (btn, content) => {
 				((val - min) * 100) / (max - min) + "% 100%";
 		}
 
-		let n = 100 / max;
-		let x = ((val * n) / 100) * (progress?.offsetWidth - 18) - 6;
+		const newValue = Number(((val - min) * 100) / (max - min));
+		const newPosition = -3 - newValue * 0.26;
 		if (result) {
-			result.style.left = `${x}px`;
+			result.style.left = `calc(${newValue}% + (${newPosition}px))`;
 		}
 	});
 

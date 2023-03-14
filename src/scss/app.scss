@@ -1557,6 +1557,13 @@ select {
 		font-size: 18px;
 		line-height: 20px;
 
+		&-head {
+			position: relative;
+			display: flex;
+			align-items: center;
+			gap: 4px;
+		}
+
 		&:not(:last-child) {
 			margin-bottom: 16px;
 		}
@@ -1572,9 +1579,6 @@ select {
 		position: relative;
 		margin-top: 8px;
 		width: 100%;
-	}
-
-	&__textarea {
 	}
 
 	&__btns {
@@ -1844,6 +1848,14 @@ select {
 			&.active {
 				opacity: 1;
 				visibility: visible;
+			}
+
+			&--prompt {
+				top: 214px;
+
+				@media (min-width: 576px) {
+					top: 194px;
+				}
 			}
 		}
 
