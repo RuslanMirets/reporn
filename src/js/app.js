@@ -970,7 +970,8 @@ const tooltip = (btn, content) => {
 	const images = document.querySelectorAll(".list-images__label");
 	const inputs = document.querySelectorAll(".list-images__input");
 
-	const listBtns = document.querySelectorAll(".my-gallery__list-item--lists");
+	const list = document.querySelector(".my-gallery__actions");
+	const openTabs = document.querySelector(".my-gallery__tabs-open");
 
 	btn?.addEventListener("click", () => {
 		btn.classList.toggle("active");
@@ -984,9 +985,10 @@ const tooltip = (btn, content) => {
 			input.disabled = !input.disabled;
 		});
 
-		listBtns.forEach((btn) => {
-			btn.classList.toggle("disable");
-		});
+		list.classList.toggle("disable");
+		list.style.maxHeight = null;
+		openTabs.classList.toggle("disable");
+		openTabs.classList.remove("active");
 	});
 })();
 
@@ -1001,7 +1003,7 @@ const tooltip = (btn, content) => {
 		});
 	});
 
-	reset.addEventListener("click", () => {
+	reset?.addEventListener("click", () => {
 		btns.forEach((btn) => {
 			btn.classList.remove("active");
 		});
@@ -1032,15 +1034,27 @@ const tooltip = (btn, content) => {
 	const inputs = document.querySelectorAll(".list-images__input");
 	const edit = document.querySelector(".my-gallery__edit");
 
-	clear.addEventListener("click", () => {
+	clear?.addEventListener("click", () => {
 		inputs.forEach((input) => {
 			input.checked = false;
 		});
 	});
 
-	edit.addEventListener("click", () => {
+	edit?.addEventListener("click", () => {
 		inputs.forEach((input) => {
 			input.checked = false;
+		});
+	});
+})();
+
+// Select all
+(function () {
+	const selectAll = document.querySelector("#selectAll");
+	const inputs = document.querySelectorAll(".list-images__input");
+
+	selectAll?.addEventListener("click", () => {
+		inputs.forEach((input) => {
+			input.checked = true;
 		});
 	});
 })();

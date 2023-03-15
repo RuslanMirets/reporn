@@ -3260,7 +3260,8 @@ select {
 				}
 			}
 
-			&.active {
+			&.active,
+			&.disable {
 				color: var(--secondary-3-color);
 
 				svg {
@@ -3268,6 +3269,10 @@ select {
 						fill: var(--secondary-3-color);
 					}
 				}
+			}
+
+			&.disable {
+				pointer-events: none;
 			}
 
 			@media (min-width: 1200px) {
@@ -3280,6 +3285,11 @@ select {
 		overflow: hidden;
 		max-height: 0;
 		transition: all 0.3s ease-in-out;
+
+		&.disable {
+			opacity: 0.3;
+			pointer-events: none;
+		}
 
 		@media (min-width: 1200px) {
 			overflow: auto;
@@ -3296,17 +3306,6 @@ select {
 		padding: 16px;
 		background-color: var(--secondary-1-color);
 		gap: 8px;
-
-		&-item {
-			&--lists {
-				transition: opacity 0.3s ease-in-out;
-
-				&.disable {
-					opacity: 0.3;
-					pointer-events: none;
-				}
-			}
-		}
 
 		&-btn {
 			display: flex;
@@ -3855,7 +3854,6 @@ select {
 			margin: 0;
 			outline: none;
 			border: 2px solid var(--ui-text-color);
-			// outline: 2px solid var(--ui-text-color);
 			border-radius: 18px;
 			width: 20px;
 			height: 14px;

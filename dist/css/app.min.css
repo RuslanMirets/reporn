@@ -3111,12 +3111,18 @@ select {
   transition: fill 0.3s ease-in-out;
 }
 
-.my-gallery__tabs-open.active {
+.my-gallery__tabs-open.active,
+.my-gallery__tabs-open.disable {
   color: var(--secondary-3-color);
 }
 
-.my-gallery__tabs-open.active svg path {
+.my-gallery__tabs-open.active svg path,
+.my-gallery__tabs-open.disable svg path {
   fill: var(--secondary-3-color);
+}
+
+.my-gallery__tabs-open.disable {
+  pointer-events: none;
 }
 
 .my-gallery__actions {
@@ -3125,6 +3131,11 @@ select {
   -webkit-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+}
+
+.my-gallery__actions.disable {
+  opacity: 0.3;
+  pointer-events: none;
 }
 
 .my-gallery__list {
@@ -3141,17 +3152,6 @@ select {
   padding: 16px;
   background-color: var(--secondary-1-color);
   gap: 8px;
-}
-
-.my-gallery__list-item--lists {
-  -webkit-transition: opacity 0.3s ease-in-out;
-  -o-transition: opacity 0.3s ease-in-out;
-  transition: opacity 0.3s ease-in-out;
-}
-
-.my-gallery__list-item--lists.disable {
-  opacity: 0.3;
-  pointer-events: none;
 }
 
 .my-gallery__list-btn {
