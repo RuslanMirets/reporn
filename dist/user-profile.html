@@ -371,7 +371,7 @@
                     <li class="my-gallery__list-item my-gallery__list-item--lists">
                         <button
 							class="my-gallery__list-btn my-gallery__list-btn--new-list btn-reset"
-							data-graph-path="new-list-modal"
+							data-graph-path="new-gallery-modal"
 						>
                             <svg
 								xmlns="http://www.w3.org/2000/svg"
@@ -1805,13 +1805,13 @@
 </div>
 
             <div
-	class="new-list-modal graph-modal__container"
+	class="new-gallery-modal graph-modal__container"
 	role="dialog"
 	aria-modal="true"
-	data-graph-target="new-list-modal"
+	data-graph-target="new-gallery-modal"
 >
     <button
-		class="new-list-modal__close close-modal btn-reset graph-modal__close js-modal-close"
+		class="new-gallery-modal__close close-modal btn-reset graph-modal__close js-modal-close"
 		aria-label="Закрыть модальное окно"
 	>
         <img
@@ -1822,20 +1822,24 @@
 			alt="Close"
 		/>
     </button>
-    <h3 class="new-list-modal__title">New list</h3>
+    <h3 class="new-gallery-modal__title">New Gallery</h3>
     <hr />
-    <div class="new-list-modal__body">
-        <form class="new-list-modal__form">
-            <label class="new-list-modal__label">
+    <div class="new-gallery-modal__body">
+        <form class="new-gallery-modal__form">
+            <label class="new-gallery-modal__label">
                 Name
                 <input
-					class="new-list-modal__input input"
+					class="new-gallery-modal__input input"
 					type="text"
 					placeholder="List name"
 				/>
             </label>
+            <div class="new-gallery-modal__toggle">
+                <div class="new-gallery-modal__toggle-title">Make private</div>
+                <input class="new-gallery-modal__toggle-input" type="checkbox" />
+            </div>
             <button
-				class="new-list-modal__submit btn-reset btn btn--red"
+				class="new-gallery-modal__submit btn-reset btn btn--red"
 				type="submit"
 			>
                 Create new list

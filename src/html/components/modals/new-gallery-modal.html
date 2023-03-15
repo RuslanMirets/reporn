@@ -1,0 +1,43 @@
+<div
+	class="new-gallery-modal graph-modal__container"
+	role="dialog"
+	aria-modal="true"
+	data-graph-target="new-gallery-modal"
+>
+	<button
+		class="new-gallery-modal__close close-modal btn-reset graph-modal__close js-modal-close"
+		aria-label="Закрыть модальное окно"
+	>
+		<img
+			src="@img/icons/close-modal-icon.svg"
+			width="14"
+			height="14"
+			loading="lazy"
+			alt="Close"
+		/>
+	</button>
+	<h3 class="new-gallery-modal__title">New Gallery</h3>
+	<hr />
+	<div class="new-gallery-modal__body">
+		<form class="new-gallery-modal__form">
+			<label class="new-gallery-modal__label">
+				Name
+				<input
+					class="new-gallery-modal__input input"
+					type="text"
+					placeholder="List name"
+				/>
+			</label>
+			<div class="new-gallery-modal__toggle">
+				<div class="new-gallery-modal__toggle-title">Make private</div>
+				<input class="new-gallery-modal__toggle-input" type="checkbox" />
+			</div>
+			<button
+				class="new-gallery-modal__submit btn-reset btn btn--red"
+				type="submit"
+			>
+				Create new list
+			</button>
+		</form>
+	</div>
+</div>
