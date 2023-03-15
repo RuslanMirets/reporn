@@ -3128,6 +3128,56 @@ select {
 	}
 }
 
+.delete-user-modal {
+	padding: 32px;
+	max-width: 440px;
+	background-color: var(--secondary-1-color);
+
+	&__close {
+		right: 12px;
+		top: 12px;
+		background-color: transparent;
+	}
+
+	&__title {
+		margin-bottom: 16px;
+		font-weight: 600;
+		font-size: 23px;
+		line-height: 24px;
+		text-align: center;
+
+		@media (min-width: 1200px) {
+			font-size: 26px;
+			line-height: 32px;
+		}
+	}
+
+	&__text {
+		margin-bottom: 48px;
+		font-weight: 500;
+		font-size: 14px;
+		line-height: 20px;
+		text-align: center;
+		color: var(--ui-text-color);
+	}
+
+	&__btns {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 16px;
+	}
+
+	&__btn {
+		padding: 12px;
+		width: 100%;
+
+		&.btn--dark {
+			background-color: var(--secondary-2-color);
+		}
+	}
+}
+
 .my-gallery {
 	margin-bottom: 16px;
 
@@ -3136,7 +3186,7 @@ select {
 
 		&-top {
 			display: flex;
-			align-items: flex-start;
+			align-items: center;
 			margin-bottom: 8px;
 			gap: 8px;
 
@@ -3246,6 +3296,17 @@ select {
 		padding: 16px;
 		background-color: var(--secondary-1-color);
 		gap: 8px;
+
+		&-item {
+			&--lists {
+				transition: opacity 0.3s ease-in-out;
+
+				&.disable {
+					opacity: 0.3;
+					pointer-events: none;
+				}
+			}
+		}
 
 		&-btn {
 			display: flex;
@@ -3594,7 +3655,7 @@ select {
 				transform: translate(-50%, -50%) scale(1);
 			}
 
-			.list-images__input-private {
+			.list-images__input-private.active {
 				opacity: 1;
 				visibility: visible;
 			}
@@ -3810,19 +3871,46 @@ select {
 	&__list {
 		display: flex;
 		flex-direction: column;
+		margin-bottom: 32px;
+		gap: 16px;
+
+		&-btn {
+			border-radius: 8px;
+			padding: 12px 20px;
+			width: 100%;
+			font-weight: 600;
+			font-size: 16px;
+			line-height: 24px;
+			text-align: left;
+			color: var(--white-color);
+			background-color: var(--secondary-2-color);
+			transition: background-color 0.3s ease-in-out;
+
+			&.active {
+				background-color: var(--main-red-hover-color);
+			}
+
+			@media (any-hover: hover) {
+				&:hover {
+					background-color: var(--main-red-hover-color);
+				}
+			}
+		}
+	}
+
+	&__btns {
+		display: flex;
+		align-items: center;
 		gap: 16px;
 	}
 
 	&__btn {
-		border-radius: 8px;
-		padding: 12px 20px;
-		width: 100%;
-		font-weight: 600;
-		font-size: 16px;
-		line-height: 24px;
-		text-align: left;
-		color: var(--white-color);
-		background-color: var(--secondary-2-color);
+		padding: 12px;
+
+		&.btn--dark {
+			width: 100%;
+			background-color: var(--secondary-2-color);
+		}
 	}
 }
 

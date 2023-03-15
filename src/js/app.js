@@ -945,6 +945,7 @@ const tooltip = (btn, content) => {
 (function () {
 	const btn = document.querySelector(".my-gallery__tabs-open");
 	const list = document.querySelector(".my-gallery__actions");
+	const listBtns = document.querySelectorAll(".my-gallery__list-item--lists");
 
 	btn?.addEventListener("click", () => {
 		btn.classList.toggle("active");
@@ -954,6 +955,12 @@ const tooltip = (btn, content) => {
 			list.style.maxHeight = list.scrollHeight + "px";
 		}
 	});
+
+	listBtns.forEach((btn) => {
+		btn.addEventListener("click", () => {
+			list.style.maxHeight = null;
+		});
+	});
 })();
 
 // Open settings
@@ -962,6 +969,8 @@ const tooltip = (btn, content) => {
 	const settings = document.querySelector(".my-gallery__settings");
 	const images = document.querySelectorAll(".list-images__label");
 	const inputs = document.querySelectorAll(".list-images__input");
+
+	const listBtns = document.querySelectorAll(".my-gallery__list-item--lists");
 
 	btn?.addEventListener("click", () => {
 		btn.classList.toggle("active");
@@ -973,6 +982,65 @@ const tooltip = (btn, content) => {
 
 		inputs.forEach((input) => {
 			input.disabled = !input.disabled;
+		});
+
+		listBtns.forEach((btn) => {
+			btn.classList.toggle("disable");
+		});
+	});
+})();
+
+// Add to list
+(function () {
+	const btns = document.querySelectorAll(".add-to-modal__list-btn");
+	const reset = document.querySelector(".add-to-modal__btn.js-modal-close");
+
+	btns.forEach((btn) => {
+		btn.addEventListener("click", () => {
+			btn.classList.toggle("active");
+		});
+	});
+
+	reset.addEventListener("click", () => {
+		btns.forEach((btn) => {
+			btn.classList.remove("active");
+		});
+	});
+})();
+
+// Make private
+(function () {
+	const toggle = document.querySelector(".my-gallery__settings-toggle-input");
+	const privateIcons = document.querySelectorAll(".list-images__input-private");
+
+	toggle?.addEventListener("change", () => {
+		if (toggle.checked) {
+			privateIcons.forEach((icon) => {
+				icon.classList.add("active");
+			});
+		} else {
+			privateIcons.forEach((icon) => {
+				icon.classList.remove("active");
+			});
+		}
+	});
+})();
+
+// Clear checked
+(function () {
+	const clear = document.querySelector("#clearCheckboxes");
+	const inputs = document.querySelectorAll(".list-images__input");
+	const edit = document.querySelector(".my-gallery__edit");
+
+	clear.addEventListener("click", () => {
+		inputs.forEach((input) => {
+			input.checked = false;
+		});
+	});
+
+	edit.addEventListener("click", () => {
+		inputs.forEach((input) => {
+			input.checked = false;
 		});
 	});
 })();

@@ -2974,6 +2974,57 @@ select {
   gap: 8px;
 }
 
+.delete-user-modal {
+  padding: 32px;
+  max-width: 440px;
+  background-color: var(--secondary-1-color);
+}
+
+.delete-user-modal__close {
+  right: 12px;
+  top: 12px;
+  background-color: transparent;
+}
+
+.delete-user-modal__title {
+  margin-bottom: 16px;
+  font-weight: 600;
+  font-size: 23px;
+  line-height: 24px;
+  text-align: center;
+}
+
+.delete-user-modal__text {
+  margin-bottom: 48px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  color: var(--ui-text-color);
+}
+
+.delete-user-modal__btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.delete-user-modal__btn {
+  padding: 12px;
+  width: 100%;
+}
+
+.delete-user-modal__btn.btn--dark {
+  background-color: var(--secondary-2-color);
+}
+
 .my-gallery {
   margin-bottom: 16px;
 }
@@ -2986,9 +3037,9 @@ select {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-align: start;
-  -ms-flex-align: start;
-  align-items: flex-start;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
   margin-bottom: 8px;
   gap: 8px;
 }
@@ -3090,6 +3141,17 @@ select {
   padding: 16px;
   background-color: var(--secondary-1-color);
   gap: 8px;
+}
+
+.my-gallery__list-item--lists {
+  -webkit-transition: opacity 0.3s ease-in-out;
+  -o-transition: opacity 0.3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.my-gallery__list-item--lists.disable {
+  opacity: 0.3;
+  pointer-events: none;
 }
 
 .my-gallery__list-btn {
@@ -3398,7 +3460,7 @@ select {
   transform: translate(-50%, -50%) scale(1);
 }
 
-.list-images__input:checked + .list-images__input-overlay .list-images__input-private {
+.list-images__input:checked + .list-images__input-overlay .list-images__input-private.active {
   opacity: 1;
   visibility: visible;
 }
@@ -3585,10 +3647,11 @@ select {
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   flex-direction: column;
+  margin-bottom: 32px;
   gap: 16px;
 }
 
-.add-to-modal__btn {
+.add-to-modal__list-btn {
   border-radius: 8px;
   padding: 12px 20px;
   width: 100%;
@@ -3597,6 +3660,32 @@ select {
   line-height: 24px;
   text-align: left;
   color: var(--white-color);
+  background-color: var(--secondary-2-color);
+  -webkit-transition: background-color 0.3s ease-in-out;
+  -o-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.add-to-modal__list-btn.active {
+  background-color: var(--main-red-hover-color);
+}
+
+.add-to-modal__btns {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  gap: 16px;
+}
+
+.add-to-modal__btn {
+  padding: 12px;
+}
+
+.add-to-modal__btn.btn--dark {
+  width: 100%;
   background-color: var(--secondary-2-color);
 }
 
@@ -4411,6 +4500,11 @@ select {
     max-width: 586px;
   }
 
+  .delete-user-modal__title {
+    font-size: 26px;
+    line-height: 32px;
+  }
+
   .my-gallery__head-top {
     gap: 24px;
   }
@@ -4813,6 +4907,10 @@ select {
 
   .followers-modal__link:hover .followers-modal__user-name {
     color: var(--main-2-color);
+  }
+
+  .add-to-modal__list-btn:hover {
+    background-color: var(--main-red-hover-color);
   }
 
   .tariffs__item--advanced:hover {
