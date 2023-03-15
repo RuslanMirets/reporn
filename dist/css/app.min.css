@@ -3771,6 +3771,7 @@ select {
 }
 
 .tariffs__item {
+  position: relative;
   border-radius: 8px;
   padding: 24px;
   background: var(--secondary-1-color);
@@ -3787,6 +3788,20 @@ select {
   width: 100%;
 }
 
+.tariffs__item-popular {
+  position: absolute;
+  right: -8px;
+  top: -6px;
+  border-radius: 4px;
+  padding: 4px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  text-transform: uppercase;
+  color: var(--secondary-1-color);
+  background-color: var(--main-2-color);
+}
+
 .tariffs__item-title {
   margin-bottom: 16px;
   font-weight: 600;
@@ -3795,8 +3810,8 @@ select {
   text-align: center;
 }
 
-.tariffs__item-title--blue {
-  color: #1ca2ed;
+.tariffs__item-title--yellow {
+  color: var(--main-2-color);
 }
 
 .tariffs__item-title--purple {
@@ -3884,6 +3899,10 @@ select {
   color: var(--main-2-color);
 }
 
+.tariffs__item-count--hightlight-purple {
+  color: #781ced;
+}
+
 .tariffs__item-speed {
   font-weight: 500;
   font-size: 18px;
@@ -3897,6 +3916,15 @@ select {
 
 .tariffs__item-speed--red {
   color: var(--main-red-color);
+}
+
+.tariffs__item-speed--purple {
+  color: #781ced;
+}
+
+.tariffs__item--expert {
+  -webkit-box-shadow: 0 24px 64px rgba(237, 204, 28, 0.32);
+  box-shadow: 0 24px 64px rgba(237, 204, 28, 0.32);
 }
 
 .tariffs__btn {
@@ -4193,6 +4221,10 @@ select {
   .tariffs__items {
     -ms-grid-columns: (1fr)[3];
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .tariffs__item-popular {
+    right: -11px;
   }
 
   .tariffs-faq__items {
@@ -4979,12 +5011,12 @@ select {
     background-color: var(--main-red-hover-color);
   }
 
-  .tariffs__item--advanced:hover {
+  .tariffs__item--expert:hover {
     -webkit-box-shadow: 0 4px 64px var(--main-2-color);
     box-shadow: 0 4px 64px var(--main-2-color);
   }
 
-  .tariffs__item--expert:hover {
+  .tariffs__item--advanced:hover {
     -webkit-box-shadow: 0 4px 64px #781ced;
     box-shadow: 0 4px 64px #781ced;
   }

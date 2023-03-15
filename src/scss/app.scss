@@ -3996,6 +3996,7 @@ select {
 	}
 
 	&__item {
+		position: relative;
 		border-radius: 8px;
 		padding: 24px;
 		background: var(--secondary-1-color);
@@ -4007,6 +4008,24 @@ select {
 			width: 100%;
 		}
 
+		&-popular {
+			position: absolute;
+			right: -8px;
+			top: -6px;
+			border-radius: 4px;
+			padding: 4px;
+			font-weight: 500;
+			font-size: 14px;
+			line-height: 16px;
+			text-transform: uppercase;
+			color: var(--secondary-1-color);
+			background-color: var(--main-2-color);
+
+			@media (min-width: 768px) {
+				right: -11px;
+			}
+		}
+
 		&-title {
 			margin-bottom: 16px;
 			font-weight: 600;
@@ -4014,8 +4033,8 @@ select {
 			line-height: 24px;
 			text-align: center;
 
-			&--blue {
-				color: #1ca2ed;
+			&--yellow {
+				color: var(--main-2-color);
 			}
 
 			&--purple {
@@ -4105,6 +4124,10 @@ select {
 				font-size: 23px;
 				line-height: 24px;
 				color: var(--main-2-color);
+
+				&-purple {
+					color: #781ced;
+				}
 			}
 		}
 
@@ -4121,9 +4144,15 @@ select {
 			&--red {
 				color: var(--main-red-color);
 			}
+
+			&--purple {
+				color: #781ced;
+			}
 		}
 
-		&--advanced {
+		&--expert {
+			box-shadow: 0 24px 64px rgba(237, 204, 28, 0.32);
+
 			@media (any-hover: hover) {
 				&:hover {
 					box-shadow: 0 4px 64px var(--main-2-color);
@@ -4131,7 +4160,7 @@ select {
 			}
 		}
 
-		&--expert {
+		&--advanced {
 			@media (any-hover: hover) {
 				&:hover {
 					box-shadow: 0 4px 64px #781ced;
