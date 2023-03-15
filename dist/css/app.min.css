@@ -2802,6 +2802,10 @@ select {
   gap: 16px;
 }
 
+.profile__statistics-item--btn {
+  cursor: pointer;
+}
+
 .profile__statistics-value {
   margin-bottom: 4px;
   font-weight: 600;
@@ -3442,17 +3446,17 @@ select {
   gap: 16px;
 }
 
-.followers-modal__item {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+.followers-modal__link {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
   gap: 16px;
 }
 
-.followers-modal__btn {
+.followers-modal__link-icon {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3469,11 +3473,20 @@ select {
   background-color: var(--secondary-1-color);
 }
 
+.followers-modal__link-icon svg path {
+  -webkit-transition: fill 0.3s ease-in-out;
+  -o-transition: fill 0.3s ease-in-out;
+  transition: fill 0.3s ease-in-out;
+}
+
 .followers-modal__user-name {
   margin-bottom: 4px;
   font-weight: 500;
   font-size: 14px;
   line-height: 16px;
+  -webkit-transition: color 0.3s ease-in-out;
+  -o-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
 }
 
 .followers-modal__user-username {
@@ -4792,6 +4805,14 @@ select {
 
   .edit-profile__form-submit:hover {
     background-color: var(--main-red-hover-color);
+  }
+
+  .followers-modal__link:hover .followers-modal__link-icon svg path {
+    fill: var(--main-2-color);
+  }
+
+  .followers-modal__link:hover .followers-modal__user-name {
+    color: var(--main-2-color);
   }
 
   .tariffs__item--advanced:hover {

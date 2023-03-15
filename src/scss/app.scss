@@ -2917,6 +2917,12 @@ select {
 		display: flex;
 		gap: 16px;
 
+		&-item {
+			&--btn {
+				cursor: pointer;
+			}
+		}
+
 		&-value {
 			margin-bottom: 4px;
 			font-weight: 600;
@@ -3653,20 +3659,59 @@ select {
 	}
 
 	&__item {
-		display: flex;
-		align-items: center;
-		gap: 16px;
+		// display: flex;
+		// align-items: center;
+		// gap: 16px;
 	}
 
-	&__btn {
-		display: flex;
+	// &__btn {
+	// 	display: flex;
+	// 	align-items: center;
+	// 	justify-content: center;
+	// 	border: 0.85px solid var(--secondary-2-color);
+	// 	border-radius: 8px;
+	// 	width: 40px;
+	// 	height: 40px;
+	// 	background-color: var(--secondary-1-color);
+	// }
+
+	&__link {
+		display: inline-flex;
 		align-items: center;
-		justify-content: center;
-		border: 0.85px solid var(--secondary-2-color);
-		border-radius: 8px;
-		width: 40px;
-		height: 40px;
-		background-color: var(--secondary-1-color);
+		gap: 16px;
+
+		&-icon {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			border: 0.85px solid var(--secondary-2-color);
+			border-radius: 8px;
+			width: 40px;
+			height: 40px;
+			background-color: var(--secondary-1-color);
+
+			svg {
+				path {
+					transition: fill 0.3s ease-in-out;
+				}
+			}
+		}
+
+		@media (any-hover: hover) {
+			&:hover {
+				.followers-modal__link-icon {
+					svg {
+						path {
+							fill: var(--main-2-color);
+						}
+					}
+				}
+
+				.followers-modal__user-name {
+					color: var(--main-2-color);
+				}
+			}
+		}
 	}
 
 	&__user {
@@ -3675,6 +3720,7 @@ select {
 			font-weight: 500;
 			font-size: 14px;
 			line-height: 16px;
+			transition: color 0.3s ease-in-out;
 		}
 
 		&-username {
