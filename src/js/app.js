@@ -920,6 +920,24 @@ const tooltip = (btn, content) => {
 		});
 	});
 })();
+
+// Like click
+(function () {
+	const btn = document.querySelector(".create-modal__actions-btn--like");
+
+	btn?.addEventListener("click", () => {
+		btn.classList.toggle("active");
+	});
+})();
+
+// Like favorite
+(function () {
+	const btn = document.querySelector(".create-modal__actions-btn--favorite");
+
+	btn?.addEventListener("click", () => {
+		btn.classList.toggle("active");
+	});
+})();
 // ========================== // CREATE ARTWORK PAGE ==========================
 
 // ========================== USER PROFILE PAGE ==========================

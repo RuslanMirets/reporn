@@ -1,0 +1,31 @@
+<div
+	class="delete-image-modal graph-modal__container"
+	role="dialog"
+	aria-modal="true"
+	data-graph-target="delete-image-modal"
+>
+	<button
+		class="delete-image-modal__close close-modal btn-reset graph-modal__close js-modal-close"
+		aria-label="Закрыть модальное окно"
+	>
+		<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="none">
+			<path
+				fill="#909090"
+				d="m10.578 7.5 3.906-3.906a1.16 1.16 0 0 0 0-1.719l-.859-.86a1.16 1.16 0 0 0-1.719 0L8 4.923 4.055 1.016a1.16 1.16 0 0 0-1.72 0l-.858.859a1.16 1.16 0 0 0 0 1.719L5.383 7.5l-3.906 3.945a1.16 1.16 0 0 0 0 1.72l.859.858a1.16 1.16 0 0 0 1.719 0L8 10.117l3.906 3.906a1.16 1.16 0 0 0 1.719 0l.86-.859a1.16 1.16 0 0 0 0-1.719L10.577 7.5Z"
+			/>
+		</svg>
+	</button>
+	<h3 class="delete-image-modal__title">Are you sure to delete?</h3>
+	<p class="delete-image-modal__text">You won't be able to recover after</p>
+	<div class="delete-image-modal__btns">
+		<button
+			class="delete-image-modal__btn btn btn--red btn-reset"
+			data-graph-path="create-modal"
+		>
+			Cancel
+		</button>
+		<button class="delete-image-modal__btn btn btn--dark btn-reset">
+			Delete
+		</button>
+	</div>
+</div>

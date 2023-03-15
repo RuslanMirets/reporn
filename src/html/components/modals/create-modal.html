@@ -61,34 +61,45 @@
 						/>
 					</svg>
 				</div>
-				<button class="create-modal__actions-btn btn-reset">
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
+				<button
+					class="create-modal__actions-btn create-modal__actions-btn--like btn-reset"
+				>
+					<img
+						src="@img/icons/like-outline.svg"
 						width="16"
 						height="13"
-						fill="none"
-					>
-						<path
-							fill="#fff"
-							d="M13.523 1.527C11.938.187 9.503.38 8 1.937 6.469.38 4.035.188 2.45 1.528.397 3.25.7 6.067 2.175 7.57l4.785 4.895c.273.273.629.437 1.039.437a1.43 1.43 0 0 0 1.012-.437l4.812-4.895c1.45-1.504 1.75-4.32-.3-6.043Zm-.656 5.114-4.785 4.894c-.055.055-.11.055-.191 0L3.105 6.641c-1.011-1.012-1.203-2.926.192-4.102 1.066-.902 2.707-.766 3.746.273L8 3.797l.957-.985c1.012-1.039 2.652-1.175 3.719-.3 1.394 1.203 1.203 3.117.191 4.129Z"
-						/>
-					</svg>
+						loading="lazy"
+						alt="Like"
+					/>
+					<img
+						src="@img/icons/like-fill-red.svg"
+						width="16"
+						height="13"
+						loading="lazy"
+						alt="Remove like"
+					/>
 				</button>
-				<button class="create-modal__actions-btn btn-reset">
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						width="12"
+				<button
+					class="create-modal__actions-btn create-modal__actions-btn--favorite btn-reset"
+				>
+					<img
+						src="@img/icons/bookmark.svg"
+						width="11"
 						height="15"
-						fill="none"
-					>
-						<path
-							fill="#fff"
-							d="M9.938.75H2.061C1.325.75.75 1.352.75 2.063V14.75L6 11.687l5.25 3.063V2.062A1.33 1.33 0 0 0 9.937.75Zm0 11.73L6 10.184 2.062 12.48V2.227c0-.082.055-.164.165-.164h7.546c.082 0 .165.082.165.164V12.48Z"
-						/>
-					</svg>
+						loading="lazy"
+						alt="Favorite"
+					/>
+					<img
+						src="@img/icons/bookmark-fill-yellow.svg"
+						width="11"
+						height="15"
+						loading="lazy"
+						alt="Remove favorite"
+					/>
 				</button>
 				<button
 					class="create-modal__actions-btn create-modal__actions-btn--delete btn-reset"
+					data-graph-path="delete-image-modal"
 				>
 					<img
 						src="@img/icons/trash.svg"
@@ -192,31 +203,33 @@
 				</svg>
 			</div>
 			<div class="create-modal__additional">
-				<div class="create-modal__additional-item">
-					<div class="create-modal__additional-title">Model</div>
-					<div class="create-modal__additional-value">Stable-diffusion</div>
-				</div>
-				<div class="create-modal__additional-item">
-					<div class="create-modal__additional-title">Guidance Scale</div>
-					<div class="create-modal__additional-value">7.4</div>
-				</div>
-				<div class="create-modal__additional-item">
-					<div class="create-modal__additional-title">Seed</div>
-					<div class="create-modal__additional-value">3206509548187911</div>
-				</div>
-				<div class="create-modal__additional-item">
-					<div class="create-modal__additional-title">Steps</div>
-					<div class="create-modal__additional-value">71</div>
-				</div>
-				<div class="create-modal__additional-item">
-					<div class="create-modal__additional-title">Dimensions</div>
-					<div class="create-modal__additional-value">768 x 512</div>
-				</div>
-				<div class="create-modal__additional-item">
-					<div class="create-modal__additional-title">Negative prompt</div>
-					<div class="create-modal__additional-value">
-						censorship, ugly, deformed, amateur drawing, odd, Imbs, extra arms,
-						extra logs, mutated hands, 3 legs, 3
+				<div class="create-modal__additional-body">
+					<div class="create-modal__additional-item">
+						<div class="create-modal__additional-title">Model</div>
+						<div class="create-modal__additional-value">Stable-diffusion</div>
+					</div>
+					<div class="create-modal__additional-item">
+						<div class="create-modal__additional-title">Guidance Scale</div>
+						<div class="create-modal__additional-value">7.4</div>
+					</div>
+					<div class="create-modal__additional-item">
+						<div class="create-modal__additional-title">Seed</div>
+						<div class="create-modal__additional-value">3206509548187911</div>
+					</div>
+					<div class="create-modal__additional-item">
+						<div class="create-modal__additional-title">Steps</div>
+						<div class="create-modal__additional-value">71</div>
+					</div>
+					<div class="create-modal__additional-item">
+						<div class="create-modal__additional-title">Dimensions</div>
+						<div class="create-modal__additional-value">768 x 512</div>
+					</div>
+					<div class="create-modal__additional-item">
+						<div class="create-modal__additional-title">Negative prompt</div>
+						<div class="create-modal__additional-value">
+							censorship, ugly, deformed, amateur drawing, odd, Imbs, extra
+							arms, extra logs, mutated hands, 3 legs, 3
+						</div>
 					</div>
 				</div>
 			</div>

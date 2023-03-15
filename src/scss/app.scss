@@ -2434,7 +2434,8 @@ select {
 	&__content {
 		@media (min-width: 992px) {
 			display: grid;
-			grid-template-columns: auto minmax(300px, 545px);
+			align-items: flex-start;
+			grid-template-columns: auto 296px;
 			gap: 24px;
 		}
 	}
@@ -2458,19 +2459,15 @@ select {
 		&[data-type="square"] {
 			max-width: 512px;
 			aspect-ratio: 1/1;
-
-			@media (min-width: 992px) {
-				max-width: 608px;
-			}
 		}
 
 		&[data-type="portrait"] {
-			max-width: 350px;
+			max-width: 455px;
 			aspect-ratio: 7/9;
 		}
 
 		&[data-type="landscape"] {
-			max-width: 450px;
+			max-width: 585px;
 			aspect-ratio: 9/7;
 		}
 	}
@@ -2481,6 +2478,7 @@ select {
 		gap: 8px;
 
 		&-btn {
+			position: relative;
 			display: flex;
 			align-items: center;
 			justify-content: center;
@@ -2495,6 +2493,39 @@ select {
 
 			&--delete {
 				margin-left: auto;
+			}
+
+			&--like,
+			&--favorite {
+				display: block;
+
+				img {
+					position: absolute;
+					left: 50%;
+					top: 50%;
+					height: auto;
+					transform: translate(-50%, -50%);
+					transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+
+					&:nth-child(2) {
+						opacity: 0;
+						transform: translate(-50%, -50%) scale(0);
+					}
+				}
+
+				&.active {
+					img {
+						&:nth-child(1) {
+							opacity: 0;
+							transform: translate(-50%, -50%) scale(0);
+						}
+
+						&:nth-child(2) {
+							opacity: 1;
+							transform: translate(-50%, -50%) scale(1);
+						}
+					}
+				}
 			}
 		}
 	}
@@ -2597,18 +2628,15 @@ select {
 	}
 
 	&__info {
-		border-radius: 8px;
+		border-radius: 16px;
 		padding: 16px;
 		background-color: var(--bg-color);
 
 		&-btns {
-			display: grid;
+			display: flex;
+			flex-direction: column;
 			margin-bottom: 32px;
 			gap: 8px;
-
-			@media (min-width: 576px) {
-				grid-template-columns: repeat(3, auto);
-			}
 		}
 
 		&-btn {
@@ -2634,10 +2662,6 @@ select {
 					background-color: var(--main-red-hover-color);
 				}
 			}
-		}
-
-		@media (min-width: 992px) {
-			align-self: start;
 		}
 	}
 
@@ -2672,7 +2696,6 @@ select {
 	&__show-more {
 		display: inline-flex;
 		align-items: center;
-		margin-bottom: 32px;
 		font-weight: 500;
 		font-size: 14px;
 		line-height: 16px;
@@ -2703,20 +2726,20 @@ select {
 	}
 
 	&__additional {
-		display: grid;
-		grid-template-columns: repeat(2, 1fr);
 		overflow: hidden;
 		max-height: 0;
 		transition: max-height 0.3s ease-in-out;
-		gap: 32px 4px;
+
+		&-body {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			margin-top: 32px;
+			gap: 32px 4px;
+		}
 
 		&-item {
 			&:last-child {
 				grid-column: span 2;
-
-				@media (min-width: 576px) {
-					grid-column: span 3;
-				}
 			}
 		}
 
@@ -2734,10 +2757,6 @@ select {
 			word-break: break-word;
 			color: var(--ui-text-color);
 		}
-
-		@media (min-width: 576px) {
-			grid-template-columns: repeat(3, 1fr);
-		}
 	}
 
 	@media (min-width: 992px) {
@@ -2746,6 +2765,56 @@ select {
 
 	@media (min-width: 1200px) {
 		padding: 40px;
+	}
+}
+
+.delete-image-modal {
+	padding: 32px;
+	max-width: 440px;
+	background-color: var(--secondary-1-color);
+
+	&__close {
+		right: 12px;
+		top: 12px;
+		background-color: transparent;
+	}
+
+	&__title {
+		margin-bottom: 16px;
+		font-weight: 600;
+		font-size: 23px;
+		line-height: 24px;
+		text-align: center;
+
+		@media (min-width: 1200px) {
+			font-size: 26px;
+			line-height: 32px;
+		}
+	}
+
+	&__text {
+		margin-bottom: 48px;
+		font-weight: 500;
+		font-size: 14px;
+		line-height: 20px;
+		text-align: center;
+		color: var(--ui-text-color);
+	}
+
+	&__btns {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 16px;
+	}
+
+	&__btn {
+		padding: 12px;
+		width: 100%;
+
+		&.btn--dark {
+			background-color: var(--secondary-2-color);
+		}
 	}
 }
 
