@@ -42,15 +42,15 @@
 
     <link
 		rel="stylesheet"
-		href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
+		href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css?_v=20230315134336"
 	/>
-    <link rel="stylesheet" href="css/app.min.css" />
+    <link rel="stylesheet" href="css/app.min.css?_v=20230315134336" />
 
     <script
 		defer
 		src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"
 	></script>
-    <script defer src="js/app.min.js"></script>
+    <script defer src="js/app.min.js?_v=20230315134336"></script>
     <title>FAQ</title>
 </head>
 
@@ -223,7 +223,9 @@
             <a class="mobile-menu__foot-link" href="#">Privacy Policy</a>
         </li>
         <li class="mobile-menu__foot-item">
-            <a class="mobile-menu__foot-link" href="#">Contact</a>
+            <button class="footer__link btn-reset" data-graph-path="contact-modal">
+                Contact
+            </button>
         </li>
         <li class="mobile-menu__foot-item">
             <a class="mobile-menu__foot-link" href="#">FAQ</a>
@@ -344,7 +346,9 @@
                 <a class="footer__link" href="#">Privacy Policy</a>
             </li>
             <li class="footer__item">
-                <a class="footer__link" href="#">Contact</a>
+                <button class="footer__link btn-reset" data-graph-path="contact-modal">
+                    Contact
+                </button>
             </li>
             <li class="footer__item">
                 <a class="footer__link" href="#">FAQ</a>
@@ -449,6 +453,91 @@
             </p>
         </div>
     </div>
+</div>
+
+            <div
+	class="contact-modal graph-modal__container"
+	role="dialog"
+	aria-modal="true"
+	data-graph-target="contact-modal"
+>
+    <button
+		class="contact-modal__close close-modal btn-reset graph-modal__close js-modal-close"
+		aria-label="Закрыть модальное окно"
+	>
+        <img
+			src="img/icons/close-modal-icon.svg"
+			width="14"
+			height="14"
+			loading="lazy"
+			alt="Close"
+		/>
+    </button>
+    <h3 class="contact-modal__title">Contact us</h3>
+    <form class="contact-modal__form">
+        <div class="contact-modal__body">
+            <label class="contact-modal__label">
+                Your name
+                <input
+					class="contact-modal__input input"
+					type="text"
+					value="David Smith"
+				/>
+            </label>
+            <label class="contact-modal__label">
+                Profile link
+                <input
+					class="contact-modal__input input"
+					type="text"
+					value="@davidsmith4819"
+				/>
+            </label>
+            <label class="contact-modal__label">
+                Topic
+                <div class="contact-modal__sampler-select dropdown">
+                    <input
+						class="dropdown__switch"
+						type="checkbox"
+						id="samplerSwitch"
+						hidden
+						value="1"
+					/>
+                    <label class="dropdown__options-filter" for="samplerSwitch">
+                        <ul class="dropdown__filter" role="listbox" tabindex="-1">
+                            <li class="dropdown__filter-selected" aria-selected="true">
+                                Choose a topic
+                            </li>
+                            <li>
+                                <ul class="dropdown__select">
+                                    <li class="dropdown__select-option" role="option" value="1">
+                                        Subscription
+                                    </li>
+                                    <li class="dropdown__select-option" role="option" value="2">
+                                        Technical Question
+                                    </li>
+                                    <li class="dropdown__select-option" role="option" value="3">
+                                        Other…
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </label>
+                </div>
+            </label>
+            <label class="contact-modal__label">
+                Profile link
+                <textarea
+					class="contact-modal__textarea textarea"
+					type="text"
+					rows="7"
+					placeholder="Hello. I have an issue..."
+				></textarea>
+            </label>
+        </div>
+        <button class="contact-modal__submit btn btn--red btn-reset" type="submit">
+            Save
+        </button>
+    </form>
 </div>
 
         </div>
