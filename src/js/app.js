@@ -411,6 +411,15 @@ const tooltip = (btn, content) => {
 		}
 	});
 })();
+
+// Login form
+(function () {
+	const submit = document.querySelector(".login-modal__submit");
+
+	submit.addEventListener("click", (e) => {
+		e.preventDefault();
+	});
+})();
 // ================================ // MAIN PAGE ==============================
 
 // ========================== CREATE ARTWORK PAGE =============================

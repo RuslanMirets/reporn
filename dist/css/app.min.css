@@ -1192,21 +1192,67 @@ select {
   color: var(--main-red-hover-color);
 }
 
-.login-modal__success {
-  margin-bottom: 56px;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 16px;
-  text-align: center;
-  color: var(--ui-text-color);
-}
-
 .login-modal__submit {
   padding: 12px;
   width: 100%;
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
+}
+
+.email-sent-modal {
+  padding: 24px 32px 32px;
+  max-width: 440px;
+  background-color: var(--secondary-1-color);
+}
+
+.email-sent-modal__close {
+  right: 16px;
+  top: 32px;
+}
+
+.email-sent-modal__logo {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+}
+
+.email-sent-modal__logo::before {
+  content: "";
+  position: absolute;
+  left: -32px;
+  bottom: 0;
+  width: calc(100% + 64px);
+  height: 1px;
+  background-color: var(--secondary-2-color);
+}
+
+.email-sent-modal__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  margin-bottom: 32px;
+  min-height: 236px;
+}
+
+.email-sent-modal__text {
+  max-width: 324px;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
 }
 
 .footer {

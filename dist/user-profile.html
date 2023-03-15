@@ -1501,11 +1501,51 @@
 				/>
                 <div class="login-modal__error">Wrong email</div>
             </div>
-            <p class="login-modal__success">Check your mail</p>
-            <button class="login-modal__submit btn btn-reset btn--red" type="submit">
+            <button
+				class="login-modal__submit btn btn-reset btn--red"
+				type="submit"
+				data-graph-path="email-sent-modal"
+			>
                 Continue
             </button>
         </form>
+    </div>
+</div>
+
+            <div
+	class="email-sent-modal graph-modal__container"
+	role="dialog"
+	aria-modal="true"
+	data-graph-target="email-sent-modal"
+>
+    <button
+		class="email-sent-modal__close close-modal btn-reset graph-modal__close js-modal-close"
+		aria-label="Закрыть модальное окно"
+	>
+        <img
+			src="img/icons/close-modal-icon.svg"
+			width="14"
+			height="14"
+			loading="lazy"
+			alt="Close"
+		/>
+    </button>
+    <div class="email-sent-modal__content graph-modal__content">
+        <div class="email-sent-modal__logo">
+            <img
+				src="img/logo-modal.svg"
+				width="144"
+				height="42"
+				loading="lazy"
+				alt="Logo"
+			/>
+        </div>
+        <div class="email-sent-modal__body">
+            <p class="email-sent-modal__text">
+                We have sent you an email mail@davidsmith4819.com with access to your
+                personal account.
+            </p>
+        </div>
     </div>
 </div>
 

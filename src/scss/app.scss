@@ -1129,21 +1129,59 @@ select {
 		color: var(--main-red-hover-color);
 	}
 
-	&__success {
-		margin-bottom: 56px;
-		font-weight: 500;
-		font-size: 14px;
-		line-height: 16px;
-		text-align: center;
-		color: var(--ui-text-color);
-	}
-
 	&__submit {
 		padding: 12px;
 		width: 100%;
 		font-weight: 600;
 		font-size: 16px;
 		line-height: 24px;
+	}
+}
+
+.email-sent-modal {
+	padding: 24px 32px 32px;
+	max-width: 440px;
+	background-color: var(--secondary-1-color);
+
+	&__close {
+		right: 16px;
+		top: 32px;
+	}
+
+	&__logo {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		margin-bottom: 32px;
+		padding-bottom: 24px;
+
+		&::before {
+			content: "";
+			position: absolute;
+			left: -32px;
+			bottom: 0;
+			width: calc(100% + 64px);
+			height: 1px;
+			background-color: var(--secondary-2-color);
+		}
+	}
+
+	&__body {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 32px;
+		min-height: 236px;
+	}
+
+	&__text {
+		// margin: 0 auto;
+		// width: 100%;
+		max-width: 324px;
+		font-weight: 500;
+		font-size: 14px;
+		line-height: 20px;
+		text-align: center;
 	}
 }
 
