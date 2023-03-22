@@ -1559,15 +1559,44 @@ select {
 
 .create {
 	&__title {
-		margin: 16px 0 24px;
+		margin: 16px 0 32px;
 
 		@media (min-width: 1200px) {
 			margin: 40px 0;
 		}
 	}
+
+	&__switch {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		margin-bottom: 32px;
+		gap: 8px;
+
+		&-btn {
+			padding: 12px;
+			width: 100%;
+			color: var(--secondary-3-color);
+			background-color: var(--secondary-1-color);
+			transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+
+			&.active {
+				color: var(--white-color);
+				background-color: var(--main-red-color);
+			}
+
+			@media (any-hover: hover) {
+				&:hover {
+					color: var(--white-color);
+					background-color: var(--main-red-hover-color);
+				}
+			}
+		}
+	}
 }
 
 .form-create {
+	display: none;
+
 	&__prompts {
 		margin-bottom: 24px;
 
@@ -2209,6 +2238,139 @@ select {
 
 	&__model {
 		margin-bottom: 32px;
+	}
+
+	&.active {
+		display: block;
+	}
+}
+
+.tab-prompts {
+	display: none;
+
+	&__text {
+		margin-bottom: 32px;
+		font-weight: 500;
+		font-size: 18px;
+		line-height: 24px;
+		text-align: center;
+	}
+
+	&__creator {
+		margin-bottom: 32px;
+
+		&-title {
+			margin-bottom: 12px;
+			font-weight: 600;
+			font-size: 18px;
+			line-height: 20px;
+		}
+
+		@media (min-width: 1200px) {
+			margin-bottom: 24px;
+		}
+	}
+
+	&__actions {
+		display: flex;
+		justify-content: center;
+		margin-bottom: 40px;
+		gap: 8px;
+
+		&-btn {
+			display: flex;
+			align-items: center;
+			padding: 12px 16px;
+			font-weight: 500;
+			font-size: 14px;
+			line-height: 16px;
+			gap: 8px;
+		}
+
+		@media (min-width: 1200px) {
+			justify-content: flex-start;
+		}
+	}
+
+	&.active {
+		display: block;
+	}
+}
+
+.tags {
+	&__title {
+		margin-bottom: 16px;
+		font-weight: 600;
+		font-size: 28px;
+		line-height: 32px;
+	}
+
+	&__list {
+		display: flex;
+		flex-wrap: wrap;
+		margin-bottom: 32px;
+		gap: 8px;
+
+		&-btn {
+			padding: 12px 8px;
+			font-weight: 500;
+			font-size: 14px;
+			line-height: 16px;
+			transition: background-color 0.3s ease-in-out;
+
+			&.active {
+				background-color: var(--secondary-2-color);
+			}
+
+			@media (any-hover: hover) {
+				&:hover {
+					background-color: var(--secondary-2-color);
+				}
+			}
+		}
+	}
+
+	&__items {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 40px;
+	}
+
+	&__item {
+		&-title {
+			margin-bottom: 8px;
+			font-weight: 600;
+			font-size: 18px;
+			line-height: 20px;
+		}
+
+		&-list {
+			display: flex;
+			flex-wrap: wrap;
+			gap: 8px;
+		}
+
+		&-btn {
+			padding: 8px;
+			font-weight: 500;
+			font-size: 14px;
+			line-height: 16px;
+			text-transform: lowercase;
+			color: var(--ui-text-color);
+			transition: color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+
+			&.active {
+				color: var(--secondary-1-color);
+				background-color: var(--main-2-color);
+			}
+
+			@media (any-hover: hover) {
+				&:hover {
+					color: var(--secondary-1-color);
+					background-color: var(--main-2-color);
+				}
+			}
+		}
 	}
 }
 

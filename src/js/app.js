@@ -423,6 +423,28 @@ const tooltip = (btn, content) => {
 // ================================ // MAIN PAGE ==============================
 
 // ========================== CREATE ARTWORK PAGE =============================
+// Switch Tags and prompts
+(function () {
+	const btnTags = document.querySelector("#btnTags");
+	const btnPrompts = document.querySelector("#btnPrompts");
+	const tabTags = document.querySelector("#tab-tags");
+	const tabPrompts = document.querySelector("#tab-prompts");
+
+	btnTags?.addEventListener("click", () => {
+		btnTags.classList.add("active");
+		tabTags.classList.add("active");
+		btnPrompts.classList.remove("active");
+		tabPrompts.classList.remove("active");
+	});
+
+	btnPrompts?.addEventListener("click", () => {
+		btnTags.classList.remove("active");
+		tabTags.classList.remove("active");
+		btnPrompts.classList.add("active");
+		tabPrompts.classList.add("active");
+	});
+})();
+
 // Drop image
 (function () {
 	const dropArea = document.querySelector("#dropArea");
@@ -945,6 +967,40 @@ const tooltip = (btn, content) => {
 
 	btn?.addEventListener("click", () => {
 		btn.classList.toggle("active");
+	});
+})();
+
+// Creator dropdown
+(function () {
+	const label = document.querySelector(
+		".dropdown--creator .dropdown__filter-selected"
+	);
+	const options = Array.from(
+		document.querySelectorAll(".dropdown--creator .dropdown__select-option")
+	);
+	const toggle = document.querySelector(".dropdown--creator .dropdown__switch");
+
+	options.forEach((option) => {
+		option.addEventListener("click", () => {
+			label.textContent = option.textContent;
+			toggle.value = option.value;
+		});
+	});
+
+	document.addEventListener("click", (e) => {
+		const element = e.target;
+
+		if (element == toggle) return;
+
+		const isDropdownChild = element.closest(
+			".dropdown--creator .dropdown__filter"
+		);
+
+		if (toggle) {
+			if (!isDropdownChild) {
+				toggle.checked = false;
+			}
+		}
 	});
 })();
 // ========================== // CREATE ARTWORK PAGE ==========================

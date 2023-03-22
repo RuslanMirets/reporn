@@ -42,15 +42,15 @@
 
     <link
 		rel="stylesheet"
-		href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css?_v=20230316200418"
+		href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
 	/>
-    <link rel="stylesheet" href="css/app.min.css?_v=20230316200418" />
+    <link rel="stylesheet" href="css/app.min.css" />
 
     <script
 		defer
 		src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"
 	></script>
-    <script defer src="js/app.min.js?_v=20230316200418"></script>
+    <script defer src="js/app.min.js"></script>
     <title>Create Artwork</title>
 </head>
 
@@ -239,8 +239,16 @@
         <h1 class="create__title heading">
             <span class="heading--red">Create</span> Artwork
         </h1>
+        <div class="create__switch">
+            <button class="create__switch-btn btn-reset btn active" id="btnTags">
+                With Tags
+            </button>
+            <button class="create__switch-btn btn-reset btn" id="btnPrompts">
+                With Prompts
+            </button>
+        </div>
     </div>
-    <form class="create__form form-create">
+    <form class="create__form form-create active" id="tab-tags">
         <div class="container">
             <div class="form-create__prompts">
                 <div class="form-create__fields">
@@ -1067,6 +1075,283 @@
             </button>
         </div>
     </form>
+    <div class="create__prompts-tab tab-prompts" id="tab-prompts">
+        <div class="container">
+            <p class="tab-prompts__text">
+                Choose some tags and click create to get started!
+            </p>
+            <div class="tab-prompts__creator">
+                <div class="tab-prompts__creator-title">Creator</div>
+                <div class="tab-prompts__dropdown dropdown dropdown--creator">
+                    <input
+						class="dropdown__switch"
+						type="checkbox"
+						id="creatorSwitch"
+						hidden
+						value="1"
+					/>
+                    <label class="dropdown__options-filter" for="creatorSwitch">
+                        <ul class="dropdown__filter" role="listbox" tabindex="-1">
+                            <li class="dropdown__filter-selected" aria-selected="true">
+                                Woman detailed
+                            </li>
+                            <li>
+                                <ul class="dropdown__select">
+                                    <li class="dropdown__select-option" role="option" value="1">
+                                        Woman detailed
+                                    </li>
+                                    <li class="dropdown__select-option" role="option" value="2">
+                                        Woman detailed 2
+                                    </li>
+
+                                    <li class="dropdown__select-option" role="option" value="3">
+                                        Woman detailed 3
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </label>
+                </div>
+            </div>
+            <div class="tab-prompts__actions">
+                <button class="tab-prompts__actions-btn btn btn--red btn-reset">
+                    Clear all tags
+                    <img
+						src="img/icons/clear.svg"
+						width="10"
+						height="9"
+						loading="lazy"
+						alt="Clear all tags"
+					/>
+                </button>
+                <button class="tab-prompts__actions-btn btn btn--dark btn-reset">
+                    Copy Tags
+                    <img
+						src="img/icons/copy-tags.svg"
+						width="12"
+						height="13"
+						loading="lazy"
+						alt="Copy Tags"
+					/>
+                </button>
+            </div>
+            <div class="tab-prompts__tags tags">
+                <h2 class="tags__title">Tags</h2>
+                <ul class="tags__list">
+                    <li class="tags__list-item">
+                        <button class="tags__list-btn btn btn--dark btn-reset active">
+                            All
+                        </button>
+                    </li>
+                    <li class="tags__list-item">
+                        <button class="tags__list-btn btn btn--dark btn-reset">Base</button>
+                    </li>
+                    <li class="tags__list-item">
+                        <button class="tags__list-btn btn btn--dark btn-reset">
+                            Number or people
+                        </button>
+                    </li>
+                    <li class="tags__list-item">
+                        <button class="tags__list-btn btn btn--dark btn-reset">Body</button>
+                    </li>
+                    <li class="tags__list-item">
+                        <button class="tags__list-btn btn btn--dark btn-reset">Body</button>
+                    </li>
+                    <li class="tags__list-item">
+                        <button class="tags__list-btn btn btn--dark btn-reset">Age</button>
+                    </li>
+                    <li class="tags__list-item">
+                        <button class="tags__list-btn btn btn--dark btn-reset">Face</button>
+                    </li>
+                    <li class="tags__list-item">
+                        <button class="tags__list-btn btn btn--dark btn-reset">
+                            Hair color
+                        </button>
+                    </li>
+                    <li class="tags__list-item">
+                        <button class="tags__list-btn btn btn--dark btn-reset">
+                            Hair Style
+                        </button>
+                    </li>
+                    <li class="tags__list-item">
+                        <button class="tags__list-btn btn btn--dark btn-reset">
+                            Ethnicity
+                        </button>
+                    </li>
+                    <li class="tags__list-item">
+                        <button class="tags__list-btn btn btn--dark btn-reset">
+                            Style
+                        </button>
+                    </li>
+                    <li class="tags__list-item">
+                        <button class="tags__list-btn btn btn--dark btn-reset">
+                            Setting
+                        </button>
+                    </li>
+                    <li class="tags__list-item">
+                        <button class="tags__list-btn btn btn--dark btn-reset">View</button>
+                    </li>
+                    <li class="tags__list-item">
+                        <button class="tags__list-btn btn btn--dark btn-reset">
+                            Action
+                        </button>
+                    </li>
+                    <li class="tags__list-item">
+                        <button class="tags__list-btn btn btn--dark btn-reset">
+                            Clothing
+                        </button>
+                    </li>
+                    <li class="tags__list-item">
+                        <button class="tags__list-btn btn btn--dark btn-reset">
+                            Clothing Modifiers
+                        </button>
+                    </li>
+                    <li class="tags__list-item">
+                        <button class="tags__list-btn btn btn--dark btn-reset">
+                            Accessories/Objects
+                        </button>
+                    </li>
+                    <li class="tags__list-item">
+                        <button class="tags__list-btn btn btn--dark btn-reset">
+                            Modifier Effects
+                        </button>
+                    </li>
+                </ul>
+                <div class="tags__items">
+                    <div class="tags__item">
+                        <h3 class="tags__item-title">Base</h3>
+                        <ul class="tags__item-list">
+                            <li>
+                                <button class="tags__item-btn btn btn--dark btn-reset">
+                                    woman
+                                </button>
+                            </li>
+                            <li>
+                                <button class="tags__item-btn btn btn--dark btn-reset">
+                                    model
+                                </button>
+                            </li>
+                            <li>
+                                <button class="tags__item-btn btn btn--dark btn-reset">
+                                    miss universe model
+                                </button>
+                            </li>
+                            <li>
+                                <button class="tags__item-btn btn btn--dark btn-reset">
+                                    milf
+                                </button>
+                            </li>
+                            <li>
+                                <button class="tags__item-btn btn btn--dark btn-reset">
+                                    celebrity
+                                </button>
+                            </li>
+                            <li>
+                                <button class="tags__item-btn btn btn--dark btn-reset">
+                                    lingerie model
+                                </button>
+                            </li>
+                            <li>
+                                <button class="tags__item-btn btn btn--dark btn-reset">
+                                    athlete
+                                </button>
+                            </li>
+                            <li>
+                                <button class="tags__item-btn btn btn--dark btn-reset">
+                                    bodybuilder
+                                </button>
+                            </li>
+                            <li>
+                                <button class="tags__item-btn btn btn--dark btn-reset">
+                                    cyborg
+                                </button>
+                            </li>
+                            <li>
+                                <button class="tags__item-btn btn btn--dark btn-reset">
+                                    sorority girl
+                                </button>
+                            </li>
+                            <li>
+                                <button class="tags__item-btn btn btn--dark btn-reset">
+                                    bimbo
+                                </button>
+                            </li>
+                            <li>
+                                <button class="tags__item-btn btn btn--dark btn-reset">
+                                    woman + man
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tags__item">
+                        <h3 class="tags__item-title">Number of people</h3>
+                        <ul class="tags__item-list">
+                            <li>
+                                <button class="tags__item-btn btn btn--dark btn-reset">
+                                    woman
+                                </button>
+                            </li>
+                            <li>
+                                <button class="tags__item-btn btn btn--dark btn-reset">
+                                    model
+                                </button>
+                            </li>
+                            <li>
+                                <button class="tags__item-btn btn btn--dark btn-reset">
+                                    miss universe model
+                                </button>
+                            </li>
+                            <li>
+                                <button class="tags__item-btn btn btn--dark btn-reset">
+                                    milf
+                                </button>
+                            </li>
+                            <li>
+                                <button class="tags__item-btn btn btn--dark btn-reset">
+                                    celebrity
+                                </button>
+                            </li>
+                            <li>
+                                <button class="tags__item-btn btn btn--dark btn-reset">
+                                    lingerie model
+                                </button>
+                            </li>
+                            <li>
+                                <button class="tags__item-btn btn btn--dark btn-reset">
+                                    athlete
+                                </button>
+                            </li>
+                            <li>
+                                <button class="tags__item-btn btn btn--dark btn-reset">
+                                    bodybuilder
+                                </button>
+                            </li>
+                            <li>
+                                <button class="tags__item-btn btn btn--dark btn-reset">
+                                    cyborg
+                                </button>
+                            </li>
+                            <li>
+                                <button class="tags__item-btn btn btn--dark btn-reset">
+                                    sorority girl
+                                </button>
+                            </li>
+                            <li>
+                                <button class="tags__item-btn btn btn--dark btn-reset">
+                                    bimbo
+                                </button>
+                            </li>
+                            <li>
+                                <button class="tags__item-btn btn btn--dark btn-reset">
+                                    woman + man
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
             </main>
