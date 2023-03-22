@@ -1004,11 +1004,12 @@ const tooltip = (btn, content) => {
 	});
 })();
 
-// Tags click
+// Tags events
 (function () {
 	const tagBtns = document.querySelectorAll("[data-tag-target]");
 	const tagContents = document.querySelectorAll("[data-tag-content]");
 	const allBtn = document.querySelector("#allTag");
+	const tags = document.querySelectorAll(".tags__item-btn");
 
 	allBtn.addEventListener("click", () => {
 		allBtn.classList.add("active");
@@ -1025,21 +1026,32 @@ const tooltip = (btn, content) => {
 		btn.addEventListener("click", () => {
 			const target = document.querySelector(btn.dataset.tagTarget);
 
-			if (target) {
-				tagContents.forEach((tagContent) => {
+			tagContents.forEach((tagContent) => {
+				if (allBtn.classList.contains("active")) {
 					tagContent.classList.remove("active");
-				});
-			}
-			// tagBtns.forEach((btn) => {
-			// 	btn.classList.remove("active");
-			// });
-			// if (target.classList.contains(".active")) {
-			// 	target.classList.remove("active");
-			// }
+				}
+			});
+
 			allBtn.classList.remove("active");
 			btn.classList.toggle("active");
 			target.classList.toggle("active");
 		});
+	});
+
+	tags.forEach((tag) => {
+		tag.addEventListener("click", () => {
+			tag.classList.toggle("active");
+		});
+	});
+})();
+
+// Scroll to top
+(function () {
+	const btn = document.querySelector("#backToTop");
+
+	btn.addEventListener("click", () => {
+		document.body.scrollTop = 0;
+		document.documentElement.scrollTop = 0;
 	});
 })();
 // ========================== // CREATE ARTWORK PAGE ==========================

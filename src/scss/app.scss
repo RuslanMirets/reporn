@@ -381,6 +381,7 @@ select {
 .page {
 	height: 100%;
 	-webkit-text-size-adjust: 100%;
+	scroll-behavior: smooth;
 }
 
 .page__body {
@@ -2292,6 +2293,31 @@ select {
 		}
 	}
 
+	&__submit {
+		position: sticky;
+		bottom: 16px;
+		padding: 16px;
+		width: 100%;
+	}
+
+	&__to-top {
+		position: sticky;
+		bottom: 88px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: 16px;
+		margin-left: auto;
+		border-radius: 4px;
+		width: 30px;
+		height: 32px;
+		background-color: var(--secondary-1-color);
+
+		@media (min-width: 992px) {
+			display: none;
+		}
+	}
+
 	&.active {
 		display: block;
 	}
@@ -2331,14 +2357,13 @@ select {
 	}
 
 	&__items {
-		display: grid;
-		grid-template-columns: 1fr;
+		position: relative;
 		margin-bottom: 32px;
-		gap: 40px;
 	}
 
 	&__item {
 		display: none;
+		margin-bottom: 40px;
 
 		&-title {
 			margin-bottom: 8px;
