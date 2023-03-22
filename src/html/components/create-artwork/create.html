@@ -4,15 +4,23 @@
 			<span class="heading--red">Create</span> Artwork
 		</h1>
 		<div class="create__switch">
-			<button class="create__switch-btn btn-reset btn active" id="btnTags">
+			<button
+				class="create__switch-btn btn-reset btn active"
+				id="btnTags"
+				type="button"
+			>
 				With Tags
 			</button>
-			<button class="create__switch-btn btn-reset btn" id="btnPrompts">
+			<button
+				class="create__switch-btn btn-reset btn"
+				id="btnPrompts"
+				type="button"
+			>
 				With Prompts
 			</button>
 		</div>
 	</div>
-	<form class="create__form form-create active" id="tab-tags">
+	<form class="create__form form-create" id="tab-tags">
 		<div class="container">
 			<div class="form-create__prompts">
 				<div class="form-create__fields">
@@ -839,7 +847,7 @@
 			</button>
 		</div>
 	</form>
-	<div class="create__prompts-tab tab-prompts" id="tab-prompts">
+	<form class="create__prompts-tab tab-prompts active" id="tab-prompts">
 		<div class="container">
 			<p class="tab-prompts__text">
 				Choose some tags and click create to get started!
@@ -878,7 +886,10 @@
 				</div>
 			</div>
 			<div class="tab-prompts__actions">
-				<button class="tab-prompts__actions-btn btn btn--red btn-reset">
+				<button
+					class="tab-prompts__actions-btn btn btn--red btn-reset"
+					type="button"
+				>
 					Clear all tags
 					<img
 						src="@img/icons/clear.svg"
@@ -888,7 +899,10 @@
 						alt="Clear all tags"
 					/>
 				</button>
-				<button class="tab-prompts__actions-btn btn btn--dark btn-reset">
+				<button
+					class="tab-prompts__actions-btn btn btn--dark btn-reset"
+					type="button"
+				>
 					Copy Tags
 					<img
 						src="@img/icons/copy-tags.svg"
@@ -903,210 +917,361 @@
 				<h2 class="tags__title">Tags</h2>
 				<ul class="tags__list">
 					<li class="tags__list-item">
-						<button class="tags__list-btn btn btn--dark btn-reset active">
+						<button
+							class="tags__list-btn btn btn--dark btn-reset active"
+							type="button"
+							id="allTag"
+						>
 							All
 						</button>
 					</li>
 					<li class="tags__list-item">
-						<button class="tags__list-btn btn btn--dark btn-reset">Base</button>
+						<button
+							class="tags__list-btn btn btn--dark btn-reset"
+							type="button"
+							data-tag-target="#baseTag"
+						>
+							Base
+						</button>
 					</li>
 					<li class="tags__list-item">
-						<button class="tags__list-btn btn btn--dark btn-reset">
+						<button
+							class="tags__list-btn btn btn--dark btn-reset"
+							type="button"
+							data-tag-target="#numberOrPeopleTag"
+						>
 							Number or people
 						</button>
 					</li>
 					<li class="tags__list-item">
-						<button class="tags__list-btn btn btn--dark btn-reset">Body</button>
+						<button
+							class="tags__list-btn btn btn--dark btn-reset"
+							type="button"
+							data-tag-target="#bodyTag"
+						>
+							Body
+						</button>
 					</li>
 					<li class="tags__list-item">
-						<button class="tags__list-btn btn btn--dark btn-reset">Body</button>
+						<button
+							class="tags__list-btn btn btn--dark btn-reset"
+							type="button"
+							data-tag-target="#ageTag"
+						>
+							Age
+						</button>
 					</li>
 					<li class="tags__list-item">
-						<button class="tags__list-btn btn btn--dark btn-reset">Age</button>
+						<button
+							class="tags__list-btn btn btn--dark btn-reset"
+							type="button"
+							data-tag-target="#faceTag"
+						>
+							Face
+						</button>
 					</li>
 					<li class="tags__list-item">
-						<button class="tags__list-btn btn btn--dark btn-reset">Face</button>
-					</li>
-					<li class="tags__list-item">
-						<button class="tags__list-btn btn btn--dark btn-reset">
+						<button
+							class="tags__list-btn btn btn--dark btn-reset"
+							type="button"
+							data-tag-target="#hairColorTag"
+						>
 							Hair color
 						</button>
 					</li>
 					<li class="tags__list-item">
-						<button class="tags__list-btn btn btn--dark btn-reset">
+						<button
+							class="tags__list-btn btn btn--dark btn-reset"
+							type="button"
+							data-tag-target="#hairStyleTag"
+						>
 							Hair Style
 						</button>
 					</li>
 					<li class="tags__list-item">
-						<button class="tags__list-btn btn btn--dark btn-reset">
+						<button
+							class="tags__list-btn btn btn--dark btn-reset"
+							type="button"
+							data-tag-target="#ethnicityTag"
+						>
 							Ethnicity
 						</button>
 					</li>
 					<li class="tags__list-item">
-						<button class="tags__list-btn btn btn--dark btn-reset">
+						<button
+							class="tags__list-btn btn btn--dark btn-reset"
+							type="button"
+							data-tag-target="#styleTag"
+						>
 							Style
 						</button>
 					</li>
 					<li class="tags__list-item">
-						<button class="tags__list-btn btn btn--dark btn-reset">
+						<button
+							class="tags__list-btn btn btn--dark btn-reset"
+							type="button"
+							data-tag-target="#settingTag"
+						>
 							Setting
 						</button>
 					</li>
 					<li class="tags__list-item">
-						<button class="tags__list-btn btn btn--dark btn-reset">View</button>
+						<button
+							class="tags__list-btn btn btn--dark btn-reset"
+							type="button"
+							data-tag-target="#viewTag"
+						>
+							View
+						</button>
 					</li>
 					<li class="tags__list-item">
-						<button class="tags__list-btn btn btn--dark btn-reset">
+						<button
+							class="tags__list-btn btn btn--dark btn-reset"
+							type="button"
+							data-tag-target="#actionTag"
+						>
 							Action
 						</button>
 					</li>
 					<li class="tags__list-item">
-						<button class="tags__list-btn btn btn--dark btn-reset">
+						<button
+							class="tags__list-btn btn btn--dark btn-reset"
+							type="button"
+							data-tag-target="#clothingTag"
+						>
 							Clothing
 						</button>
 					</li>
 					<li class="tags__list-item">
-						<button class="tags__list-btn btn btn--dark btn-reset">
+						<button
+							class="tags__list-btn btn btn--dark btn-reset"
+							type="button"
+							data-tag-target="#clothingModifiersTag"
+						>
 							Clothing Modifiers
 						</button>
 					</li>
 					<li class="tags__list-item">
-						<button class="tags__list-btn btn btn--dark btn-reset">
+						<button
+							class="tags__list-btn btn btn--dark btn-reset"
+							type="button"
+							data-tag-target="#accessoriesObjectsTag"
+						>
 							Accessories/Objects
 						</button>
 					</li>
 					<li class="tags__list-item">
-						<button class="tags__list-btn btn btn--dark btn-reset">
+						<button
+							class="tags__list-btn btn btn--dark btn-reset"
+							type="button"
+							data-tag-target="#modifierEffectsTag"
+						>
 							Modifier Effects
 						</button>
 					</li>
 				</ul>
 				<div class="tags__items">
-					<div class="tags__item">
+					<div class="tags__item active" id="baseTag" data-tag-content>
 						<h3 class="tags__item-title">Base</h3>
 						<ul class="tags__item-list">
 							<li>
-								<button class="tags__item-btn btn btn--dark btn-reset">
+								<button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
 									woman
 								</button>
 							</li>
 							<li>
-								<button class="tags__item-btn btn btn--dark btn-reset">
+								<button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
 									model
 								</button>
 							</li>
 							<li>
-								<button class="tags__item-btn btn btn--dark btn-reset">
+								<button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
 									miss universe model
 								</button>
 							</li>
 							<li>
-								<button class="tags__item-btn btn btn--dark btn-reset">
+								<button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
 									milf
 								</button>
 							</li>
 							<li>
-								<button class="tags__item-btn btn btn--dark btn-reset">
+								<button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
 									celebrity
 								</button>
 							</li>
 							<li>
-								<button class="tags__item-btn btn btn--dark btn-reset">
+								<button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
 									lingerie model
 								</button>
 							</li>
 							<li>
-								<button class="tags__item-btn btn btn--dark btn-reset">
+								<button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
 									athlete
 								</button>
 							</li>
 							<li>
-								<button class="tags__item-btn btn btn--dark btn-reset">
+								<button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
 									bodybuilder
 								</button>
 							</li>
 							<li>
-								<button class="tags__item-btn btn btn--dark btn-reset">
+								<button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
 									cyborg
 								</button>
 							</li>
 							<li>
-								<button class="tags__item-btn btn btn--dark btn-reset">
+								<button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
 									sorority girl
 								</button>
 							</li>
 							<li>
-								<button class="tags__item-btn btn btn--dark btn-reset">
+								<button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
 									bimbo
 								</button>
 							</li>
 							<li>
-								<button class="tags__item-btn btn btn--dark btn-reset">
+								<button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
 									woman + man
 								</button>
 							</li>
 						</ul>
 					</div>
-					<div class="tags__item">
+					<div
+						class="tags__item active"
+						id="numberOrPeopleTag"
+						data-tag-content
+					>
 						<h3 class="tags__item-title">Number of people</h3>
 						<ul class="tags__item-list">
 							<li>
-								<button class="tags__item-btn btn btn--dark btn-reset">
+								<button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
 									woman
 								</button>
 							</li>
 							<li>
-								<button class="tags__item-btn btn btn--dark btn-reset">
+								<button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
 									model
 								</button>
 							</li>
 							<li>
-								<button class="tags__item-btn btn btn--dark btn-reset">
+								<button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
 									miss universe model
 								</button>
 							</li>
 							<li>
-								<button class="tags__item-btn btn btn--dark btn-reset">
+								<button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
 									milf
 								</button>
 							</li>
 							<li>
-								<button class="tags__item-btn btn btn--dark btn-reset">
+								<button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
 									celebrity
 								</button>
 							</li>
 							<li>
-								<button class="tags__item-btn btn btn--dark btn-reset">
+								<button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
 									lingerie model
 								</button>
 							</li>
 							<li>
-								<button class="tags__item-btn btn btn--dark btn-reset">
+								<button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
 									athlete
 								</button>
 							</li>
 							<li>
-								<button class="tags__item-btn btn btn--dark btn-reset">
+								<button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
 									bodybuilder
 								</button>
 							</li>
 							<li>
-								<button class="tags__item-btn btn btn--dark btn-reset">
+								<button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
 									cyborg
 								</button>
 							</li>
 							<li>
-								<button class="tags__item-btn btn btn--dark btn-reset">
+								<button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
 									sorority girl
 								</button>
 							</li>
 							<li>
-								<button class="tags__item-btn btn btn--dark btn-reset">
+								<button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
 									bimbo
 								</button>
 							</li>
 							<li>
-								<button class="tags__item-btn btn btn--dark btn-reset">
+								<button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
 									woman + man
 								</button>
 							</li>
@@ -1115,5 +1280,5 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</form>
 </section>

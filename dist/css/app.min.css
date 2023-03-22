@@ -2297,7 +2297,12 @@ select {
   display: grid;
   -ms-grid-columns: 1fr;
   grid-template-columns: 1fr;
+  margin-bottom: 32px;
   gap: 40px;
+}
+
+.tags__item {
+  display: none;
 }
 
 .tags__item-title {
@@ -2331,6 +2336,10 @@ select {
 .tags__item-btn.active {
   color: var(--secondary-1-color);
   background-color: var(--main-2-color);
+}
+
+.tags__item.active {
+  display: block;
 }
 
 .model__head {

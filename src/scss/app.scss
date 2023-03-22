@@ -2333,10 +2333,13 @@ select {
 	&__items {
 		display: grid;
 		grid-template-columns: 1fr;
+		margin-bottom: 32px;
 		gap: 40px;
 	}
 
 	&__item {
+		display: none;
+
 		&-title {
 			margin-bottom: 8px;
 			font-weight: 600;
@@ -2370,6 +2373,10 @@ select {
 					background-color: var(--main-2-color);
 				}
 			}
+		}
+
+		&.active {
+			display: block;
 		}
 	}
 }

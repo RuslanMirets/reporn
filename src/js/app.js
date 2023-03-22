@@ -1003,6 +1003,45 @@ const tooltip = (btn, content) => {
 		}
 	});
 })();
+
+// Tags click
+(function () {
+	const tagBtns = document.querySelectorAll("[data-tag-target]");
+	const tagContents = document.querySelectorAll("[data-tag-content]");
+	const allBtn = document.querySelector("#allTag");
+
+	allBtn.addEventListener("click", () => {
+		allBtn.classList.add("active");
+
+		tagBtns.forEach((btn) => {
+			btn.classList.remove("active");
+		});
+		tagContents.forEach((tagContent) => {
+			tagContent.classList.add("active");
+		});
+	});
+
+	tagBtns.forEach((btn) => {
+		btn.addEventListener("click", () => {
+			const target = document.querySelector(btn.dataset.tagTarget);
+
+			if (target) {
+				tagContents.forEach((tagContent) => {
+					tagContent.classList.remove("active");
+				});
+			}
+			// tagBtns.forEach((btn) => {
+			// 	btn.classList.remove("active");
+			// });
+			// if (target.classList.contains(".active")) {
+			// 	target.classList.remove("active");
+			// }
+			allBtn.classList.remove("active");
+			btn.classList.toggle("active");
+			target.classList.toggle("active");
+		});
+	});
+})();
 // ========================== // CREATE ARTWORK PAGE ==========================
 
 // ========================== USER PROFILE PAGE ==========================
