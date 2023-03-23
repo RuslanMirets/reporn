@@ -42,15 +42,15 @@
 
     <link
 		rel="stylesheet"
-		href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css?_v=20230323094941"
+		href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
 	/>
-    <link rel="stylesheet" href="css/app.min.css?_v=20230323094941" />
+    <link rel="stylesheet" href="css/app.min.css" />
 
     <script
 		defer
 		src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"
 	></script>
-    <script defer src="js/app.min.js?_v=20230323094941"></script>
+    <script defer src="js/app.min.js"></script>
     <title>Create Artwork</title>
 </head>
 
@@ -240,23 +240,2039 @@
             <span class="heading--red">Create</span> Artwork
         </h1>
         <div class="create__switch">
+            <button class="create__switch-btn btn-reset" id="btnTags" type="button">
+                With Tags
+            </button>
             <button
-				class="create__switch-btn btn-reset btn active"
-				id="btnTags"
+				class="create__switch-btn btn-reset active"
+				id="btnPrompts"
 				type="button"
 			>
                 With Prompts
             </button>
-            <button
-				class="create__switch-btn btn-reset btn"
-				id="btnPrompts"
-				type="button"
-			>
-                With Tags
-            </button>
         </div>
     </div>
-    <form class="create__form form-create active" id="tab-tags">
+    <form class="create__prompts-tab tab-tags" id="tabTags">
+        <div class="container">
+            <p class="tab-tags__text">
+                Choose some tags and click create to get started!
+            </p>
+            <div class="tab-tags__creator">
+                <div class="tab-tags__creator-title">Creator</div>
+                <div class="tab-tags__dropdown dropdown dropdown--creator">
+                    <input
+						class="dropdown__switch"
+						type="checkbox"
+						id="creatorSwitch"
+						hidden
+						value="1"
+					/>
+                    <label class="dropdown__options-filter" for="creatorSwitch">
+                        <ul class="dropdown__filter" role="listbox" tabindex="-1">
+                            <li class="dropdown__filter-selected" aria-selected="true">
+                                Woman detailed
+                            </li>
+                            <li>
+                                <ul class="dropdown__select">
+                                    <li class="dropdown__select-option" role="option" value="1">
+                                        Woman detailed
+                                    </li>
+                                    <li class="dropdown__select-option" role="option" value="2">
+                                        Woman detailed 2
+                                    </li>
+
+                                    <li class="dropdown__select-option" role="option" value="3">
+                                        Woman detailed 3
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </label>
+                </div>
+            </div>
+            <div class="tab-tags__actions">
+                <button
+					class="tab-tags__actions-btn btn btn--red btn-reset"
+					type="button"
+				>
+                    Clear all tags
+                    <img
+						src="img/icons/clear.svg"
+						width="10"
+						height="9"
+						loading="lazy"
+						alt="Clear all tags"
+					/>
+                </button>
+                <button
+					class="tab-tags__actions-btn btn btn--dark btn-reset"
+					type="button"
+				>
+                    Copy Tags
+                    <img
+						src="img/icons/copy-tags.svg"
+						width="12"
+						height="13"
+						loading="lazy"
+						alt="Copy Tags"
+					/>
+                </button>
+            </div>
+            <div class="tab-tags__tags tags">
+                <h2 class="tags__title">Tags</h2>
+                <ul class="tags__list">
+                    <li class="tags__list-item">
+                        <button
+							class="tags__list-btn btn btn--dark btn-reset active"
+							type="button"
+							id="allTag"
+						>
+                            All
+                        </button>
+                    </li>
+                    <li class="tags__list-item">
+                        <button
+							class="tags__list-btn btn btn--dark btn-reset"
+							type="button"
+							data-tag-target="#baseTag"
+						>
+                            Base
+                        </button>
+                    </li>
+                    <li class="tags__list-item">
+                        <button
+							class="tags__list-btn btn btn--dark btn-reset"
+							type="button"
+							data-tag-target="#numberOrPeopleTag"
+						>
+                            Number or people
+                        </button>
+                    </li>
+                    <li class="tags__list-item">
+                        <button
+							class="tags__list-btn btn btn--dark btn-reset"
+							type="button"
+							data-tag-target="#bodyTag"
+						>
+                            Body
+                        </button>
+                    </li>
+                    <li class="tags__list-item">
+                        <button
+							class="tags__list-btn btn btn--dark btn-reset"
+							type="button"
+							data-tag-target="#ageTag"
+						>
+                            Age
+                        </button>
+                    </li>
+                    <li class="tags__list-item">
+                        <button
+							class="tags__list-btn btn btn--dark btn-reset"
+							type="button"
+							data-tag-target="#faceTag"
+						>
+                            Face
+                        </button>
+                    </li>
+                    <li class="tags__list-item">
+                        <button
+							class="tags__list-btn btn btn--dark btn-reset"
+							type="button"
+							data-tag-target="#hairColorTag"
+						>
+                            Hair color
+                        </button>
+                    </li>
+                    <li class="tags__list-item">
+                        <button
+							class="tags__list-btn btn btn--dark btn-reset"
+							type="button"
+							data-tag-target="#hairStyleTag"
+						>
+                            Hair Style
+                        </button>
+                    </li>
+                    <li class="tags__list-item">
+                        <button
+							class="tags__list-btn btn btn--dark btn-reset"
+							type="button"
+							data-tag-target="#ethnicityTag"
+						>
+                            Ethnicity
+                        </button>
+                    </li>
+                    <li class="tags__list-item">
+                        <button
+							class="tags__list-btn btn btn--dark btn-reset"
+							type="button"
+							data-tag-target="#styleTag"
+						>
+                            Style
+                        </button>
+                    </li>
+                    <li class="tags__list-item">
+                        <button
+							class="tags__list-btn btn btn--dark btn-reset"
+							type="button"
+							data-tag-target="#settingTag"
+						>
+                            Setting
+                        </button>
+                    </li>
+                    <li class="tags__list-item">
+                        <button
+							class="tags__list-btn btn btn--dark btn-reset"
+							type="button"
+							data-tag-target="#viewTag"
+						>
+                            View
+                        </button>
+                    </li>
+                    <li class="tags__list-item">
+                        <button
+							class="tags__list-btn btn btn--dark btn-reset"
+							type="button"
+							data-tag-target="#actionTag"
+						>
+                            Action
+                        </button>
+                    </li>
+                    <li class="tags__list-item">
+                        <button
+							class="tags__list-btn btn btn--dark btn-reset"
+							type="button"
+							data-tag-target="#clothingTag"
+						>
+                            Clothing
+                        </button>
+                    </li>
+                    <li class="tags__list-item">
+                        <button
+							class="tags__list-btn btn btn--dark btn-reset"
+							type="button"
+							data-tag-target="#clothingModifiersTag"
+						>
+                            Clothing Modifiers
+                        </button>
+                    </li>
+                    <li class="tags__list-item">
+                        <button
+							class="tags__list-btn btn btn--dark btn-reset"
+							type="button"
+							data-tag-target="#accessoriesObjectsTag"
+						>
+                            Accessories/Objects
+                        </button>
+                    </li>
+                    <li class="tags__list-item">
+                        <button
+							class="tags__list-btn btn btn--dark btn-reset"
+							type="button"
+							data-tag-target="#modifierEffectsTag"
+						>
+                            Modifier Effects
+                        </button>
+                    </li>
+                </ul>
+                <div class="tags__items">
+                    <div class="tags__item active" id="baseTag" data-tag-content>
+                        <h3 class="tags__item-title">
+                            <img
+								src="img/icons/tag-base-person.svg"
+								width="32"
+								height="32"
+								loading="lazy"
+								alt="Base"
+							/>
+                            Base
+                        </h3>
+                        <ul class="tags__item-list">
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    woman
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    model
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    miss universe model
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    milf
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    celebrity
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    lingerie model
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    athlete
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    bodybuilder
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    cyborg
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    sorority girl
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    bimbo
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    woman + man
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div
+						class="tags__item active"
+						id="numberOrPeopleTag"
+						data-tag-content
+					>
+                        <h3 class="tags__item-title">
+                            <img
+								src="img/icons/tag-number-or-people.svg"
+								width="32"
+								height="32"
+								loading="lazy"
+								alt="Number of people"
+							/>
+                            Number of people
+                        </h3>
+                        <ul class="tags__item-list">
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    woman
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    model
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    miss universe model
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    milf
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    celebrity
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    lingerie model
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    athlete
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    bodybuilder
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    cyborg
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    sorority girl
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    bimbo
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    woman + man
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tags__item active" id="bodyTag" data-tag-content>
+                        <h3 class="tags__item-title">
+                            <img
+								src="img/icons/tag-body.svg"
+								width="32"
+								height="32"
+								loading="lazy"
+								alt="Body"
+							/>
+                            Body
+                        </h3>
+                        <ul class="tags__item-list">
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    woman
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    model
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    miss universe model
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    milf
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    celebrity
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    lingerie model
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    athlete
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    bodybuilder
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    cyborg
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    sorority girl
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    bimbo
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    woman + man
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tags__item active" id="ageTag" data-tag-content>
+                        <h3 class="tags__item-title">
+                            <img
+								src="img/icons/tag-age.svg"
+								width="32"
+								height="32"
+								loading="lazy"
+								alt="Age"
+							/>
+                            Age
+                        </h3>
+                        <ul class="tags__item-list">
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    woman
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    model
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    miss universe model
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    milf
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    celebrity
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    lingerie model
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    athlete
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    bodybuilder
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    cyborg
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    sorority girl
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    bimbo
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    woman + man
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tags__item active" id="faceTag" data-tag-content>
+                        <h3 class="tags__item-title">
+                            <img
+								src="img/icons/tag-face.svg"
+								width="32"
+								height="32"
+								loading="lazy"
+								alt="Face"
+							/>
+                            Face
+                        </h3>
+                        <ul class="tags__item-list">
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    woman
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    model
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    miss universe model
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    milf
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    celebrity
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    lingerie model
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    athlete
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    bodybuilder
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    cyborg
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    sorority girl
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    bimbo
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    woman + man
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tags__item active" id="hairColorTag" data-tag-content>
+                        <h3 class="tags__item-title">
+                            <img
+								src="img/icons/tag-hair-color.svg"
+								width="32"
+								height="32"
+								loading="lazy"
+								alt="Hair color"
+							/>
+                            Hair color
+                        </h3>
+                        <ul class="tags__item-list">
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    woman
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    model
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    miss universe model
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    milf
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    celebrity
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    lingerie model
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    athlete
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    bodybuilder
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    cyborg
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    sorority girl
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    bimbo
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    woman + man
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tags__item active" id="hairStyleTag" data-tag-content>
+                        <h3 class="tags__item-title">
+                            <img
+								src="img/icons/tag-hair-style.svg"
+								width="32"
+								height="32"
+								loading="lazy"
+								alt="Hair style"
+							/>
+                            Hair style
+                        </h3>
+                        <ul class="tags__item-list">
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    woman
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    model
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    miss universe model
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    milf
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    celebrity
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    lingerie model
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    athlete
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    bodybuilder
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    cyborg
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    sorority girl
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    bimbo
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    woman + man
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tags__item active" id="ethnicityTag" data-tag-content>
+                        <h3 class="tags__item-title">
+                            <img
+								src="img/icons/tag-ethnicity.svg"
+								width="32"
+								height="32"
+								loading="lazy"
+								alt="Ethnicity"
+							/>
+                            Ethnicity
+                        </h3>
+                        <ul class="tags__item-list">
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    woman
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    model
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    miss universe model
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    milf
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    celebrity
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    lingerie model
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    athlete
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    bodybuilder
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    cyborg
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    sorority girl
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    bimbo
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    woman + man
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tags__item active" id="styleTag" data-tag-content>
+                        <h3 class="tags__item-title">
+                            <img
+								src="img/icons/tag-style.svg"
+								width="32"
+								height="32"
+								loading="lazy"
+								alt="Style"
+							/>
+                            Style
+                        </h3>
+                        <ul class="tags__item-list">
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    woman
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    model
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    miss universe model
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    milf
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    celebrity
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    lingerie model
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    athlete
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    bodybuilder
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    cyborg
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    sorority girl
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    bimbo
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    woman + man
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tags__item active" id="settingTag" data-tag-content>
+                        <h3 class="tags__item-title">
+                            <img
+								src="img/icons/tag-setting-place.svg"
+								width="32"
+								height="32"
+								loading="lazy"
+								alt="Setting / Place"
+							/>
+                            Setting / Place
+                        </h3>
+                        <ul class="tags__item-list">
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    woman
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    model
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    miss universe model
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    milf
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    celebrity
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    lingerie model
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    athlete
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    bodybuilder
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    cyborg
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    sorority girl
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    bimbo
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    woman + man
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tags__item active" id="viewTag" data-tag-content>
+                        <h3 class="tags__item-title">
+                            <img
+								src="img/icons/tag-view.svg"
+								width="32"
+								height="32"
+								loading="lazy"
+								alt="View"
+							/>
+                            View
+                        </h3>
+                        <ul class="tags__item-list">
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    woman
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    model
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    miss universe model
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    milf
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    celebrity
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    lingerie model
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    athlete
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    bodybuilder
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    cyborg
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    sorority girl
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    bimbo
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    woman + man
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tags__item active" id="actionTag" data-tag-content>
+                        <h3 class="tags__item-title">
+                            <img
+								src="img/icons/tag-action.svg"
+								width="32"
+								height="32"
+								loading="lazy"
+								alt="Action"
+							/>
+                            Action
+                        </h3>
+                        <ul class="tags__item-list">
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    woman
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    model
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    miss universe model
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    milf
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    celebrity
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    lingerie model
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    athlete
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    bodybuilder
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    cyborg
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    sorority girl
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    bimbo
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    woman + man
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tags__item active" id="clothingTag" data-tag-content>
+                        <h3 class="tags__item-title">
+                            <img
+								src="img/icons/tag-clothing.svg"
+								width="32"
+								height="32"
+								loading="lazy"
+								alt="Clothing"
+							/>
+                            Clothing
+                        </h3>
+                        <ul class="tags__item-list">
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    woman
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    model
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    miss universe model
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    milf
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    celebrity
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    lingerie model
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    athlete
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    bodybuilder
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    cyborg
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    sorority girl
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    bimbo
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    woman + man
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div
+						class="tags__item active"
+						id="clothingModifiersTag"
+						data-tag-content
+					>
+                        <h3 class="tags__item-title">
+                            <img
+								src="img/icons/tag-clothing-modifiers.svg"
+								width="32"
+								height="32"
+								loading="lazy"
+								alt="Clothing Modifiers"
+							/>
+                            Clothing Modifiers
+                        </h3>
+                        <ul class="tags__item-list">
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    woman
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    model
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    miss universe model
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    milf
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    celebrity
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    lingerie model
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    athlete
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    bodybuilder
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    cyborg
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    sorority girl
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    bimbo
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    woman + man
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div
+						class="tags__item active"
+						id="accessoriesObjectsTag"
+						data-tag-content
+					>
+                        <h3 class="tags__item-title">
+                            <img
+								src="img/icons/tag-accessories-objects.svg"
+								width="32"
+								height="32"
+								loading="lazy"
+								alt="Accessories/Objects"
+							/>
+                            Accessories/Objects
+                        </h3>
+                        <ul class="tags__item-list">
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    woman
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    model
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    miss universe model
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    milf
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    celebrity
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    lingerie model
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    athlete
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    bodybuilder
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    cyborg
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    sorority girl
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    bimbo
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    woman + man
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div
+						class="tags__item active"
+						id="modifierEffectsTag"
+						data-tag-content
+					>
+                        <h3 class="tags__item-title">
+                            <img
+								src="img/icons/tag-modifiers-effects.svg"
+								width="32"
+								height="32"
+								loading="lazy"
+								alt="Modifiers/Effects"
+							/>
+                            Modifiers/Effects
+                        </h3>
+                        <ul class="tags__item-list">
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    woman
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    model
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    miss universe model
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    milf
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    celebrity
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    lingerie model
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    athlete
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    bodybuilder
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    cyborg
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    sorority girl
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    bimbo
+                                </button>
+                            </li>
+                            <li>
+                                <button
+									class="tags__item-btn btn btn--dark btn-reset"
+									type="button"
+								>
+                                    woman + man
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                    <button
+						class="tab-tags__to-top btn-reset"
+						type="button"
+						id="backToTop"
+					>
+                        <img
+							src="img/icons/arrow-up.svg"
+							width="14"
+							height="15"
+							loading="lazy"
+							alt="Back to top"
+						/>
+                    </button>
+                    <button class="tab-tags__submit btn btn--red btn-reset" type="submit">
+                        Create
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+    <form class="create__form form-create active" id="tabPrompts">
         <div class="container">
             <div class="form-create__prompts">
                 <div class="form-create__fields">
@@ -1081,1885 +3097,6 @@
 			>
                 Create
             </button>
-        </div>
-    </form>
-    <form class="create__prompts-tab tab-prompts" id="tab-prompts">
-        <div class="container">
-            <p class="tab-prompts__text">
-                Choose some tags and click create to get started!
-            </p>
-            <div class="tab-prompts__creator">
-                <div class="tab-prompts__creator-title">Creator</div>
-                <div class="tab-prompts__dropdown dropdown dropdown--creator">
-                    <input
-						class="dropdown__switch"
-						type="checkbox"
-						id="creatorSwitch"
-						hidden
-						value="1"
-					/>
-                    <label class="dropdown__options-filter" for="creatorSwitch">
-                        <ul class="dropdown__filter" role="listbox" tabindex="-1">
-                            <li class="dropdown__filter-selected" aria-selected="true">
-                                Woman detailed
-                            </li>
-                            <li>
-                                <ul class="dropdown__select">
-                                    <li class="dropdown__select-option" role="option" value="1">
-                                        Woman detailed
-                                    </li>
-                                    <li class="dropdown__select-option" role="option" value="2">
-                                        Woman detailed 2
-                                    </li>
-
-                                    <li class="dropdown__select-option" role="option" value="3">
-                                        Woman detailed 3
-                                    </li>
-                                </ul>
-                            </li>
-                        </ul>
-                    </label>
-                </div>
-            </div>
-            <div class="tab-prompts__actions">
-                <button
-					class="tab-prompts__actions-btn btn btn--red btn-reset"
-					type="button"
-				>
-                    Clear all tags
-                    <img
-						src="img/icons/clear.svg"
-						width="10"
-						height="9"
-						loading="lazy"
-						alt="Clear all tags"
-					/>
-                </button>
-                <button
-					class="tab-prompts__actions-btn btn btn--dark btn-reset"
-					type="button"
-				>
-                    Copy Tags
-                    <img
-						src="img/icons/copy-tags.svg"
-						width="12"
-						height="13"
-						loading="lazy"
-						alt="Copy Tags"
-					/>
-                </button>
-            </div>
-            <div class="tab-prompts__tags tags">
-                <h2 class="tags__title">Tags</h2>
-                <ul class="tags__list">
-                    <li class="tags__list-item">
-                        <button
-							class="tags__list-btn btn btn--dark btn-reset active"
-							type="button"
-							id="allTag"
-						>
-                            All
-                        </button>
-                    </li>
-                    <li class="tags__list-item">
-                        <button
-							class="tags__list-btn btn btn--dark btn-reset"
-							type="button"
-							data-tag-target="#baseTag"
-						>
-                            Base
-                        </button>
-                    </li>
-                    <li class="tags__list-item">
-                        <button
-							class="tags__list-btn btn btn--dark btn-reset"
-							type="button"
-							data-tag-target="#numberOrPeopleTag"
-						>
-                            Number or people
-                        </button>
-                    </li>
-                    <li class="tags__list-item">
-                        <button
-							class="tags__list-btn btn btn--dark btn-reset"
-							type="button"
-							data-tag-target="#bodyTag"
-						>
-                            Body
-                        </button>
-                    </li>
-                    <li class="tags__list-item">
-                        <button
-							class="tags__list-btn btn btn--dark btn-reset"
-							type="button"
-							data-tag-target="#ageTag"
-						>
-                            Age
-                        </button>
-                    </li>
-                    <li class="tags__list-item">
-                        <button
-							class="tags__list-btn btn btn--dark btn-reset"
-							type="button"
-							data-tag-target="#faceTag"
-						>
-                            Face
-                        </button>
-                    </li>
-                    <li class="tags__list-item">
-                        <button
-							class="tags__list-btn btn btn--dark btn-reset"
-							type="button"
-							data-tag-target="#hairColorTag"
-						>
-                            Hair color
-                        </button>
-                    </li>
-                    <li class="tags__list-item">
-                        <button
-							class="tags__list-btn btn btn--dark btn-reset"
-							type="button"
-							data-tag-target="#hairStyleTag"
-						>
-                            Hair Style
-                        </button>
-                    </li>
-                    <li class="tags__list-item">
-                        <button
-							class="tags__list-btn btn btn--dark btn-reset"
-							type="button"
-							data-tag-target="#ethnicityTag"
-						>
-                            Ethnicity
-                        </button>
-                    </li>
-                    <li class="tags__list-item">
-                        <button
-							class="tags__list-btn btn btn--dark btn-reset"
-							type="button"
-							data-tag-target="#styleTag"
-						>
-                            Style
-                        </button>
-                    </li>
-                    <li class="tags__list-item">
-                        <button
-							class="tags__list-btn btn btn--dark btn-reset"
-							type="button"
-							data-tag-target="#settingTag"
-						>
-                            Setting
-                        </button>
-                    </li>
-                    <li class="tags__list-item">
-                        <button
-							class="tags__list-btn btn btn--dark btn-reset"
-							type="button"
-							data-tag-target="#viewTag"
-						>
-                            View
-                        </button>
-                    </li>
-                    <li class="tags__list-item">
-                        <button
-							class="tags__list-btn btn btn--dark btn-reset"
-							type="button"
-							data-tag-target="#actionTag"
-						>
-                            Action
-                        </button>
-                    </li>
-                    <li class="tags__list-item">
-                        <button
-							class="tags__list-btn btn btn--dark btn-reset"
-							type="button"
-							data-tag-target="#clothingTag"
-						>
-                            Clothing
-                        </button>
-                    </li>
-                    <li class="tags__list-item">
-                        <button
-							class="tags__list-btn btn btn--dark btn-reset"
-							type="button"
-							data-tag-target="#clothingModifiersTag"
-						>
-                            Clothing Modifiers
-                        </button>
-                    </li>
-                    <li class="tags__list-item">
-                        <button
-							class="tags__list-btn btn btn--dark btn-reset"
-							type="button"
-							data-tag-target="#accessoriesObjectsTag"
-						>
-                            Accessories/Objects
-                        </button>
-                    </li>
-                    <li class="tags__list-item">
-                        <button
-							class="tags__list-btn btn btn--dark btn-reset"
-							type="button"
-							data-tag-target="#modifierEffectsTag"
-						>
-                            Modifier Effects
-                        </button>
-                    </li>
-                </ul>
-                <div class="tags__items">
-                    <div class="tags__item active" id="baseTag" data-tag-content>
-                        <h3 class="tags__item-title">Base</h3>
-                        <ul class="tags__item-list">
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    woman
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    model
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    miss universe model
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    milf
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    celebrity
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    lingerie model
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    athlete
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    bodybuilder
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    cyborg
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    sorority girl
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    bimbo
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    woman + man
-                                </button>
-                            </li>
-                        </ul>
-                    </div>
-                    <div
-						class="tags__item active"
-						id="numberOrPeopleTag"
-						data-tag-content
-					>
-                        <h3 class="tags__item-title">Number of people</h3>
-                        <ul class="tags__item-list">
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    woman
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    model
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    miss universe model
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    milf
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    celebrity
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    lingerie model
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    athlete
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    bodybuilder
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    cyborg
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    sorority girl
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    bimbo
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    woman + man
-                                </button>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="tags__item active" id="bodyTag" data-tag-content>
-                        <h3 class="tags__item-title">Body</h3>
-                        <ul class="tags__item-list">
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    woman
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    model
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    miss universe model
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    milf
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    celebrity
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    lingerie model
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    athlete
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    bodybuilder
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    cyborg
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    sorority girl
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    bimbo
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    woman + man
-                                </button>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="tags__item active" id="ageTag" data-tag-content>
-                        <h3 class="tags__item-title">Age</h3>
-                        <ul class="tags__item-list">
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    woman
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    model
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    miss universe model
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    milf
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    celebrity
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    lingerie model
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    athlete
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    bodybuilder
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    cyborg
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    sorority girl
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    bimbo
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    woman + man
-                                </button>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="tags__item active" id="faceTag" data-tag-content>
-                        <h3 class="tags__item-title">Face</h3>
-                        <ul class="tags__item-list">
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    woman
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    model
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    miss universe model
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    milf
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    celebrity
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    lingerie model
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    athlete
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    bodybuilder
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    cyborg
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    sorority girl
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    bimbo
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    woman + man
-                                </button>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="tags__item active" id="hairColorTag" data-tag-content>
-                        <h3 class="tags__item-title">Hair color</h3>
-                        <ul class="tags__item-list">
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    woman
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    model
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    miss universe model
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    milf
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    celebrity
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    lingerie model
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    athlete
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    bodybuilder
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    cyborg
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    sorority girl
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    bimbo
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    woman + man
-                                </button>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="tags__item active" id="hairStyleTag" data-tag-content>
-                        <h3 class="tags__item-title">Hair style</h3>
-                        <ul class="tags__item-list">
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    woman
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    model
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    miss universe model
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    milf
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    celebrity
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    lingerie model
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    athlete
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    bodybuilder
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    cyborg
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    sorority girl
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    bimbo
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    woman + man
-                                </button>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="tags__item active" id="ethnicityTag" data-tag-content>
-                        <h3 class="tags__item-title">Ethnicity</h3>
-                        <ul class="tags__item-list">
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    woman
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    model
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    miss universe model
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    milf
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    celebrity
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    lingerie model
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    athlete
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    bodybuilder
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    cyborg
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    sorority girl
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    bimbo
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    woman + man
-                                </button>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="tags__item active" id="styleTag" data-tag-content>
-                        <h3 class="tags__item-title">Style</h3>
-                        <ul class="tags__item-list">
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    woman
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    model
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    miss universe model
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    milf
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    celebrity
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    lingerie model
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    athlete
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    bodybuilder
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    cyborg
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    sorority girl
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    bimbo
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    woman + man
-                                </button>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="tags__item active" id="settingTag" data-tag-content>
-                        <h3 class="tags__item-title">Setting / Place</h3>
-                        <ul class="tags__item-list">
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    woman
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    model
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    miss universe model
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    milf
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    celebrity
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    lingerie model
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    athlete
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    bodybuilder
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    cyborg
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    sorority girl
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    bimbo
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    woman + man
-                                </button>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="tags__item active" id="viewTag" data-tag-content>
-                        <h3 class="tags__item-title">View</h3>
-                        <ul class="tags__item-list">
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    woman
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    model
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    miss universe model
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    milf
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    celebrity
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    lingerie model
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    athlete
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    bodybuilder
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    cyborg
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    sorority girl
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    bimbo
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    woman + man
-                                </button>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="tags__item active" id="actionTag" data-tag-content>
-                        <h3 class="tags__item-title">Action</h3>
-                        <ul class="tags__item-list">
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    woman
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    model
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    miss universe model
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    milf
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    celebrity
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    lingerie model
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    athlete
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    bodybuilder
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    cyborg
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    sorority girl
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    bimbo
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    woman + man
-                                </button>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="tags__item active" id="clothingTag" data-tag-content>
-                        <h3 class="tags__item-title">Clothing</h3>
-                        <ul class="tags__item-list">
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    woman
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    model
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    miss universe model
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    milf
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    celebrity
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    lingerie model
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    athlete
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    bodybuilder
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    cyborg
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    sorority girl
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    bimbo
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    woman + man
-                                </button>
-                            </li>
-                        </ul>
-                    </div>
-                    <div
-						class="tags__item active"
-						id="clothingModifiersTag"
-						data-tag-content
-					>
-                        <h3 class="tags__item-title">Clothing Modifiers</h3>
-                        <ul class="tags__item-list">
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    woman
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    model
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    miss universe model
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    milf
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    celebrity
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    lingerie model
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    athlete
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    bodybuilder
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    cyborg
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    sorority girl
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    bimbo
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    woman + man
-                                </button>
-                            </li>
-                        </ul>
-                    </div>
-                    <div
-						class="tags__item active"
-						id="accessoriesObjectsTag"
-						data-tag-content
-					>
-                        <h3 class="tags__item-title">Accessories/Objects</h3>
-                        <ul class="tags__item-list">
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    woman
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    model
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    miss universe model
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    milf
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    celebrity
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    lingerie model
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    athlete
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    bodybuilder
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    cyborg
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    sorority girl
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    bimbo
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    woman + man
-                                </button>
-                            </li>
-                        </ul>
-                    </div>
-                    <div
-						class="tags__item active"
-						id="modifierEffectsTag"
-						data-tag-content
-					>
-                        <h3 class="tags__item-title">Modifiers/Effects</h3>
-                        <ul class="tags__item-list">
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    woman
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    model
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    miss universe model
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    milf
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    celebrity
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    lingerie model
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    athlete
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    bodybuilder
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    cyborg
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    sorority girl
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    bimbo
-                                </button>
-                            </li>
-                            <li>
-                                <button
-									class="tags__item-btn btn btn--dark btn-reset"
-									type="button"
-								>
-                                    woman + man
-                                </button>
-                            </li>
-                        </ul>
-                    </div>
-                    <button
-						class="tab-prompts__to-top btn-reset"
-						type="button"
-						id="backToTop"
-					>
-                        <img
-							src="img/icons/arrow-up.svg"
-							width="14"
-							height="15"
-							loading="lazy"
-							alt="Back to top"
-						/>
-                    </button>
-                    <button
-						class="tab-prompts__submit btn btn--red btn-reset"
-						type="submit"
-					>
-                        Create
-                    </button>
-                </div>
-            </div>
         </div>
     </form>
 </section>

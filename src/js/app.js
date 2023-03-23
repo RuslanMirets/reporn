@@ -427,8 +427,8 @@ const tooltip = (btn, content) => {
 (function () {
 	const btnTags = document.querySelector("#btnTags");
 	const btnPrompts = document.querySelector("#btnPrompts");
-	const tabTags = document.querySelector("#tab-tags");
-	const tabPrompts = document.querySelector("#tab-prompts");
+	const tabTags = document.querySelector("#tabTags");
+	const tabPrompts = document.querySelector("#tabPrompts");
 
 	btnTags?.addEventListener("click", () => {
 		btnTags.classList.add("active");
