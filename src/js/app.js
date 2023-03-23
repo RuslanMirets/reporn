@@ -139,8 +139,8 @@
 						this.speed / 1e3 + "s"
 					),
 					this.modal.classList.add("is-open"),
-					(document.body.style.scrollBehavior = "smooth"),
-					(document.documentElement.style.scrollBehavior = "smooth"),
+					(document.body.style.scrollBehavior = "auto"),
+					(document.documentElement.style.scrollBehavior = "auto"),
 					this.disableScroll(),
 					this.modalContainer.classList.add("graph-modal-open"),
 					this.modalContainer.classList.add(this.animation),
@@ -158,8 +158,8 @@
 					this.modal.classList.remove("is-open"),
 					this.modalContainer.classList.remove("graph-modal-open"),
 					this.enableScroll(),
-					(document.body.style.scrollBehavior = "smooth"),
-					(document.documentElement.style.scrollBehavior = "smooth"),
+					(document.body.style.scrollBehavior = "auto"),
+					(document.documentElement.style.scrollBehavior = "auto"),
 					this.options.isClose(this),
 					(this.isOpen = !1),
 					this.focusTrap(),
@@ -1050,6 +1050,8 @@ const tooltip = (btn, content) => {
 	const btn = document.querySelector("#backToTop");
 
 	btn?.addEventListener("click", () => {
+		document.body.style.scrollBehavior = "smooth";
+		document.documentElement.style.scrollBehavior = "smooth";
 		document.body.scrollTop = 0;
 		document.documentElement.scrollTop = 0;
 	});
