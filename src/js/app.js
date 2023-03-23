@@ -1056,9 +1056,9 @@ const tooltip = (btn, content) => {
 
 	window.addEventListener("scroll", () => {
 		if (window.scrollY >= 200) {
-			btn.classList.add("active");
+			btn?.classList.add("active");
 		} else {
-			btn.classList.remove("active");
+			btn?.classList.remove("active");
 		}
 	});
 })();
