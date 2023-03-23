@@ -377,7 +377,7 @@ const tooltip = (btn, content) => {
 
 // Init modal
 (function () {
-	const modal = new GraphModal();
+	const modal = new GraphModal().open("warning-modal");
 })();
 // ================================ //GLOBAL =================================
 
@@ -1011,7 +1011,7 @@ const tooltip = (btn, content) => {
 	const allBtn = document.querySelector("#allTag");
 	const tags = document.querySelectorAll(".tags__item-btn");
 
-	allBtn.addEventListener("click", () => {
+	allBtn?.addEventListener("click", () => {
 		allBtn.classList.add("active");
 
 		tagBtns.forEach((btn) => {
@@ -1049,7 +1049,7 @@ const tooltip = (btn, content) => {
 (function () {
 	const btn = document.querySelector("#backToTop");
 
-	btn.addEventListener("click", () => {
+	btn?.addEventListener("click", () => {
 		document.body.scrollTop = 0;
 		document.documentElement.scrollTop = 0;
 	});

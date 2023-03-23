@@ -360,6 +360,61 @@
         </div>
         <div class="graph-modal">
             <div
+	class="warning-modal graph-modal__container"
+	role="dialog"
+	aria-modal="true"
+	data-graph-target="warning-modal"
+>
+    <button
+		class="warning-modal__close close-modal btn-reset graph-modal__close js-modal-close"
+		aria-label="Закрыть модальное окно"
+	>
+        <img
+			src="img/icons/close-modal-icon.svg"
+			width="14"
+			height="14"
+			loading="lazy"
+			alt="Close"
+		/>
+    </button>
+    <div class="warning-modal__content graph-modal__content">
+        <div class="warning-modal__logo">
+            <img
+				src="img/logo-modal.svg"
+				width="144"
+				height="42"
+				loading="lazy"
+				alt="Logo"
+			/>
+        </div>
+        <div class="warning-modal__info">
+            <img
+				class="warning-modal__img"
+				src="img/icons/age.svg"
+				width="56"
+				height="56"
+				loading="lazy"
+				alt="Age"
+			/>
+            <h3 class="warning-modal__title">WARNING!</h3>
+            <div class="warning-modal__subtitle">This site is for adults only!</div>
+            <p class="warning-modal__text">
+                By entering this website, I acknowledge that I am 18 years old or older
+                and agree to the Terms of Service
+            </p>
+        </div>
+        <div class="warning-modal__btns">
+            <button class="warning-modal__btn btn btn--dark btn-reset js-modal-close">
+                I am OVER 18
+            </button>
+            <button class="warning-modal__btn btn btn--dark btn-reset">
+                I am UNDER 18
+            </button>
+        </div>
+    </div>
+</div>
+
+            <div
 	class="login-modal graph-modal__container"
 	role="dialog"
 	aria-modal="true"

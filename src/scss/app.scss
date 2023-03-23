@@ -1052,6 +1052,86 @@ select {
 	}
 }
 
+.warning-modal {
+	padding: 24px 32px 32px;
+	max-width: 440px;
+	background-color: var(--secondary-1-color);
+
+	&__close {
+		right: 16px;
+		top: 32px;
+		outline: none;
+	}
+
+	&__logo {
+		position: relative;
+		display: flex;
+		justify-content: center;
+		margin-bottom: 32px;
+		padding-bottom: 24px;
+
+		&::before {
+			content: "";
+			position: absolute;
+			left: -32px;
+			bottom: 0;
+			width: calc(100% + 64px);
+			height: 1px;
+			background-color: var(--secondary-2-color);
+		}
+	}
+
+	&__info {
+		margin-bottom: 48px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	}
+
+	&__img {
+		margin-bottom: 16px;
+	}
+
+	&__title {
+		margin-bottom: 8px;
+		font-weight: 600;
+		font-size: 23px;
+		line-height: 24px;
+		text-transform: uppercase;
+
+		@media (min-width: 1200px) {
+			font-size: 26px;
+			line-height: 32px;
+		}
+	}
+
+	&__subtitle {
+		margin-bottom: 8px;
+		font-weight: 500;
+		font-size: 16px;
+		line-height: 20px;
+	}
+
+	&__text {
+		font-weight: 400;
+		font-size: 12px;
+		line-height: 16px;
+		color: var(--ui-text-color);
+	}
+
+	&__btns {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: 16px;
+	}
+
+	&__btn {
+		padding: 12px 5px;
+		background-color: var(--secondary-2-color);
+	}
+}
+
 .login-modal {
 	padding: 24px 32px 40px;
 	max-width: 440px;
