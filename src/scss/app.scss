@@ -1082,10 +1082,10 @@ select {
 	}
 
 	&__info {
-		margin-bottom: 48px;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		margin-bottom: 48px;
 		text-align: center;
 	}
 
@@ -2417,14 +2417,6 @@ select {
 
 	&.active {
 		display: block;
-	}
-
-	@media (min-width: 992px) {
-		margin-bottom: 32px;
-	}
-
-	@media (min-width: 1200px) {
-		margin-bottom: 48px;
 	}
 }
 
