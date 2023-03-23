@@ -1053,6 +1053,14 @@ const tooltip = (btn, content) => {
 		document.body.scrollTop = 0;
 		document.documentElement.scrollTop = 0;
 	});
+
+	window.addEventListener("scroll", () => {
+		if (window.scrollY >= 200) {
+			btn.classList.add("active");
+		} else {
+			btn.classList.remove("active");
+		}
+	});
 })();
 // ========================== // CREATE ARTWORK PAGE ==========================
 

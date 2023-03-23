@@ -2248,6 +2248,7 @@ select {
 
 .tab-prompts {
 	display: none;
+	margin-bottom: 24px;
 
 	&__text {
 		margin-bottom: 32px;
@@ -2312,6 +2313,14 @@ select {
 		width: 30px;
 		height: 32px;
 		background-color: var(--secondary-1-color);
+		opacity: 0;
+		visibility: hidden;
+		transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+
+		&.active {
+			opacity: 1;
+			visibility: visible;
+		}
 
 		@media (min-width: 992px) {
 			display: none;
@@ -2320,6 +2329,14 @@ select {
 
 	&.active {
 		display: block;
+	}
+
+	@media (min-width: 992px) {
+		margin-bottom: 32px;
+	}
+
+	@media (min-width: 1200px) {
+		margin-bottom: 48px;
 	}
 }
 
@@ -2358,7 +2375,6 @@ select {
 
 	&__items {
 		position: relative;
-		margin-bottom: 32px;
 	}
 
 	&__item {
