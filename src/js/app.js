@@ -1010,6 +1010,7 @@ const tooltip = (btn, content) => {
 	const tagContents = document.querySelectorAll("[data-tag-content]");
 	const allBtn = document.querySelector("#allTag");
 	const tags = document.querySelectorAll(".tags__item-btn");
+	const clearAllTags = document.querySelector("#clearAllTags");
 
 	allBtn?.addEventListener("click", () => {
 		allBtn.classList.add("active");
@@ -1041,6 +1042,14 @@ const tooltip = (btn, content) => {
 	tags.forEach((tag) => {
 		tag.addEventListener("click", () => {
 			tag.classList.toggle("active");
+			clearAllTags.classList.add("active");
+		});
+	});
+
+	clearAllTags?.addEventListener("click", () => {
+		tags.forEach((tag) => {
+			clearAllTags.classList.remove("active");
+			tag.classList.remove("active");
 		});
 	});
 })();
