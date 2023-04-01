@@ -42,15 +42,15 @@
 
     <link
 		rel="stylesheet"
-		href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css?_v=20230327153214"
+		href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css?_v=20230401103803"
 	/>
-    <link rel="stylesheet" href="css/app.min.css?_v=20230327153214" />
+    <link rel="stylesheet" href="css/app.min.css?_v=20230401103803" />
 
     <script
 		defer
 		src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"
 	></script>
-    <script defer src="js/app.min.js?_v=20230327153214"></script>
+    <script defer src="js/app.min.js?_v=20230401103803"></script>
     <title>Create Artwork</title>
 </head>
 
@@ -2825,7 +2825,11 @@
                             <div class="model__item-info">
                                 <div class="model__item-head">
                                     <h4 class="model__item-title">Model Name v2.0</h4>
-                                    <button class="model__item-btn btn-reset" type="button">
+                                    <button
+										class="model__item-btn btn-reset"
+										type="button"
+										data-graph-path="limit-modal"
+									>
                                         Select
                                     </button>
                                 </div>
@@ -3623,6 +3627,21 @@
             Save
         </button>
     </form>
+</div>
+
+            <div
+	class="limit-modal graph-modal__container"
+	role="dialog"
+	aria-modal="true"
+	data-graph-target="limit-modal"
+>
+    <h3 class="limit-modal__title">Your limit is reached: (</h3>
+    <p class="limit-modal__text">Upgrade your tariff</p>
+    <div class="limit-modal__info">
+        <div class="limit-modal__info-number">0</div>
+        <div class="limit-modal__info-text">image available</div>
+    </div>
+    <a class="limit-modal__link" href="#">See tariffs</a>
 </div>
 
         </div>
