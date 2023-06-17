@@ -42,15 +42,15 @@
 
     <link
 		rel="stylesheet"
-		href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css?_v=20230401103803"
+		href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css"
 	/>
-    <link rel="stylesheet" href="css/app.min.css?_v=20230401103803" />
+    <link rel="stylesheet" href="css/app.min.css" />
 
     <script
 		defer
 		src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"
 	></script>
-    <script defer src="js/app.min.js?_v=20230401103803"></script>
+    <script defer src="js/app.min.js"></script>
     <title>Create Artwork</title>
 </head>
 
@@ -2314,6 +2314,204 @@
 							></textarea>
                         </div>
                     </label>
+                    <div class="prompts-base">
+    <div class="form-create__toggle">
+        <div class="form-create__toggle-title">Prompts base</div>
+        <input
+			class="form-create__toggle-input"
+			type="checkbox"
+			id="promptsBaseToggle"
+			checked
+		/>
+    </div>
+    <div class="prompts-base__box active">
+        <div class="choose-category">
+            <div class="choose-category__head">
+                <div class="choose-category__head-title">Choose category</div>
+                <div class="form-create__tooltip">
+                    <button
+						class="form-create__tooltip-btn btn-reset"
+						type="button"
+						id="chooseCategoryTooltipBtn"
+					>
+                        <svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="12"
+							height="13"
+							fill="none"
+						>
+                            <path
+								fill="#fff"
+								d="M11.813 6.5C11.813 3.312 9.187.687 6 .687 2.79.688.187 3.313.187 6.5A5.811 5.811 0 0 0 6 12.313c3.188 0 5.813-2.602 5.813-5.813ZM6.14 2.61c1.336 0 2.742 1.03 2.742 2.39 0 1.828-1.945 1.852-1.945 2.508v.023c0 .164-.141.282-.282.282H5.344a.27.27 0 0 1-.282-.282v-.093c0-.961.727-1.336 1.266-1.641.469-.258.774-.445.774-.797 0-.469-.61-.773-1.079-.773-.632 0-.914.304-1.335.843a.293.293 0 0 1-.399.047l-.82-.61c-.117-.093-.14-.257-.047-.398.633-.96 1.453-1.5 2.719-1.5ZM6 8.421A1.09 1.09 0 0 1 7.078 9.5c0 .61-.492 1.078-1.078 1.078A1.06 1.06 0 0 1 4.922 9.5c0-.586.469-1.078 1.078-1.078Z"
+							/>
+                        </svg>
+                    </button>
+                    <div
+						class="form-create__tooltip-content"
+						id="chooseCategoryTooltipContent"
+					>
+                        <h4 class="form-create__tooltip-title">How it works</h4>
+                        <p class="form-create__tooltip-text">
+                            Prompts base is designed to help you avoid the issues of creating
+                            prompts. As a hint, you can select the desired prompts through the
+                            categories. Choose a category > subcategory > click on the prompt
+                            you need. It will automatically be inserted into the line of your
+                            prompt. You can insert multiple hints from different categories at
+                            once.
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <ul class="choose-category__list">
+                <li class="choose-category__item active">
+                    <img
+						src="img/icons/category-general.svg"
+						width="33"
+						height="37"
+						loading="lazy"
+						alt="General"
+					/>
+                    <div class="choose-category__item-title">General</div>
+                </li>
+                <li class="choose-category__item disabled">
+                    <svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="35"
+						height="32"
+						fill="none"
+					>
+                        <path
+							fill="#fff"
+							d="M28.333 6.667C25.193 2.48 21.2.167 17 .167S8.807 2.48 5.667 6.667C3.305 9.815.457 14.067.063 18.54c-.201 2.307.245 4.668 1.699 6.917 1.435 2.22 3.78 4.218 7.191 5.966 2.099 1.075 4.384-.366 4.682-2.471a10.797 10.797 0 0 1-1.937-1.669c-1.688-1.841-3.033-4.538-3.033-7.95 0-5.713 2.95-9.558 6.5-10.573.47-.133 1 .22 1.057.707a8.333 8.333 0 0 0 8.195 7.366c1.123.01.916 1.767.916 2.5 0 3.412-1.343 6.109-3.033 7.95a10.637 10.637 0 0 1-1.94 1.672c.267 2.113 2.53 3.567 4.63 2.552 3.608-1.74 6.072-3.739 7.563-5.975 1.512-2.27 1.939-4.662 1.679-6.99-.5-4.484-3.562-8.762-5.899-11.875Z"
+						/>
+                    </svg>
+                    <div class="choose-category__item-title">Hair</div>
+                </li>
+                <li class="choose-category__item">
+                    <svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="32"
+						height="36"
+						fill="none"
+					>
+                        <path
+							fill="#fff"
+							d="m10.797.387-1.586.796c0 2.502.062 6.864 1.086 10.231 4.555 1.11 6.851 1.11 11.406 0 1.04-3.36 1.086-6.76 1.094-10.231L21.203.387A40.56 40.56 0 0 1 19.5 2.463c-.563.638-1.156 1.278-1.727 1.782a6.047 6.047 0 0 1-.828.638c-.28.172-.554.32-.945.32-.39 0-.664-.148-.945-.32a6.047 6.047 0 0 1-.828-.638c-.57-.504-1.165-1.144-1.727-1.782A40.56 40.56 0 0 1 10.797.387Zm-.672 12.425L.477 32.117c.021.086.062.18.168.297.157.18.436.398.83.602.787.422 2.009.804 3.494 1.109 2.968.61 7.008.922 11.031.922 4.023 0 8.063-.313 11.031-.922 1.485-.305 2.711-.688 3.492-1.11.399-.203.672-.421.829-.6a.664.664 0 0 0 .171-.298l-9.648-19.304c-4.531 1.085-7.219 1.085-11.75 0Z"
+						/>
+                    </svg>
+                    <div class="choose-category__item-title">Wear and Accessories</div>
+                </li>
+                <li class="choose-category__item">
+                    <svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="32"
+						height="36"
+						fill="none"
+					>
+                        <path
+							fill="#fff"
+							d="m10.797.387-1.586.796c0 2.502.062 6.864 1.086 10.231 4.555 1.11 6.851 1.11 11.406 0 1.04-3.36 1.086-6.76 1.094-10.231L21.203.387A40.56 40.56 0 0 1 19.5 2.463c-.563.638-1.156 1.278-1.727 1.782a6.047 6.047 0 0 1-.828.638c-.28.172-.554.32-.945.32-.39 0-.664-.148-.945-.32a6.047 6.047 0 0 1-.828-.638c-.57-.504-1.165-1.144-1.727-1.782A40.56 40.56 0 0 1 10.797.387Zm-.672 12.425L.477 32.117c.021.086.062.18.168.297.157.18.436.398.83.602.787.422 2.009.804 3.494 1.109 2.968.61 7.008.922 11.031.922 4.023 0 8.063-.313 11.031-.922 1.485-.305 2.711-.688 3.492-1.11.399-.203.672-.421.829-.6a.664.664 0 0 0 .171-.298l-9.648-19.304c-4.531 1.085-7.219 1.085-11.75 0Z"
+						/>
+                    </svg>
+                    <div class="choose-category__item-title">Camera</div>
+                </li>
+                <li class="choose-category__item">
+                    <svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="28"
+						height="40"
+						fill="none"
+					>
+                        <path
+							fill="#fff"
+							d="M7.505 35.496c0 .491.146.973.418 1.382l1.336 2.007a2.5 2.5 0 0 0 2.08 1.116h4.822a2.5 2.5 0 0 0 2.081-1.116l1.335-2.007a2.5 2.5 0 0 0 .42-1.382l.002-2.996H7.501l.004 2.996ZM0 13.75c0 3.466 1.285 6.629 3.403 9.045 1.29 1.473 3.31 4.55 4.079 7.145l.009.06h12.518l.009-.06c.77-2.596 2.788-5.672 4.079-7.145A13.674 13.674 0 0 0 27.5 13.75C27.5 6.141 21.321-.023 13.707 0 5.737.024 0 6.482 0 13.75ZM13.75 7.5a6.257 6.257 0 0 0-6.25 6.25 1.25 1.25 0 1 1-2.5 0C5 8.925 8.925 5 13.75 5a1.25 1.25 0 1 1 0 2.5Z"
+						/>
+                    </svg>
+                    <div class="choose-category__item-title">Light and efx</div>
+                </li>
+                <li class="choose-category__item">
+                    <svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="38"
+						height="39"
+						fill="none"
+					>
+                        <path
+							fill="#fff"
+							d="M16.445 2.717C27.656.597 37.432 9.074 37.5 19.807c-.068 2.46-2.05 4.443-4.443 4.443h-5.47c-3.485 0-5.741 3.623-4.169 6.768 1.299 2.529-.068 5.81-2.871 6.289C11.797 38.605.312 29.103 2.842 16.32 4.14 9.553 9.609 4.084 16.445 2.717ZM9.062 24.25c1.163 0 2.188-.957 2.188-2.188 0-1.162-1.025-2.187-2.188-2.187-1.23 0-2.187 1.025-2.187 2.188a2.16 2.16 0 0 0 2.188 2.187Zm2.188-8.75c1.162 0 2.188-.957 2.188-2.188 0-1.162-1.026-2.187-2.188-2.187-1.23 0-2.188 1.025-2.188 2.188A2.16 2.16 0 0 0 11.25 15.5ZM20 11.125c1.162 0 2.188-.957 2.188-2.188 0-1.162-1.026-2.187-2.188-2.187-1.23 0-2.188 1.025-2.188 2.188A2.16 2.16 0 0 0 20 11.124Zm8.75 4.375c1.162 0 2.188-.957 2.188-2.188 0-1.162-1.026-2.187-2.188-2.187-1.23 0-2.188 1.025-2.188 2.188A2.16 2.16 0 0 0 28.75 15.5Z"
+						/>
+                    </svg>
+                    <div class="choose-category__item-title">Painters</div>
+                </li>
+            </ul>
+        </div>
+        <div class="prompts-base__content active">
+            <div class="choose-subcategory">
+                <div class="choose-subcategory__title">Choose subcategory</div>
+                <ul class="choose-subcategory__list">
+                    <li class="choose-subcategory__item active">Ethnic</li>
+                    <li class="choose-subcategory__item disabled">Professions</li>
+                    <li class="choose-subcategory__item">Fantasy and fiction</li>
+                    <li class="choose-subcategory__item">Mythology</li>
+                </ul>
+            </div>
+            <div class="choose-prompt">
+                <div class="choose-prompt__title">Choose prompt</div>
+                <ul class="choose-prompt__list">
+                    <li class="choose-prompt__item active">
+                        <div class="choose-prompt__item-img">
+                            <img
+								src="img/choose-prompt-01.png"
+								width="128"
+								height="128"
+								loading="lazy"
+								alt="Caucasian / European"
+							/>
+                        </div>
+                        <div class="choose-prompt__item-title">Caucasian / European</div>
+                    </li>
+                    <li class="choose-prompt__item disabled">
+                        <div class="choose-prompt__item-img">
+                            <img
+								src="img/choose-prompt-01.png"
+								width="128"
+								height="128"
+								loading="lazy"
+								alt="Caucasian / European"
+							/>
+                        </div>
+                        <div class="choose-prompt__item-title">Caucasian / European</div>
+                    </li>
+                    <li class="choose-prompt__item">
+                        <div class="choose-prompt__item-img">
+                            <img
+								src="img/choose-prompt-01.png"
+								width="128"
+								height="128"
+								loading="lazy"
+								alt="Caucasian / European"
+							/>
+                        </div>
+                        <div class="choose-prompt__item-title">Caucasian / European</div>
+                    </li>
+                    <li class="choose-prompt__item">
+                        <div class="choose-prompt__item-img">
+                            <img
+								src="img/choose-prompt-02.png"
+								width="128"
+								height="128"
+								loading="lazy"
+								alt="Mongoloid"
+							/>
+                        </div>
+                        <div class="choose-prompt__item-title">Caucasian</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
                     <label class="form-create__label form-create__label--sm">
                         <div class="form-create__label-head">
                             Negative Prompt

@@ -377,7 +377,8 @@ const tooltip = (btn, content) => {
 
 // Init modal
 (function () {
-	const modal = new GraphModal().open("warning-modal");
+	// Не забыть вернуть
+	// const modal = new GraphModal().open("warning-modal");
 })();
 // ================================ //GLOBAL =================================
 
@@ -532,6 +533,74 @@ const tooltip = (btn, content) => {
 	const content = document.querySelector("#promptTooltipContent");
 
 	tooltip(btn, content);
+})();
+
+// Choose Category Tooltip
+(function () {
+	const btn = document.querySelector("#chooseCategoryTooltipBtn");
+	const content = document.querySelector("#chooseCategoryTooltipContent");
+
+	tooltip(btn, content);
+})();
+
+// Prompts base trigger
+(function () {
+	const toggle = document.querySelector("#promptsBaseToggle");
+	const promptsBaseBox = document.querySelector(".prompts-base__box");
+
+	const categories = document.querySelectorAll(".choose-category__item");
+	const promptsBaseContent = document.querySelector(".prompts-base__content");
+	const subcategories = document.querySelectorAll(".choose-subcategory__item");
+
+	toggle?.addEventListener("change", () => {
+		if (toggle.checked == true) {
+			promptsBaseBox.classList.add("active");
+		} else {
+			promptsBaseBox.classList.remove("active");
+
+			categories.forEach((el) => {
+				el.classList.remove("active");
+			});
+			promptsBaseContent.classList.remove("active");
+			subcategories.forEach((el) => {
+				el.classList.remove("active");
+			});
+		}
+	});
+})();
+
+// Prompts base choose category
+(function () {
+	const btns = document.querySelectorAll(".choose-category__item");
+	const promptsBaseContent = document.querySelector(".prompts-base__content");
+
+	function toggleCategory() {
+		btns.forEach((element) => {
+			element.classList.remove("active");
+			promptsBaseContent.classList.add("active");
+		});
+		this.classList.add("active");
+	}
+
+	btns.forEach((el) => {
+		el.addEventListener("click", toggleCategory);
+	});
+})();
+
+// Prompts base choose subcategory
+(function () {
+	const btns = document.querySelectorAll(".choose-subcategory__item");
+
+	function toggleCategory() {
+		btns.forEach((element) => {
+			element.classList.remove("active");
+		});
+		this.classList.add("active");
+	}
+
+	btns.forEach((el) => {
+		el.addEventListener("click", toggleCategory);
+	});
 })();
 
 // Negative Prompt Tooltip
